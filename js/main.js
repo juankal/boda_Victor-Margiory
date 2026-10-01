@@ -1,5 +1,5 @@
 /**
- * BODA VÍCTOR & MARGIORY — INTERACTIVIDAD Y DETALLES PREMIUM
+ * BODA VÍCTOR & MARGIORY — EXPERIENCIA NAVY BLUE & WAX SEAL
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,10 +9,45 @@ document.addEventListener('DOMContentLoaded', () => {
   initRSVPForm();
   initGallery();
   initScrollAnimations();
-  initPetals();
+  initSparkles();
 });
 
-/* ================= 1. CONTADOR REGRESIVO ================= */
+/* ================= 1. APERTURA INTERACTIVA DEL SOBRE ================= */
+window.openEnvelopeExperience = function() {
+  const envelopeBox = document.getElementById('envelope-box');
+  const envelopeHero = document.getElementById('envelope-hero');
+  const audio = document.getElementById('bg-audio');
+
+  if (envelopeBox) {
+    envelopeBox.classList.add('open-anim');
+  }
+
+  // Intentar reproducir música automáticamente al abrir
+  if (audio && audio.paused) {
+    audio.play().then(() => {
+      const floatBtn = document.getElementById('floating-audio-btn');
+      const playIcon = document.getElementById('main-play-icon');
+      if (floatBtn) floatBtn.classList.add('playing');
+      if (playIcon) {
+        playIcon.classList.remove('fa-play');
+        playIcon.classList.add('fa-pause');
+      }
+    }).catch(err => {
+      console.log("Audio autoplay restringido:", err);
+    });
+  }
+
+  // Desvanecer el sobre y mostrar la invitación completa
+  setTimeout(() => {
+    if (envelopeHero) {
+      envelopeHero.classList.add('opened');
+    }
+    // Desplazar suavemente a la cabecera
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 1100);
+};
+
+/* ================= 2. CONTADOR REGRESIVO ================= */
 function initCountdown() {
   const eventDate = new Date(2026, 9, 19, 17, 0, 0).getTime();
 
@@ -48,22 +83,20 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-/* ================= 2. ENLACE GOOGLE CALENDAR ================= */
+/* ================= 3. ENLACE GOOGLE CALENDAR ================= */
 function initCalendarLink() {
   const calBtn = document.getElementById('btn-add-calendar');
   if (!calBtn) return;
 
   const title = encodeURIComponent("Boda de Víctor & Margiory 💍");
-  const details = encodeURIComponent("¡Acompáñanos a celebrar nuestra unión matrimonial!\nRecepción: 5:00 PM.\nLugar: Salón de Eventos Los Tulipanes, Pasaje San Hilarión Nro 350, Tacna.");
+  const details = encodeURIComponent("¡Acompáñanos a celebrar nuestra boda!\nRecepción: 5:00 PM.\nLugar: Salón de Eventos Los Tulipanes, Pasaje San Hilarión Nro 350, Tacna.");
   const location = encodeURIComponent("Salón de Eventos Los Tulipanes, Pasaje San Hilarión 350, Tacna, Perú");
   const dates = "20261019T220000Z/20261020T080000Z";
 
   calBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 }
 
-/* ================= 3. REPRODUCTOR DE MÚSICA REAL ================= */
-let isMusicPlaying = false;
-
+/* ================= 4. REPRODUCTOR DE MÚSICA (PISTA REAL IL DIVO) ================= */
 function formatAudioTime(seconds) {
   if (isNaN(seconds) || seconds < 0) return "0:00";
   const m = Math.floor(seconds / 60);
@@ -82,14 +115,12 @@ function initMusicPlayer() {
 
   if (!audio) return;
 
-  // Actualización de duración inicial cuando cargue la metadata
   audio.addEventListener('loadedmetadata', () => {
     if (timerDisplay) {
       timerDisplay.textContent = `0:00 / ${formatAudioTime(audio.duration)}`;
     }
   });
 
-  // Progreso en tiempo real
   audio.addEventListener('timeupdate', () => {
     if (audio.duration) {
       const percent = (audio.currentTime / audio.duration) * 100;
@@ -100,9 +131,7 @@ function initMusicPlayer() {
     }
   });
 
-  // Cuando finaliza la canción
   audio.addEventListener('ended', () => {
-    isMusicPlaying = false;
     updatePlayerState(false);
     if (progressBar) progressBar.style.width = '0%';
   });
@@ -126,21 +155,17 @@ function initMusicPlayer() {
   function togglePlay() {
     if (audio.paused) {
       audio.play().then(() => {
-        isMusicPlaying = true;
         updatePlayerState(true);
       }).catch(err => {
-        console.warn("Reproducción bloqueada por navegador:", err);
+        console.warn("Reproducción no permitida automáticamente:", err);
       });
     } else {
       audio.pause();
-      isMusicPlaying = false;
       updatePlayerState(false);
     }
   }
 
-  // Clic en la barra para adelantar o retroceder
   if (trackBar) {
-    trackBar.style.cursor = 'pointer';
     trackBar.addEventListener('click', (e) => {
       if (!audio.duration) return;
       const rect = trackBar.getBoundingClientRect();
@@ -153,19 +178,17 @@ function initMusicPlayer() {
   if (floatBtn) floatBtn.addEventListener('click', togglePlay);
 }
 
-/* ================= 4. COPIAR DATOS AL PORTAPAPELES ================= */
+/* ================= 5. COPIAR DATOS BANCARIOS ================= */
 window.copyText = function(text, btnElement) {
   navigator.clipboard.writeText(text).then(() => {
     showToast("¡Número copiado con éxito!");
     if (btnElement) {
       const origHtml = btnElement.innerHTML;
       btnElement.innerHTML = `<i class="fa-solid fa-check"></i> <span>¡Listo!</span>`;
-      btnElement.style.background = "#55758f";
-      btnElement.style.color = "#ffffff";
+      btnElement.style.background = "#dfbe82";
       setTimeout(() => {
         btnElement.innerHTML = origHtml;
         btnElement.style.background = "";
-        btnElement.style.color = "";
       }, 2000);
     }
   }).catch(() => {
@@ -189,7 +212,7 @@ function showToast(msg) {
   }, 2600);
 }
 
-/* ================= 5. FORMULARIO RSVP WHATSAPP ================= */
+/* ================= 6. FORMULARIO RSVP WHATSAPP ================= */
 function initRSVPForm() {
   const form = document.getElementById('wedding-rsvp-form');
   if (!form) return;
@@ -223,7 +246,7 @@ function initRSVPForm() {
   });
 }
 
-/* ================= 6. GALERÍA DE FOTOS INTERACTIVA & LIGHTBOX ================= */
+/* ================= 7. GALERÍA DE FOTOS & LIGHTBOX ================= */
 const galleryImages = [
   "assets/images/boda_foto_1.jpg",
   "assets/images/boda_foto_2.jpg",
@@ -269,12 +292,8 @@ function initGallery() {
     updateGalleryUI();
   }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => goToSlide(curGalleryIndex - 1));
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => goToSlide(curGalleryIndex + 1));
-  }
+  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(curGalleryIndex - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(curGalleryIndex + 1));
 
   let touchStartX = 0;
   let touchEndX = 0;
@@ -293,7 +312,7 @@ function initGallery() {
   }, { passive: true });
 }
 
-/* ================= LIGHTBOX MODAL ================= */
+/* ================= LIGHTBOX ================= */
 window.openLightbox = function(index) {
   curLightboxIndex = index;
   const modal = document.getElementById('lightbox-modal');
@@ -336,13 +355,12 @@ window.navLightbox = function(step, e) {
 document.addEventListener('keydown', (e) => {
   const modal = document.getElementById('lightbox-modal');
   if (!modal || !modal.classList.contains('active')) return;
-
   if (e.key === 'Escape') window.closeLightbox();
   if (e.key === 'ArrowLeft') window.navLightbox(-1);
   if (e.key === 'ArrowRight') window.navLightbox(1);
 });
 
-/* ================= 7. ANIMACIONES DE SCROLL ================= */
+/* ================= 8. ANIMACIONES SCROLL ================= */
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.fade-up');
   if (!elements.length) return;
@@ -354,41 +372,28 @@ function initScrollAnimations() {
       }
     });
   }, {
-    threshold: 0.12,
-    rootMargin: "0px 0px -40px 0px"
+    threshold: 0.1,
+    rootMargin: "0px 0px -30px 0px"
   });
 
   elements.forEach(el => observer.observe(el));
 }
 
-/* ================= 8. PÉTALOS FLOTANTES DECORATIVOS ================= */
-function initPetals() {
-  const container = document.getElementById('petals-canvas');
+/* ================= 9. DESTELLOS DORADOS (GOLD SPARKLES) ================= */
+function initSparkles() {
+  const container = document.getElementById('gold-sparkles');
   if (!container) return;
 
-  const totalPetals = 12;
-
-  for (let i = 0; i < totalPetals; i++) {
-    createPetal(container, i);
+  const total = 18;
+  for (let i = 0; i < total; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    const size = Math.random() * 4 + 2;
+    s.style.width = `${size}px`;
+    s.style.height = `${size}px`;
+    s.style.left = `${Math.random() * 100}vw`;
+    s.style.animationDuration = `${Math.random() * 8 + 6}s`;
+    s.style.animationDelay = `${Math.random() * 5}s`;
+    container.appendChild(s);
   }
-}
-
-function createPetal(container, index) {
-  const petal = document.createElement('div');
-  petal.className = 'petal';
-
-  const size = Math.random() * 9 + 8;
-  petal.style.width = `${size}px`;
-  petal.style.height = `${size * 1.3}px`;
-  petal.style.left = `${Math.random() * 100}vw`;
-
-  const duration = Math.random() * 10 + 9;
-  petal.style.animationDuration = `${duration}s`;
-  petal.style.animationDelay = `${(index * 1.2) + Math.random() * 2}s`;
-
-  container.appendChild(petal);
-
-  petal.addEventListener('animationiteration', () => {
-    petal.style.left = `${Math.random() * 100}vw`;
-  });
 }
