@@ -1721,3 +1721,30 @@ body.page-navy-roses {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ================= CRÉDITOS DE DESARROLLO ================= */
+.developer-credit {
+  text-align: center;
+  padding-top: 18px;
+  margin-top: 14px;
+  border-top: 1px solid rgba(202, 161, 96, 0.25);
+}
+
+.developer-credit span {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #7a8c9e;
+  letter-spacing: 0.5px;
+}
+
+.developer-credit a {
+  color: #00d26a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.developer-credit a:hover {
+  color: #3bf395;
+  text-shadow: 0 0 8px rgba(0, 210, 106, 0.4);
+}
