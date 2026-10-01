@@ -61,73 +61,14 @@ function initCalendarLink() {
   calBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 }
 
-/* ================= 3. REPRODUCTOR DE MÚSICA & WEBAUDIO SYNTH ================= */
+/* ================= 3. REPRODUCTOR DE MÚSICA REAL ================= */
 let isMusicPlaying = false;
-let audioContext = null;
-let synthTimer = null;
-let currentStep = 0;
-let playbackSeconds = 0;
-let progressInterval = null;
 
-const romanticNotes = [
-  293.66, 369.99, 440.00, 587.33,
-  220.00, 277.18, 329.63, 440.00,
-  246.94, 293.66, 369.99, 493.88,
-  185.00, 220.00, 277.18, 369.99,
-  196.00, 246.94, 293.66, 392.00,
-  146.83, 185.00, 220.00, 293.66,
-  196.00, 246.94, 293.66, 392.00,
-  220.00, 277.18, 329.63, 440.00
-];
-
-function playSynthNote(freq, time) {
-  if (!audioContext) return;
-  const osc = audioContext.createOscillator();
-  const gain = audioContext.createGain();
-
-  osc.type = 'triangle';
-  osc.frequency.setValueAtTime(freq, time);
-
-  gain.gain.setValueAtTime(0.0001, time);
-  gain.gain.linearRampToValueAtTime(0.12, time + 0.04);
-  gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.95);
-
-  osc.connect(gain);
-  gain.connect(audioContext.destination);
-
-  osc.start(time);
-  osc.stop(time + 1.0);
-}
-
-function startRomanticSynth() {
-  if (!audioContext) {
-    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-    if (AudioCtx) {
-      audioContext = new AudioCtx();
-    }
-  }
-
-  if (audioContext && audioContext.state === 'suspended') {
-    audioContext.resume();
-  }
-
-  if (synthTimer) clearInterval(synthTimer);
-
-  currentStep = 0;
-  synthTimer = setInterval(() => {
-    if (!isMusicPlaying || !audioContext) return;
-    const now = audioContext.currentTime;
-    const freq = romanticNotes[currentStep % romanticNotes.length];
-    playSynthNote(freq, now);
-    currentStep++;
-  }, 380);
-}
-
-function stopRomanticSynth() {
-  if (synthTimer) {
-    clearInterval(synthTimer);
-    synthTimer = null;
-  }
+function formatAudioTime(seconds) {
+  if (isNaN(seconds) || seconds < 0) return "0:00";
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
 }
 
 function initMusicPlayer() {
@@ -135,55 +76,77 @@ function initMusicPlayer() {
   const floatBtn = document.getElementById('floating-audio-btn');
   const playIcon = document.getElementById('main-play-icon');
   const progressBar = document.getElementById('player-progress-bar');
+  const trackBar = document.querySelector('.player-track');
   const timerDisplay = document.getElementById('player-timer');
-  const audioElement = document.getElementById('bg-audio');
+  const audio = document.getElementById('bg-audio');
 
-  const totalDuration = 195;
+  if (!audio) return;
 
-  function togglePlay() {
-    isMusicPlaying = !isMusicPlaying;
+  // Actualización de duración inicial cuando cargue la metadata
+  audio.addEventListener('loadedmetadata', () => {
+    if (timerDisplay) {
+      timerDisplay.textContent = `0:00 / ${formatAudioTime(audio.duration)}`;
+    }
+  });
 
-    if (isMusicPlaying) {
-      if (audioElement && audioElement.src && audioElement.src.length > 5) {
-        audioElement.play().catch(() => {
-          startRomanticSynth();
-        });
-      } else {
-        startRomanticSynth();
+  // Progreso en tiempo real
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      const percent = (audio.currentTime / audio.duration) * 100;
+      if (progressBar) progressBar.style.width = `${percent}%`;
+      if (timerDisplay) {
+        timerDisplay.textContent = `${formatAudioTime(audio.currentTime)} / ${formatAudioTime(audio.duration)}`;
       }
+    }
+  });
 
+  // Cuando finaliza la canción
+  audio.addEventListener('ended', () => {
+    isMusicPlaying = false;
+    updatePlayerState(false);
+    if (progressBar) progressBar.style.width = '0%';
+  });
+
+  function updatePlayerState(playing) {
+    if (playing) {
       if (playIcon) {
         playIcon.classList.remove('fa-play');
         playIcon.classList.add('fa-pause');
       }
       if (floatBtn) floatBtn.classList.add('playing');
-
-      if (progressInterval) clearInterval(progressInterval);
-      progressInterval = setInterval(() => {
-        playbackSeconds = (playbackSeconds + 1) % totalDuration;
-        const percent = (playbackSeconds / totalDuration) * 100;
-        if (progressBar) progressBar.style.width = percent + '%';
-
-        const curMin = Math.floor(playbackSeconds / 60);
-        const curSec = String(playbackSeconds % 60).padStart(2, '0');
-        if (timerDisplay) timerDisplay.textContent = `${curMin}:${curSec} / 3:15`;
-      }, 1000);
-
     } else {
-      if (audioElement) audioElement.pause();
-      stopRomanticSynth();
-
       if (playIcon) {
         playIcon.classList.remove('fa-pause');
         playIcon.classList.add('fa-play');
       }
       if (floatBtn) floatBtn.classList.remove('playing');
-
-      if (progressInterval) {
-        clearInterval(progressInterval);
-        progressInterval = null;
-      }
     }
+  }
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        isMusicPlaying = true;
+        updatePlayerState(true);
+      }).catch(err => {
+        console.warn("Reproducción bloqueada por navegador:", err);
+      });
+    } else {
+      audio.pause();
+      isMusicPlaying = false;
+      updatePlayerState(false);
+    }
+  }
+
+  // Clic en la barra para adelantar o retroceder
+  if (trackBar) {
+    trackBar.style.cursor = 'pointer';
+    trackBar.addEventListener('click', (e) => {
+      if (!audio.duration) return;
+      const rect = trackBar.getBoundingClientRect();
+      const clickPos = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = clickPos * audio.duration;
+    });
   }
 
   if (playBtn) playBtn.addEventListener('click', togglePlay);
@@ -285,7 +248,6 @@ function initGallery() {
 
   if (!track || !dotsContainer) return;
 
-  // Crear dots
   dotsContainer.innerHTML = '';
   galleryImages.forEach((_, idx) => {
     const dot = document.createElement('div');
@@ -314,7 +276,6 @@ function initGallery() {
     nextBtn.addEventListener('click', () => goToSlide(curGalleryIndex + 1));
   }
 
-  // Swipe táctil en móvil
   let touchStartX = 0;
   let touchEndX = 0;
 
@@ -325,9 +286,9 @@ function initGallery() {
   track.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     if (touchStartX - touchEndX > 50) {
-      goToSlide(curGalleryIndex + 1); // Deslizar izquierda -> siguiente
+      goToSlide(curGalleryIndex + 1);
     } else if (touchEndX - touchStartX > 50) {
-      goToSlide(curGalleryIndex - 1); // Deslizar derecha -> anterior
+      goToSlide(curGalleryIndex - 1);
     }
   }, { passive: true });
 }
@@ -372,7 +333,6 @@ window.navLightbox = function(step, e) {
   }
 };
 
-// Teclado para lightbox
 document.addEventListener('keydown', (e) => {
   const modal = document.getElementById('lightbox-modal');
   if (!modal || !modal.classList.contains('active')) return;
