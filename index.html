@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Boda Víctor & Margiory | Nuestra Invitación</title>
+  
+  <!-- Metadatos para compartir en WhatsApp y Redes Sociales -->
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Sábado 19 de Octubre, 5:00 PM. Salón de Eventos Los Tulipanes, Tacna.">
+  <meta property="og:title" content="Boda Víctor & Margiory 💍">
+  <meta property="og:description" content="Tenemos el inmenso honor de invitarte a celebrar nuestra boda. Sábado 19 de Octubre - Salón Los Tulipanes, Tacna.">
+  <meta property="og:image" content="assets/images/foto1.jpg">
+  <meta property="og:type" content="website">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+
+  <!-- Google Fonts de Alta Gama -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Contenedor de Pétalos Románticos Flotantes -->
+  <div id="petals-canvas" aria-hidden="true"></div>
+
+  <!-- Botón Flotante de Música -->
+  <button id="floating-audio-btn" class="floating-audio-btn" aria-label="Reproducir música romántica" title="Música romántica">
+    <i class="fa-solid fa-music"></i>
+    <div class="audio-bars">
+      <span></span><span></span><span></span>
+    </div>
+  </button>
+
+  <!-- Botón Flotante Acceso Rápido RSVP -->
+  <a href="#rsvp" class="floating-rsvp-btn" aria-label="Confirmar Asistencia">
+    <i class="fa-solid fa-envelope-open-text"></i>
+    <span>RSVP</span>
+  </a>
+
+  <!-- Layout Principal Tipo Tarjeta Móvil Elegante -->
+  <div class="invitation-wrapper">
+    <article class="wedding-card">
+
+      <!-- ================= 1. ENCABEZADO Y MONOGRAMA ================= -->
+      <section class="inv-section header-section fade-up">
+        <!-- Corona / Acuarela Floral Superior -->
+        <div class="floral-decor-top">
+          <svg viewBox="0 0 400 110" class="floral-svg" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.85">
+              <path d="M200,65 C160,25 100,20 40,50 C80,38 130,48 180,68" stroke="#7b97ae" stroke-width="1.4" fill="none"/>
+              <path d="M200,65 C240,25 300,20 360,50 C320,38 270,48 220,68" stroke="#7b97ae" stroke-width="1.4" fill="none"/>
+              <ellipse cx="80" cy="42" rx="16" ry="8" transform="rotate(-18 80 42)" fill="#9eb5c7" opacity="0.55"/>
+              <ellipse cx="120" cy="35" rx="18" ry="9" transform="rotate(-28 120 35)" fill="#7b97ae" opacity="0.5"/>
+              <ellipse cx="160" cy="46" rx="15" ry="8" transform="rotate(-15 160 46)" fill="#b4c7d5" opacity="0.6"/>
+              <ellipse cx="320" cy="42" rx="16" ry="8" transform="rotate(18 320 42)" fill="#9eb5c7" opacity="0.55"/>
+              <ellipse cx="280" cy="35" rx="18" ry="9" transform="rotate(28 280 35)" fill="#7b97ae" opacity="0.5"/>
+              <ellipse cx="240" cy="46" rx="15" ry="8" transform="rotate(15 240 46)" fill="#b4c7d5" opacity="0.6"/>
+              <circle cx="190" cy="60" r="12" fill="#6787a0" opacity="0.35"/>
+              <circle cx="210" cy="60" r="12" fill="#6787a0" opacity="0.35"/>
+              <circle cx="200" cy="58" r="15" fill="#51738d" opacity="0.3"/>
+              <circle cx="200" cy="58" r="7" fill="#c5a059" opacity="0.65"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Cita Bíblica -->
+        <div class="verse-box">
+          <p class="verse-text">
+            “El que encontró una esposa encontró la felicidad; Yavé es quien le otorgó ese favor.”
+          </p>
+          <span class="verse-ref">PROVERBIOS 18:22</span>
+        </div>
+
+        <!-- Monograma V & M -->
+        <div class="monogram-area">
+          <div class="monogram-circle">
+            <span class="mono-letter">V</span>
+            <span class="mono-sep">|</span>
+            <span class="mono-letter">M</span>
+          </div>
+        </div>
+
+        <h3 class="announcement-tag">¡NOS CASAMOS!</h3>
+      </section>
+
+      <!-- ================= 2. FOTO 1 CON BORDE RASGADO ================= -->
+      <section class="photo-section fade-up">
+        <div class="torn-photo-card">
+          <div class="torn-edge-top"></div>
+          <img src="assets/images/foto1.jpg" alt="Víctor y Margiory" class="couple-img" loading="lazy">
+          <div class="torn-edge-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ================= 3. BENDICIÓN DE PADRES Y NOVIOS ================= -->
+      <section class="inv-section parents-section fade-up">
+        <p class="blessing-intro">
+          Con nuestro amor, la bendición de Dios y la de nuestros padres:
+        </p>
+
+        <div class="parents-columns">
+          <div class="parents-group">
+            <h4 class="parents-title">Padres del Novio</h4>
+            <p class="parent-name">Ricardo Guzmán Guzmán</p>
+            <p class="parent-name">Marta Dalila Fernández Paredes</p>
+          </div>
+
+          <div class="gold-divider">
+            <span class="gold-diamond">♦</span>
+          </div>
+
+          <div class="parents-group">
+            <h4 class="parents-title">Padres de la Novia</h4>
+            <p class="parent-name">Winder Perci Esquia Catacora</p>
+            <p class="parent-name">Eda Dula Mamani Davalos</p>
+          </div>
+        </div>
+
+        <div class="couple-hero">
+          <span class="we-tag">Nosotros</span>
+          <h1 class="main-names">Víctor <span class="gold-amp">&</span> Margiory</h1>
+          <p class="invite-subtext">
+            Tenemos el honor de invitarte a celebrar nuestra unión en matrimonio
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= 4. REPRODUCTOR DE MÚSICA ROMÁNTICA ================= -->
+      <section class="inv-section music-section fade-up">
+        <div class="music-player-widget">
+          <div class="music-badge">
+            <i class="fa-solid fa-heart beat"></i>
+            <span>DALE PLAY A NUESTRA CANCIÓN</span>
+          </div>
+          <h4 class="song-title">Hasta Mi Final — Melodía Romántica</h4>
+          
+          <div class="player-controls-row">
+            <button id="play-toggle-btn" class="circle-play-btn" aria-label="Reproducir o Pausar">
+              <i class="fa-solid fa-play" id="main-play-icon"></i>
+            </button>
+            <div class="player-track">
+              <div class="player-progress-bar" id="player-progress-bar"></div>
+            </div>
+            <span class="player-timer" id="player-timer">0:00 / 3:15</span>
+          </div>
+          
+          <audio id="bg-audio" preload="none">
+            <source src="assets/audio/cancion.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </section>
+
+      <!-- ================= 5. FECHA Y CUENTA REGRESIVA ================= -->
+      <section class="inv-section date-section fade-up">
+        <div class="date-card">
+          <span class="date-month-title">OCTUBRE</span>
+          <div class="date-display-row">
+            <span class="date-weekday">SÁBADO</span>
+            <span class="date-day-big">19</span>
+            <span class="date-year-num">2026</span>
+          </div>
+        </div>
+
+        <div class="countdown-module">
+          <h4 class="countdown-title">FALTAN</h4>
+          <div class="countdown-boxes">
+            <div class="time-box">
+              <span class="time-value" id="cd-days">00</span>
+              <span class="time-unit">DÍAS</span>
+            </div>
+            <span class="time-colon">:</span>
+            <div class="time-box">
+              <span class="time-value" id="cd-hours">00</span>
+              <span class="time-unit">HORAS</span>
+            </div>
+            <span class="time-colon">:</span>
+            <div class="time-box">
+              <span class="time-value" id="cd-minutes">00</span>
+              <span class="time-unit">MIN</span>
+            </div>
+            <span class="time-colon">:</span>
+            <div class="time-box">
+              <span class="time-value" id="cd-seconds">00</span>
+              <span class="time-unit">SEG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calendar-cta-wrap">
+          <a id="btn-add-calendar" href="#" target="_blank" rel="noopener" class="btn btn-calendar">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span>Agendar en mi Calendario</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= 6. FOTO 2 DE PAREJA ================= -->
+      <section class="photo-section fade-up">
+        <div class="torn-photo-card">
+          <div class="torn-edge-top"></div>
+          <img src="assets/images/foto2.jpg" alt="Víctor y Margiory en el jardín" class="couple-img" loading="lazy">
+          <div class="torn-edge-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ================= 7. LUGAR DE RECEPCIÓN Y GOOGLE MAPS ================= -->
+      <section class="inv-section reception-section fade-up" id="ubicacion">
+        <div class="category-pill">
+          <i class="fa-solid fa-champagne-glasses"></i>
+          <span>CELEBRACIÓN</span>
+        </div>
+
+        <div class="venue-info-box">
+          <div class="venue-schedule">5:00 PM (17:00 HRS)</div>
+          <h2 class="venue-type">RECEPCIÓN</h2>
+          <h3 class="venue-title">Salón de Eventos Los Tulipanes</h3>
+          <p class="venue-address">
+            <i class="fa-solid fa-location-dot gold-icon"></i>
+            Pasaje San Hilarión Nro 350, Tacna, Perú
+          </p>
+        </div>
+
+        <!-- Módulo Interactivo de Google Maps -->
+        <div class="map-interactive-module">
+          <div class="map-wrapper">
+            <iframe 
+              title="Mapa de Salón de Eventos Los Tulipanes Tacna"
+              src="https://maps.google.com/maps?q=Salon+de+Eventos+Los+Tulipanes+Pasaje+San+Hilarion+350+Tacna&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="280" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="map-buttons-grid">
+            <a href="https://www.google.com/maps/search/?api=1&query=Salon+de+Eventos+Los+Tulipanes,+Pasaje+San+Hilari%C3%B3n+350,+Tacna" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-map-primary">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>Abrir en Google Maps</span>
+            </a>
+            
+            <a href="https://waze.com/ul?q=Pasaje%20San%20Hilarion%20350%20Tacna" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-map-waze">
+              <i class="fa-brands fa-waze"></i>
+              <span>Abrir en Waze</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 8. ITINERARIO DE ACTIVIDADES ================= -->
+      <section class="inv-section itinerary-section fade-up">
+        <div class="category-pill">
+          <i class="fa-solid fa-clock"></i>
+          <span>TIMELINE</span>
+        </div>
+        <h2 class="section-heading">Itinerario de Actividades</h2>
+        <p class="section-lead">Acompáñanos en cada momento especial de nuestra velada</p>
+
+        <div class="timeline-list">
+          <!-- Actividad 1 -->
+          <div class="timeline-row">
+            <div class="timeline-badge">
+              <i class="fa-solid fa-door-open"></i>
+            </div>
+            <div class="timeline-details">
+              <span class="t-time">17:00 HRS</span>
+              <h4 class="t-name">Recepción y Cóctel de Bienvenida</h4>
+              <p class="t-desc">Llegada de invitados, fotos y copa de bienvenida.</p>
+            </div>
+          </div>
+
+          <!-- Actividad 2 -->
+          <div class="timeline-row">
+            <div class="timeline-badge">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="timeline-details">
+              <span class="t-time">17:45 HRS</span>
+              <h4 class="t-name">Entrada Triunfal de los Novios</h4>
+              <p class="t-desc">Ingreso oficial y recibimiento de Víctor & Margiory.</p>
+            </div>
+          </div>
+
+          <!-- Actividad 3 -->
+          <div class="timeline-row">
+            <div class="timeline-badge">
+              <i class="fa-solid fa-champagne-glasses"></i>
+            </div>
+            <div class="timeline-details">
+              <span class="t-time">18:30 HRS</span>
+              <h4 class="t-name">Brindis de Honor y Vals</h4>
+              <p class="t-desc">Palabras de nuestros queridos padres y baile nupcial.</p>
+            </div>
+          </div>
+
+          <!-- Actividad 4 -->
+          <div class="timeline-row">
+            <div class="timeline-badge">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="timeline-details">
+              <span class="t-time">19:30 HRS</span>
+              <h4 class="t-name">Cena de Gala</h4>
+              <p class="t-desc">Banquete especial para compartir en familia y amigos.</p>
+            </div>
+          </div>
+
+          <!-- Actividad 5 -->
+          <div class="timeline-row">
+            <div class="timeline-badge">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="timeline-details">
+              <span class="t-time">21:00 HRS</span>
+              <h4 class="t-name">Fiesta y Celebración</h4>
+              <p class="t-desc">¡Música en vivo, baile y alegría para celebrar el amor!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 9. FOTO 3 DE PAREJA ================= -->
+      <section class="photo-section fade-up">
+        <div class="torn-photo-card">
+          <div class="torn-edge-top"></div>
+          <img src="assets/images/foto3.jpg" alt="Víctor y Margiory al atardecer" class="couple-img" loading="lazy">
+          <div class="torn-edge-bottom"></div>
+        </div>
+      </section>
+
+      <!-- ================= 10. CÓDIGO DE VESTIMENTA ================= -->
+      <section class="inv-section dresscode-section fade-up">
+        <div class="category-pill">
+          <i class="fa-solid fa-gem"></i>
+          <span>DRESS CODE</span>
+        </div>
+        <h2 class="section-heading">Código de Vestimenta</h2>
+        <div class="attire-badge">Etiqueta Rigurosa / Formal</div>
+
+        <div class="dress-cards-wrapper">
+          <!-- Damas -->
+          <div class="dress-card">
+            <div class="dress-icon-box">
+              <svg viewBox="0 0 64 64" class="dress-svg">
+                <path d="M32 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-3 15l-5 9h4l-4 28h16l-4-28h4l-5-9h-6z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h4 class="dress-target">Damas</h4>
+            <p class="dress-spec">Vestido Largo de Fiesta</p>
+            <span class="dress-restriction">* Reservamos los tonos blanco y marfil para la novia.</span>
+          </div>
+
+          <!-- Caballeros -->
+          <div class="dress-card">
+            <div class="dress-icon-box">
+              <svg viewBox="0 0 64 64" class="dress-svg">
+                <path d="M32 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 15l3 37h10l3-37l-6 4l-2 9l-2-9l-6-4z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h4 class="dress-target">Caballeros</h4>
+            <p class="dress-spec">Terno Completo / Traje Formal</p>
+            <span class="dress-restriction">* Corbata o lazo elegante.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 11. SUGERENCIA DE REGALOS ================= -->
+      <section class="inv-section gifts-section fade-up">
+        <div class="category-pill">
+          <i class="fa-solid fa-gift"></i>
+          <span>PRESENTES</span>
+        </div>
+        <h2 class="section-heading">Sugerencia de Regalos</h2>
+        <p class="section-lead">
+          El mejor regalo es tu presencia. Sin embargo, si deseas hacernos un obsequio, ponemos a tu disposición las siguientes opciones con gratitud:
+        </p>
+
+        <!-- Lluvia de Sobres -->
+        <div class="gift-envelope-box">
+          <div class="gift-icon-ring">
+            <i class="fa-solid fa-envelope-open-text"></i>
+          </div>
+          <h4 class="envelope-title">Lluvia de Sobres</h4>
+          <p class="envelope-desc">
+            El día de la recepción contaremos con un buzón especial donde podrás depositar tu sobre con tus mejores deseos y bendiciones.
+          </p>
+        </div>
+
+        <!-- Cuentas Bancarias / Billeteras Digitales -->
+        <div class="accounts-accordion">
+          <h4 class="accordion-header"><i class="fa-solid fa-building-columns"></i> Transferencias y Billeteras Digitales</h4>
+          
+          <!-- BCP -->
+          <div class="account-entry">
+            <div class="acc-meta">
+              <span class="bank-badge bcp">BCP</span>
+              <span class="acc-name">Víctor Guzmán (Novio)</span>
+              <code class="acc-number">191-98765432-0-12</code>
+            </div>
+            <button class="copy-btn" onclick="copyText('19198765432012', this)" aria-label="Copiar cuenta BCP">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copiar</span>
+            </button>
+          </div>
+
+          <!-- YAPE / PLIN -->
+          <div class="account-entry">
+            <div class="acc-meta">
+              <span class="bank-badge yape">Yape / Plin</span>
+              <span class="acc-name">Margiory Esquia (Novia)</span>
+              <code class="acc-number">952 000 000</code>
+            </div>
+            <button class="copy-btn" onclick="copyText('952000000', this)" aria-label="Copiar teléfono Yape">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copiar</span>
+            </button>
+          </div>
+
+          <p class="cci-hint">* ¿Necesitas el código de cuenta interbancaria (CCI)? Contáctanos y con gusto te lo brindamos.</p>
+        </div>
+      </section>
+
+      <!-- ================= 12. CONFIRMACIÓN DE ASISTENCIA (RSVP) ================= -->
+      <section class="inv-section rsvp-section fade-up" id="rsvp">
+        <div class="category-pill">
+          <i class="fa-solid fa-envelope-circle-check"></i>
+          <span>RSVP</span>
+        </div>
+        <h2 class="section-heading">Confirmar Asistencia</h2>
+        <p class="rsvp-notice">
+          Por favor, confírmanos antes del <strong>10 de Octubre</strong> para asegurar tu lugar en nuestra mesa.
+        </p>
+
+        <!-- Formulario Integrado con WhatsApp -->
+        <form id="wedding-rsvp-form" class="rsvp-card-form">
+          <div class="form-field">
+            <label for="rsvp-name"><i class="fa-solid fa-user"></i> Tu Nombre y Apellido:</label>
+            <input type="text" id="rsvp-name" placeholder="Ej. Roberto Mendoza" required>
+          </div>
+
+          <div class="form-field">
+            <label for="rsvp-status"><i class="fa-solid fa-clipboard-question"></i> ¿Nos acompañarás?:</label>
+            <select id="rsvp-status" required>
+              <option value="¡Sí, confirmo mi asistencia con alegría!">¡Sí, ahí estaré con mucho gusto! 🎉</option>
+              <option value="Lamentablemente no podré asistir, pero les deseo lo mejor">Lamentablemente no podré asistir 🤍</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="rsvp-guests"><i class="fa-solid fa-users"></i> Cantidad de personas:</label>
+            <select id="rsvp-guests">
+              <option value="1 persona (Individual)">1 pase (Solo yo)</option>
+              <option value="2 personas (En pareja)" selected>2 pases (Con mi acompañante)</option>
+              <option value="3 personas">3 pases</option>
+              <option value="Familia (4 pases)">Familia (4 pases)</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label><i class="fa-solid fa-mobile-screen-button"></i> Enviar confirmación a:</label>
+            <div class="recipient-toggle">
+              <label class="rec-option">
+                <input type="radio" name="rsvp-recipient" value="novio" checked>
+                <span>Víctor (Novio)</span>
+              </label>
+              <label class="rec-option">
+                <input type="radio" name="rsvp-recipient" value="novia">
+                <span>Margiory (Novia)</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-rsvp-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Confirmar Asistencia por WhatsApp</span>
+          </button>
+        </form>
+
+        <!-- Botones de Chat Directo -->
+        <div class="quick-contacts">
+          <span class="quick-contact-title">O escríbenos directamente:</span>
+          <div class="contact-pill-row">
+            <a href="https://wa.me/51952000000?text=Hola%20Víctor,%20quiero%20confirmar%20mi%20asistencia%20a%20su%20boda" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="contact-pill">
+              <i class="fa-brands fa-whatsapp"></i> Chat Víctor
+            </a>
+            <a href="https://wa.me/51952000000?text=Hola%20Margiory,%20quiero%20confirmar%20mi%20asistencia%20a%20su%20boda" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="contact-pill">
+              <i class="fa-brands fa-whatsapp"></i> Chat Margiory
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 13. NOTA DE ADULTOS (SIN NIÑOS) ================= -->
+      <section class="inv-section nokids-section fade-up">
+        <div class="adults-only-box">
+          <i class="fa-solid fa-moon adults-icon"></i>
+          <h4 class="adults-heading">RECEPCIÓN SOLO PARA ADULTOS</h4>
+          <p class="adults-body">
+            Adoramos a los pequeños de casa, pero deseamos que esta sea una noche de descanso, brindis y fiesta total para todos los papis. Por ello, hemos preparado una celebración <strong>exclusiva para adultos</strong>.
+          </p>
+          <span class="adults-thanks">¡Gracias de corazón por su comprensión!</span>
+        </div>
+      </section>
+
+      <!-- ================= 14. CIERRE Y DESPEDIDA ================= -->
+      <section class="inv-section farewell-section fade-up">
+        <p class="farewell-quote">
+          “Esperamos contar con tu valiosa presencia para brindar juntos por el comienzo de este nuevo capítulo.”
+        </p>
+
+        <h3 class="farewell-thanks">¡Muchas Gracias!</h3>
+
+        <div class="footer-monogram-circle">
+          <span class="f-mono">V & M</span>
+        </div>
+
+        <div class="floral-decor-bottom">
+          <svg viewBox="0 0 400 90" class="floral-svg" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.75">
+              <path d="M200,30 C160,65 100,70 40,40 C80,52 130,42 180,22" stroke="#7b97ae" stroke-width="1.4" fill="none"/>
+              <path d="M200,30 C240,65 300,70 360,40 C320,52 270,42 220,22" stroke="#7b97ae" stroke-width="1.4" fill="none"/>
+              <ellipse cx="120" cy="52" rx="16" ry="8" transform="rotate(20 120 52)" fill="#9eb5c7" opacity="0.55"/>
+              <ellipse cx="280" cy="52" rx="16" ry="8" transform="rotate(-20 280 52)" fill="#9eb5c7" opacity="0.55"/>
+              <circle cx="200" cy="30" r="12" fill="#6787a0" opacity="0.35"/>
+              <circle cx="200" cy="30" r="6" fill="#c5a059" opacity="0.7"/>
+            </g>
+          </svg>
+        </div>
+
+        <p class="footer-signature">
+          Víctor Guzmán & Margiory Esquia<br>
+          19 de Octubre • Tacna, Perú
+        </p>
+      </section>
+
+    </article>
+  </div>
+
+  <!-- Toast de Notificación Copiado -->
+  <div id="toast-alert" class="toast-alert">Copiado al portapapeles</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
