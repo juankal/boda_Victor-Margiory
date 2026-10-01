@@ -271,7 +271,6 @@
         <p class="section-lead">Acompáñanos en cada momento especial de nuestra velada</p>
 
         <div class="timeline-list">
-          <!-- Actividad 1 -->
           <div class="timeline-row">
             <div class="timeline-badge">
               <i class="fa-solid fa-door-open"></i>
@@ -283,7 +282,6 @@
             </div>
           </div>
 
-          <!-- Actividad 2 -->
           <div class="timeline-row">
             <div class="timeline-badge">
               <i class="fa-solid fa-heart"></i>
@@ -295,7 +293,6 @@
             </div>
           </div>
 
-          <!-- Actividad 3 -->
           <div class="timeline-row">
             <div class="timeline-badge">
               <i class="fa-solid fa-champagne-glasses"></i>
@@ -307,7 +304,6 @@
             </div>
           </div>
 
-          <!-- Actividad 4 -->
           <div class="timeline-row">
             <div class="timeline-badge">
               <i class="fa-solid fa-utensils"></i>
@@ -319,7 +315,6 @@
             </div>
           </div>
 
-          <!-- Actividad 5 -->
           <div class="timeline-row">
             <div class="timeline-badge">
               <i class="fa-solid fa-music"></i>
@@ -342,7 +337,67 @@
         </div>
       </section>
 
-      <!-- ================= 10. CÓDIGO DE VESTIMENTA ================= -->
+      <!-- ================= 10. NUEVA GALERÍA: NUESTROS MOMENTOS ================= -->
+      <section class="inv-section gallery-section fade-up" id="galeria">
+        <div class="category-pill">
+          <i class="fa-solid fa-camera-retro"></i>
+          <span>RECUERDOS</span>
+        </div>
+        <h2 class="section-heading">Nuestra Historia de Amor</h2>
+        <p class="section-lead">Cada mirada, cada sonrisa y cada aventura nos trajeron a este gran día.</p>
+
+        <div class="gallery-container">
+          <div class="gallery-viewport">
+            <div class="gallery-track" id="gallery-track">
+              <!-- Slides de las 10 fotos reales -->
+              <div class="gallery-slide" onclick="openLightbox(0)">
+                <img src="assets/images/boda_foto_1.jpg" alt="Víctor y Margiory 1" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(1)">
+                <img src="assets/images/boda_foto_2.jpg" alt="Víctor y Margiory 2" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(2)">
+                <img src="assets/images/boda_foto_3.jpg" alt="Víctor y Margiory 3" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(3)">
+                <img src="assets/images/boda_foto_4.jpg" alt="Víctor y Margiory 4" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(4)">
+                <img src="assets/images/boda_foto_5.jpg" alt="Víctor y Margiory 5" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(5)">
+                <img src="assets/images/boda_foto_6.jpg" alt="Víctor y Margiory 6" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(6)">
+                <img src="assets/images/boda_foto_7.jpg" alt="Víctor y Margiory 7" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(7)">
+                <img src="assets/images/boda_foto_8.jpg" alt="Víctor y Margiory 8" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(8)">
+                <img src="assets/images/boda_foto_9.jpg" alt="Víctor y Margiory 9" loading="lazy">
+              </div>
+              <div class="gallery-slide" onclick="openLightbox(9)">
+                <img src="assets/images/boda_foto_10.jpg" alt="Víctor y Margiory 10" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="gallery-arrow arrow-prev" id="gallery-prev-btn" aria-label="Foto anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="gallery-arrow arrow-next" id="gallery-next-btn" aria-label="Siguiente foto">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Puntos indicadores -->
+          <div class="gallery-indicator-dots" id="gallery-dots"></div>
+          <span class="gallery-hint"><i class="fa-solid fa-hand-pointer"></i> Toca cualquier foto para verla en pantalla completa</span>
+        </div>
+      </section>
+
+      <!-- ================= 11. CÓDIGO DE VESTIMENTA ================= -->
       <section class="inv-section dresscode-section fade-up">
         <div class="category-pill">
           <i class="fa-solid fa-gem"></i>
@@ -352,7 +407,6 @@
         <div class="attire-badge">Etiqueta Rigurosa / Formal</div>
 
         <div class="dress-cards-wrapper">
-          <!-- Damas -->
           <div class="dress-card">
             <div class="dress-icon-box">
               <svg viewBox="0 0 64 64" class="dress-svg">
@@ -364,7 +418,6 @@
             <span class="dress-restriction">* Reservamos los tonos blanco y marfil para la novia.</span>
           </div>
 
-          <!-- Caballeros -->
           <div class="dress-card">
             <div class="dress-icon-box">
               <svg viewBox="0 0 64 64" class="dress-svg">
@@ -378,7 +431,7 @@
         </div>
       </section>
 
-      <!-- ================= 11. SUGERENCIA DE REGALOS ================= -->
+      <!-- ================= 12. SUGERENCIA DE REGALOS ================= -->
       <section class="inv-section gifts-section fade-up">
         <div class="category-pill">
           <i class="fa-solid fa-gift"></i>
@@ -389,7 +442,6 @@
           El mejor regalo es tu presencia. Sin embargo, si deseas hacernos un obsequio, ponemos a tu disposición las siguientes opciones con gratitud:
         </p>
 
-        <!-- Lluvia de Sobres -->
         <div class="gift-envelope-box">
           <div class="gift-icon-ring">
             <i class="fa-solid fa-envelope-open-text"></i>
@@ -400,11 +452,9 @@
           </p>
         </div>
 
-        <!-- Cuentas Bancarias / Billeteras Digitales -->
         <div class="accounts-accordion">
           <h4 class="accordion-header"><i class="fa-solid fa-building-columns"></i> Transferencias y Billeteras Digitales</h4>
           
-          <!-- BCP -->
           <div class="account-entry">
             <div class="acc-meta">
               <span class="bank-badge bcp">BCP</span>
@@ -417,7 +467,6 @@
             </button>
           </div>
 
-          <!-- YAPE / PLIN -->
           <div class="account-entry">
             <div class="acc-meta">
               <span class="bank-badge yape">Yape / Plin</span>
@@ -434,7 +483,7 @@
         </div>
       </section>
 
-      <!-- ================= 12. CONFIRMACIÓN DE ASISTENCIA (RSVP) ================= -->
+      <!-- ================= 13. CONFIRMACIÓN DE ASISTENCIA (RSVP) ================= -->
       <section class="inv-section rsvp-section fade-up" id="rsvp">
         <div class="category-pill">
           <i class="fa-solid fa-envelope-circle-check"></i>
@@ -445,7 +494,6 @@
           Por favor, confírmanos antes del <strong>10 de Octubre</strong> para asegurar tu lugar en nuestra mesa.
         </p>
 
-        <!-- Formulario Integrado con WhatsApp -->
         <form id="wedding-rsvp-form" class="rsvp-card-form">
           <div class="form-field">
             <label for="rsvp-name"><i class="fa-solid fa-user"></i> Tu Nombre y Apellido:</label>
@@ -490,7 +538,6 @@
           </button>
         </form>
 
-        <!-- Botones de Chat Directo -->
         <div class="quick-contacts">
           <span class="quick-contact-title">O escríbenos directamente:</span>
           <div class="contact-pill-row">
@@ -510,7 +557,7 @@
         </div>
       </section>
 
-      <!-- ================= 13. NOTA DE ADULTOS (SIN NIÑOS) ================= -->
+      <!-- ================= 14. NOTA DE ADULTOS (SIN NIÑOS) ================= -->
       <section class="inv-section nokids-section fade-up">
         <div class="adults-only-box">
           <i class="fa-solid fa-moon adults-icon"></i>
@@ -522,7 +569,7 @@
         </div>
       </section>
 
-      <!-- ================= 14. CIERRE Y DESPEDIDA ================= -->
+      <!-- ================= 15. CIERRE Y DESPEDIDA ================= -->
       <section class="inv-section farewell-section fade-up">
         <p class="farewell-quote">
           “Esperamos contar con tu valiosa presencia para brindar juntos por el comienzo de este nuevo capítulo.”
@@ -554,6 +601,16 @@
       </section>
 
     </article>
+  </div>
+
+  <!-- Modal Lightbox para Ver Fotos en Pantalla Completa -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="handleLightboxClick(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar foto">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Foto de Víctor y Margiory">
+    </div>
+    <button class="lightbox-arrow lb-prev" onclick="navLightbox(-1, event)" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-arrow lb-next" onclick="navLightbox(1, event)" aria-label="Siguiente foto"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <!-- Toast de Notificación Copiado -->

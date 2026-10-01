@@ -7,14 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendarLink();
   initMusicPlayer();
   initRSVPForm();
+  initGallery();
   initScrollAnimations();
   initPetals();
 });
 
 /* ================= 1. CONTADOR REGRESIVO ================= */
 function initCountdown() {
-  // Fecha: 19 de Octubre 2026, 17:00:00 (Tacna, Perú - UTC-5)
-  // Formato: Año 2026, Mes 9 (Octubre es índice 9 en JS Date), Día 19, Hora 17, Minuto 0
   const eventDate = new Date(2026, 9, 19, 17, 0, 0).getTime();
 
   const daysEl = document.getElementById('cd-days');
@@ -54,8 +53,6 @@ function initCalendarLink() {
   const calBtn = document.getElementById('btn-add-calendar');
   if (!calBtn) return;
 
-  // 19 de Octubre de 2026 de 17:00 a 03:00 (+51 Perú = UTC-5)
-  // En UTC: 2026-10-19T22:00:00Z hasta 2026-10-20T08:00:00Z
   const title = encodeURIComponent("Boda de Víctor & Margiory 💍");
   const details = encodeURIComponent("¡Acompáñanos a celebrar nuestra unión matrimonial!\nRecepción: 5:00 PM.\nLugar: Salón de Eventos Los Tulipanes, Pasaje San Hilarión Nro 350, Tacna.");
   const location = encodeURIComponent("Salón de Eventos Los Tulipanes, Pasaje San Hilarión 350, Tacna, Perú");
@@ -72,23 +69,14 @@ let currentStep = 0;
 let playbackSeconds = 0;
 let progressInterval = null;
 
-// Melodía romántica dulce (Arpegios Canon / Balada acústica en D Mayor)
 const romanticNotes = [
-  // Acorde D: D4, F#4, A4, D5
   293.66, 369.99, 440.00, 587.33,
-  // Acorde A: A3, C#4, E4, A4
   220.00, 277.18, 329.63, 440.00,
-  // Acorde Bm: B3, D4, F#4, B4
   246.94, 293.66, 369.99, 493.88,
-  // Acorde F#m: F#3, A3, C#4, F#4
   185.00, 220.00, 277.18, 369.99,
-  // Acorde G: G3, B3, D4, G4
   196.00, 246.94, 293.66, 392.00,
-  // Acorde D: D3, F#3, A3, D4
   146.83, 185.00, 220.00, 293.66,
-  // Acorde G: G3, B3, D4, G4
   196.00, 246.94, 293.66, 392.00,
-  // Acorde A: A3, C#4, E4, A4
   220.00, 277.18, 329.63, 440.00
 ];
 
@@ -97,11 +85,9 @@ function playSynthNote(freq, time) {
   const osc = audioContext.createOscillator();
   const gain = audioContext.createGain();
 
-  // Tipo de onda suave estilo Rhodes / Campana
   osc.type = 'triangle';
   osc.frequency.setValueAtTime(freq, time);
 
-  // Envolvente de volumen suave
   gain.gain.setValueAtTime(0.0001, time);
   gain.gain.linearRampToValueAtTime(0.12, time + 0.04);
   gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.95);
@@ -152,30 +138,26 @@ function initMusicPlayer() {
   const timerDisplay = document.getElementById('player-timer');
   const audioElement = document.getElementById('bg-audio');
 
-  const totalDuration = 195; // 3 min 15 seg
+  const totalDuration = 195;
 
   function togglePlay() {
     isMusicPlaying = !isMusicPlaying;
 
     if (isMusicPlaying) {
-      // Intentar reproducir elemento audio nativo
       if (audioElement && audioElement.src && audioElement.src.length > 5) {
         audioElement.play().catch(() => {
-          // Si no hay archivo real mp3, usar el sintetizador web audio
           startRomanticSynth();
         });
       } else {
         startRomanticSynth();
       }
 
-      // Actualizar UI
       if (playIcon) {
         playIcon.classList.remove('fa-play');
         playIcon.classList.add('fa-pause');
       }
       if (floatBtn) floatBtn.classList.add('playing');
 
-      // Temporizador de barra
       if (progressInterval) clearInterval(progressInterval);
       progressInterval = setInterval(() => {
         playbackSeconds = (playbackSeconds + 1) % totalDuration;
@@ -224,7 +206,6 @@ window.copyText = function(text, btnElement) {
       }, 2000);
     }
   }).catch(() => {
-    // Fallback
     const input = document.createElement('textarea');
     input.value = text;
     document.body.appendChild(input);
@@ -258,7 +239,6 @@ function initRSVPForm() {
     const guests = document.getElementById('rsvp-guests').value;
     const recipient = document.querySelector('input[name="rsvp-recipient"]:checked')?.value || 'novio';
 
-    // Teléfonos configurables (actualizables por los novios)
     const phoneNovio = "51952000000";
     const phoneNovia = "51952000000";
     const targetPhone = recipient === 'novio' ? phoneNovio : phoneNovia;
@@ -280,7 +260,129 @@ function initRSVPForm() {
   });
 }
 
-/* ================= 6. ANIMACIONES DE SCROLL ================= */
+/* ================= 6. GALERÍA DE FOTOS INTERACTIVA & LIGHTBOX ================= */
+const galleryImages = [
+  "assets/images/boda_foto_1.jpg",
+  "assets/images/boda_foto_2.jpg",
+  "assets/images/boda_foto_3.jpg",
+  "assets/images/boda_foto_4.jpg",
+  "assets/images/boda_foto_5.jpg",
+  "assets/images/boda_foto_6.jpg",
+  "assets/images/boda_foto_7.jpg",
+  "assets/images/boda_foto_8.jpg",
+  "assets/images/boda_foto_9.jpg",
+  "assets/images/boda_foto_10.jpg"
+];
+
+let curGalleryIndex = 0;
+let curLightboxIndex = 0;
+
+function initGallery() {
+  const track = document.getElementById('gallery-track');
+  const prevBtn = document.getElementById('gallery-prev-btn');
+  const nextBtn = document.getElementById('gallery-next-btn');
+  const dotsContainer = document.getElementById('gallery-dots');
+
+  if (!track || !dotsContainer) return;
+
+  // Crear dots
+  dotsContainer.innerHTML = '';
+  galleryImages.forEach((_, idx) => {
+    const dot = document.createElement('div');
+    dot.className = `dot ${idx === 0 ? 'active' : ''}`;
+    dot.addEventListener('click', () => goToSlide(idx));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateGalleryUI() {
+    track.style.transform = `translateX(-${curGalleryIndex * 100}%)`;
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === curGalleryIndex);
+    });
+  }
+
+  function goToSlide(idx) {
+    curGalleryIndex = (idx + galleryImages.length) % galleryImages.length;
+    updateGalleryUI();
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => goToSlide(curGalleryIndex - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => goToSlide(curGalleryIndex + 1));
+  }
+
+  // Swipe táctil en móvil
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchStartX - touchEndX > 50) {
+      goToSlide(curGalleryIndex + 1); // Deslizar izquierda -> siguiente
+    } else if (touchEndX - touchStartX > 50) {
+      goToSlide(curGalleryIndex - 1); // Deslizar derecha -> anterior
+    }
+  }, { passive: true });
+}
+
+/* ================= LIGHTBOX MODAL ================= */
+window.openLightbox = function(index) {
+  curLightboxIndex = index;
+  const modal = document.getElementById('lightbox-modal');
+  const img = document.getElementById('lightbox-img');
+  if (!modal || !img) return;
+
+  img.src = galleryImages[curLightboxIndex];
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeLightbox = function(e) {
+  if (e) e.stopPropagation();
+  const modal = document.getElementById('lightbox-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
+
+window.handleLightboxClick = function(e) {
+  if (e.target.id === 'lightbox-modal') {
+    window.closeLightbox();
+  }
+};
+
+window.navLightbox = function(step, e) {
+  if (e) e.stopPropagation();
+  curLightboxIndex = (curLightboxIndex + step + galleryImages.length) % galleryImages.length;
+  const img = document.getElementById('lightbox-img');
+  if (img) {
+    img.style.opacity = '0.3';
+    setTimeout(() => {
+      img.src = galleryImages[curLightboxIndex];
+      img.style.opacity = '1';
+    }, 150);
+  }
+};
+
+// Teclado para lightbox
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('lightbox-modal');
+  if (!modal || !modal.classList.contains('active')) return;
+
+  if (e.key === 'Escape') window.closeLightbox();
+  if (e.key === 'ArrowLeft') window.navLightbox(-1);
+  if (e.key === 'ArrowRight') window.navLightbox(1);
+});
+
+/* ================= 7. ANIMACIONES DE SCROLL ================= */
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.fade-up');
   if (!elements.length) return;
@@ -299,7 +401,7 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ================= 7. PÉTALOS FLOTANTES DECORATIVOS ================= */
+/* ================= 8. PÉTALOS FLOTANTES DECORATIVOS ================= */
 function initPetals() {
   const container = document.getElementById('petals-canvas');
   if (!container) return;
@@ -315,12 +417,12 @@ function createPetal(container, index) {
   const petal = document.createElement('div');
   petal.className = 'petal';
 
-  const size = Math.random() * 9 + 8; // 8px a 17px
+  const size = Math.random() * 9 + 8;
   petal.style.width = `${size}px`;
   petal.style.height = `${size * 1.3}px`;
   petal.style.left = `${Math.random() * 100}vw`;
 
-  const duration = Math.random() * 10 + 9; // 9s a 19s
+  const duration = Math.random() * 10 + 9;
   petal.style.animationDuration = `${duration}s`;
   petal.style.animationDelay = `${(index * 1.2) + Math.random() * 2}s`;
 
