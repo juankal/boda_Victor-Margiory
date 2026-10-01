@@ -5,30 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Boda Víctor & Margiory | Nuestra Invitación</title>
   
-  <!-- Metadatos para compartir en WhatsApp y Redes Sociales -->
-  <meta name="description" content="Acompáñanos a celebrar nuestra unión matrimonial. Sábado 19 de Octubre, 5:00 PM. Salón de Eventos Los Tulipanes, Tacna.">
+  <meta name="description" content="Acompáñanos a celebrar nuestra boda. Sábado 19 de Octubre, 5:00 PM. Salón de Eventos Los Tulipanes, Tacna.">
   <meta property="og:title" content="Boda Víctor & Margiory 💍">
-  <meta property="og:description" content="Tenemos el honor de invitarte a celebrar nuestra boda. Sábado 19 de Octubre - Salón Los Tulipanes, Tacna.">
+  <meta property="og:description" content="Celebra con nosotros nuestra unión en matrimonio. Sábado 19 de Octubre - Salón Los Tulipanes, Tacna.">
   <meta property="og:image" content="https://juankal.github.io/boda_Victor-Margiory/assets/images/boda_foto_1.jpg">
   <meta property="og:url" content="https://juankal.github.io/boda_Victor-Margiory/">
   <meta property="og:type" content="website">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
 
-  <!-- Google Fonts: Caligrafía de Lujo y Serif Clásico -->
+  <!-- Fuentes Tipográficas Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="theme-navy-gold">
-
-  <!-- Fondo de Estrellas y Destellos Dorados -->
-  <div id="gold-sparkles" aria-hidden="true"></div>
+<body class="page-navy-roses">
 
   <!-- Botón Flotante de Audio con Canción Real de Il Divo -->
   <button id="floating-audio-btn" class="floating-audio-btn" aria-label="Reproducir música romántica" title="Música romántica">
@@ -49,571 +45,532 @@
     <source src="assets/audio/cancion.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- ================= EXPERIENCIA DE SOBRE INTERACTIVO INICIAL ================= -->
-  <div class="envelope-hero-overlay" id="envelope-hero">
-    <div class="envelope-scene">
-      <div class="envelope-wrapper" id="envelope-box">
-        <div class="envelope-base"></div>
-        <div class="envelope-pocket"></div>
-        
-        <!-- Tarjeta que asoma del sobre -->
-        <div class="envelope-card-peek" id="envelope-card-peek">
-          <div class="peek-photo">
-            <img src="assets/images/boda_foto_1.jpg" alt="Víctor & Margiory">
-          </div>
-          <span class="peek-title">Víctor & Margiory</span>
-          <span class="peek-date">19 • 10 • 2026</span>
+  <!-- ================= LIENZO MARFIL CENTRAL (ESTILO SUITE FLAT-LAY) ================= -->
+  <div class="canvas-wrapper">
+    <article class="stationery-canvas">
+
+      <!-- 1. ENCABEZADO SUPERIOR -->
+      <header class="stationery-header fade-up">
+        <span class="header-pretitle">THE WEDDING OF</span>
+        <h1 class="header-couple-script">Víctor & Margiory</h1>
+        <div class="gold-heart-center">
+          <i class="fa-solid fa-heart"></i>
         </div>
+      </header>
 
-        <!-- Solapa del sobre -->
-        <div class="envelope-flap" id="envelope-flap"></div>
-
-        <!-- Sello de Lacre Dorado con Monograma VM -->
-        <div class="wax-seal" id="wax-seal" onclick="openEnvelopeExperience()" role="button" aria-label="Abrir sobre de invitación" tabindex="0">
-          <div class="seal-inner">
-            <span class="seal-letters">VM</span>
+      <!-- 2. SOBRE AZUL MARINO CERRADO (INTERACTIVO) -->
+      <section class="envelope-suite-section fade-up">
+        <div class="envelope-closed-card" id="interactive-envelope" onclick="toggleMainEnvelope()" role="button" tabindex="0">
+          <div class="env-floral-decor top-right-corner">
+            <img src="assets/images/floral_cluster.svg" alt="Flores azul marino y oro" class="floral-img flip-h">
           </div>
-          <div class="seal-ring"></div>
-        </div>
-      </div>
-
-      <div class="envelope-instructions" id="envelope-instructions">
-        <p class="env-subtitle">EL COMIENZO DE NUESTRO</p>
-        <h2 class="env-forever">Para Siempre</h2>
-        <button class="btn-open-envelope" onclick="openEnvelopeExperience()">
-          <i class="fa-solid fa-envelope-open"></i> TOCA AQUÍ PARA ABRIR
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ================= INVITACIÓN PRINCIPAL (REVELADA) ================= -->
-  <main class="invitation-container" id="main-invitation">
-
-    <!-- 1. ENCABEZADO DE BODA -->
-    <header class="wedding-header fade-up">
-      <div class="floral-crown-header">
-        <svg viewBox="0 0 400 90" class="navy-floral-svg">
-          <path d="M200,50 C160,20 110,15 50,45 C90,32 140,40 185,55" stroke="#caa160" stroke-width="1.2" fill="none" opacity="0.8"/>
-          <path d="M200,50 C240,20 290,15 350,45 C310,32 260,40 215,55" stroke="#caa160" stroke-width="1.2" fill="none" opacity="0.8"/>
-          <circle cx="200" cy="50" r="14" fill="#0d1b33" stroke="#caa160" stroke-width="1.5"/>
-          <circle cx="200" cy="50" r="6" fill="#caa160"/>
-          <circle cx="160" cy="42" r="5" fill="#597b9c" opacity="0.7"/>
-          <circle cx="240" cy="42" r="5" fill="#597b9c" opacity="0.7"/>
-        </svg>
-      </div>
-
-      <span class="header-pretitle">NUESTRA BODA</span>
-      <h1 class="header-couple-names">Víctor <span class="gold-and">&</span> Margiory</h1>
-      <div class="gold-heart-divider">
-        <span class="line"></span>
-        <i class="fa-solid fa-heart gold-heart"></i>
-        <span class="line"></span>
-      </div>
-    </header>
-
-    <!-- 2. TARJETA POLAROID DOBLE (FOTOS REALES) -->
-    <section class="polaroids-section fade-up">
-      <div class="polaroid-duo">
-        <div class="polaroid-frame frame-left" onclick="openLightbox(0)">
-          <div class="polaroid-photo">
-            <img src="assets/images/boda_foto_1.jpg" alt="Víctor y Margiory">
-          </div>
-          <div class="polaroid-caption">Víctor & Margiory</div>
-        </div>
-        <div class="polaroid-frame frame-right" onclick="openLightbox(1)">
-          <div class="polaroid-photo">
-            <img src="assets/images/boda_foto_2.jpg" alt="Víctor y Margiory">
-          </div>
-          <div class="polaroid-caption">19 de Octubre</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. TARJETA EN FORMA DE ARCO (FECHA, HORA Y LUGAR) -->
-    <section class="arch-card-section fade-up">
-      <div class="arch-card">
-        <div class="arch-floral-corner top-left"></div>
-        <div class="arch-floral-corner top-right"></div>
-
-        <span class="arch-day-name">SÁBADO</span>
-        <div class="arch-date-num">19</div>
-        <span class="arch-month-year">OCTUBRE 2026 • 5:00 PM</span>
-
-        <div class="arch-divider">
-          <span>♦</span>
-        </div>
-
-        <div class="arch-venue">
-          <span class="venue-subtitle">LUGAR DE RECEPCIÓN</span>
-          <h3 class="venue-name">Salón de Eventos Los Tulipanes</h3>
-          <p class="venue-address">
-            <i class="fa-solid fa-location-dot gold-text"></i>
-            Pasaje San Hilarión Nro 350, Tacna, Perú
-          </p>
-        </div>
-
-        <div class="arch-actions">
-          <a href="https://www.google.com/maps/search/?api=1&query=Salon+de+Eventos+Los+Tulipanes,+Pasaje+San+Hilari%C3%B3n+350,+Tacna" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn btn-navy-map">
-            <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
-          </a>
-          <a href="https://waze.com/ul?q=Pasaje%20San%20Hilarion%20350%20Tacna" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn btn-waze">
-            <i class="fa-brands fa-waze"></i> Abrir en Waze
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. CONTADOR REGRESIVO Y AGENDAR CALENDARIO -->
-    <section class="countdown-section fade-up">
-      <div class="countdown-card-navy">
-        <span class="cd-title">CUENTA REGRESIVA PARA EL GRAN DÍA</span>
-        <div class="countdown-digits" id="countdown">
-          <div class="cd-box">
-            <span class="cd-num" id="cd-days">00</span>
-            <span class="cd-lbl">DÍAS</span>
-          </div>
-          <span class="cd-colon">:</span>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-hours">00</span>
-            <span class="cd-lbl">HORAS</span>
-          </div>
-          <span class="cd-colon">:</span>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-minutes">00</span>
-            <span class="cd-lbl">MIN</span>
-          </div>
-          <span class="cd-colon">:</span>
-          <div class="cd-box">
-            <span class="cd-num" id="cd-seconds">00</span>
-            <span class="cd-lbl">SEG</span>
-          </div>
-        </div>
-
-        <a id="btn-add-calendar" href="#" target="_blank" rel="noopener" class="btn btn-gold-outline">
-          <i class="fa-regular fa-calendar-check"></i> Agendar en mi Calendario
-        </a>
-      </div>
-    </section>
-
-    <!-- 5. TARJETA NUPCIAL AZUL MARINO (BENDICIÓN DE PADRES) -->
-    <section class="navy-invitation-card-section fade-up">
-      <div class="navy-card-frame">
-        <div class="navy-card-inner">
-          <span class="navy-card-top-tag">CON LA BENDICIÓN DE DIOS Y DE NUESTROS PADRES</span>
           
-          <div class="parents-side-by-side">
-            <div class="parents-side">
-              <h4 class="parents-group-title">Padres del Novio</h4>
-              <p class="p-name">Ricardo Guzmán Guzmán</p>
-              <p class="p-name">Marta Dalila Fernández Paredes</p>
-            </div>
-            
-            <div class="parents-gold-sep">
-              <i class="fa-solid fa-ring gold-text"></i>
-            </div>
-
-            <div class="parents-side">
-              <h4 class="parents-group-title">Padres de la Novia</h4>
-              <p class="p-name">Winder Perci Esquia Catacora</p>
-              <p class="p-name">Eda Dula Mamani Davalos</p>
-            </div>
+          <div class="env-front-content">
+            <span class="env-tagline">THE BEGINNING OF</span>
+            <span class="env-forever-script">OUR Forever</span>
           </div>
 
-          <div class="navy-card-names-wrap">
-            <span class="we-invite-text">Tenemos el honor de invitarte al matrimonio de</span>
-            <h2 class="navy-card-names">Víctor & Margiory</h2>
-            <p class="navy-card-quote">
+          <div class="gold-wax-seal" id="main-wax-seal">
+            <span class="wax-monogram">VM</span>
+          </div>
+
+          <span class="env-click-hint"><i class="fa-solid fa-hand-pointer"></i> CLICK TO OPEN</span>
+        </div>
+      </section>
+
+      <!-- 3. SOBRE ABIERTO CON FOTO POLAROID REVELADA -->
+      <section class="revealed-envelope-section fade-up" id="revealed-envelope-box">
+        <div class="open-envelope-display">
+          <!-- Flores a los lados del sobre -->
+          <div class="open-env-floral floral-left">
+            <img src="assets/images/floral_cluster.svg" alt="Rosas y anémonas" class="floral-img">
+          </div>
+          <div class="open-env-floral floral-right">
+            <img src="assets/images/floral_cluster.svg" alt="Rosas y anémonas" class="floral-img flip-h">
+          </div>
+
+          <!-- Solapa abierta forrada en pan de oro -->
+          <div class="open-envelope-back">
+            <div class="gold-foil-liner"></div>
+          </div>
+
+          <!-- Foto Polaroid saliendo del sobre -->
+          <div class="polaroid-emerging" onclick="openLightbox(0)">
+            <div class="polaroid-inner">
+              <img src="assets/images/boda_foto_1.jpg" alt="Víctor & Margiory">
+            </div>
+            <span class="polaroid-text">Víctor & Margiory</span>
+          </div>
+
+          <!-- Bolsillo del sobre azul marino con sello abajo -->
+          <div class="open-envelope-pocket">
+            <div class="wax-seal-pocket">
+              <span>VM</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. TARJETA EN FORMA DE ARCO (FECHA, HORA Y LUGAR) -->
+      <section class="arch-invitation-section fade-up">
+        <div class="arch-card-exact">
+          <!-- Flores trepando por el arco -->
+          <div class="arch-floral floral-arch-left">
+            <img src="assets/images/floral_cluster.svg" alt="Flores" class="floral-img">
+          </div>
+          <div class="arch-floral floral-arch-right">
+            <img src="assets/images/floral_cluster.svg" alt="Flores" class="floral-img flip-h">
+          </div>
+
+          <div class="arch-card-content">
+            <span class="arch-day-lbl">SÁBADO</span>
+            <div class="arch-number-gold">19</div>
+            <span class="arch-date-lbl">OCTUBRE 2026 • 5:00 PM</span>
+
+            <div class="arch-gold-divider"></div>
+
+            <span class="arch-venue-tag">LUGAR DE RECEPCIÓN</span>
+            <h3 class="arch-venue-title">Salón de Eventos Los Tulipanes</h3>
+            <p class="arch-venue-dir">
+              <i class="fa-solid fa-location-dot gold-icon"></i>
+              Pasaje San Hilarión Nro 350, Tacna
+            </p>
+
+            <div class="arch-buttons-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Salon+de+Eventos+Los+Tulipanes,+Pasaje+San+Hilari%C3%B3n+350,+Tacna" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-navy-pill">
+                <i class="fa-solid fa-map-location-dot"></i> Google Maps
+              </a>
+              <a href="https://waze.com/ul?q=Pasaje%20San%20Hilarion%20350%20Tacna" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-waze-pill">
+                <i class="fa-brands fa-waze"></i> Waze
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. TARJETA CUADRADA AZUL MARINO DE INVITACIÓN FORMAL -->
+      <section class="square-navy-section fade-up">
+        <div class="square-navy-card">
+          <!-- Flores en las esquinas inferiores -->
+          <div class="square-floral floral-bottom-left">
+            <img src="assets/images/floral_cluster.svg" alt="Flores" class="floral-img">
+          </div>
+          <div class="square-floral floral-bottom-right">
+            <img src="assets/images/floral_cluster.svg" alt="Flores" class="floral-img flip-h">
+          </div>
+
+          <div class="square-navy-inner">
+            <span class="sq-pretitle">CELEBRA CON NOSOTROS EL MATRIMONIO DE</span>
+            <h2 class="sq-names">Víctor <span class="sq-and">&</span> Margiory</h2>
+            <span class="sq-families">JUNTO A NUESTRAS FAMILIAS</span>
+
+            <div class="parents-two-col">
+              <div class="parent-side">
+                <span class="role-lbl">Padres del Novio</span>
+                <p>Ricardo Guzmán Guzmán</p>
+                <p>Marta Dalila Fernández Paredes</p>
+              </div>
+              <div class="parent-side">
+                <span class="role-lbl">Padres de la Novia</span>
+                <p>Winder Perci Esquia Catacora</p>
+                <p>Eda Dula Mamani Davalos</p>
+              </div>
+            </div>
+
+            <p class="sq-verse">
               “El que encontró una esposa encontró la felicidad; Yavé es quien le otorgó ese favor.”
               <br><small>Proverbios 18:22</small>
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 6. REPRODUCTOR DE MÚSICA ROMÁNTICA (CANCIÓN REAL IL DIVO) -->
-    <section class="music-card-section fade-up">
-      <div class="music-player-navy">
-        <div class="music-top-row">
-          <div class="music-icon-ring">
-            <i class="fa-solid fa-music"></i>
+      <!-- 6. CUENTA REGRESIVA Y GOOGLE CALENDAR -->
+      <section class="countdown-suite-section fade-up">
+        <div class="countdown-suite-box">
+          <span class="cd-badge">FALTAN PARA EL GRAN DÍA</span>
+          <div class="cd-grid-row">
+            <div class="cd-item">
+              <span class="cd-val" id="cd-days">00</span>
+              <span class="cd-txt">DÍAS</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-item">
+              <span class="cd-val" id="cd-hours">00</span>
+              <span class="cd-txt">HORAS</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-item">
+              <span class="cd-val" id="cd-minutes">00</span>
+              <span class="cd-txt">MIN</span>
+            </div>
+            <span class="cd-sep">:</span>
+            <div class="cd-item">
+              <span class="cd-val" id="cd-seconds">00</span>
+              <span class="cd-txt">SEG</span>
+            </div>
           </div>
-          <div class="music-meta">
-            <span class="music-tagline">NUESTRA CANCIÓN</span>
-            <h4 class="music-song">Hasta Mi Final — Il Divo</h4>
+
+          <a id="btn-add-calendar" href="#" target="_blank" rel="noopener" class="btn btn-calendar-gold">
+            <i class="fa-regular fa-calendar-check"></i> Agendar en mi Calendario
+          </a>
+        </div>
+      </section>
+
+      <!-- 7. REPRODUCTOR DE MÚSICA (PISTA REAL IL DIVO) -->
+      <section class="music-suite-section fade-up">
+        <div class="music-suite-card">
+          <div class="music-header-row">
+            <div class="music-disc-icon">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="music-info-text">
+              <span class="m-tag">DALE PLAY A NUESTRA CANCIÓN</span>
+              <h4 class="m-song">Hasta Mi Final — Il Divo</h4>
+            </div>
+          </div>
+
+          <div class="player-controls-row">
+            <button id="play-toggle-btn" class="gold-play-btn" aria-label="Reproducir o Pausar">
+              <i class="fa-solid fa-play" id="main-play-icon"></i>
+            </button>
+            <div class="player-track">
+              <div class="player-progress-bar" id="player-progress-bar"></div>
+            </div>
+            <span class="player-timer" id="player-timer">0:00 / 3:36</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. SECCIÓN "OUR STORY" (ESTILO PANTALLA SMARTPHONE DE LA REFERENCIA) -->
+      <section class="smartphone-story-section fade-up">
+        <div class="smartphone-frame">
+          <div class="smartphone-notch"></div>
+          
+          <div class="smartphone-screen">
+            <span class="story-our-script">Our</span>
+            <h2 class="story-title-main">STORY</h2>
+            <div class="story-heart-div">♥</div>
+
+            <div class="story-wax-badge">
+              <span>VM</span>
+            </div>
+
+            <!-- 3 fotos Polaroid inclinadas como en la pantalla del celular -->
+            <div class="story-polaroids-group">
+              <div class="st-pol pol-left" onclick="openLightbox(2)">
+                <img src="assets/images/boda_foto_3.jpg" alt="Foto 1">
+              </div>
+              <div class="st-pol pol-top-right" onclick="openLightbox(4)">
+                <img src="assets/images/boda_foto_5.jpg" alt="Foto 2">
+              </div>
+              <div class="st-pol pol-bot-right" onclick="openLightbox(6)">
+                <img src="assets/images/boda_foto_7.jpg" alt="Foto 3">
+              </div>
+            </div>
+
+            <div class="story-text-container">
+              <p>Nuestros caminos se cruzaron. Conversamos durante horas. De alguna manera, ese fue solo el comienzo.</p>
+              <p>Lo que empezó como un saludo casual se convirtió en largas noches, risas cómplices y un amor que en silencio se volvió nuestro hogar favorito.</p>
+              <p>Encontramos la magia en lo cotidiano y la certeza de elegirnos día tras día.</p>
+              <p class="story-footer-text">
+                Hoy los días están contados y nuestro mayor deseo es celebrar este momento con las personas que más amamos.
+              </p>
+              <div class="story-heart-end">♥</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. MEDALLÓN CIRCULAR "THE DETAILS" (ITINERARIO & MAPA) -->
+      <section class="details-medallion-section fade-up" id="detalles">
+        <div class="medallion-wrapper">
+          <div class="medallion-wreath">
+            <img src="assets/images/floral_cluster.svg" alt="Corona Floral" class="wreath-floral-left">
+            <img src="assets/images/floral_cluster.svg" alt="Corona Floral" class="wreath-floral-right flip-h">
+          </div>
+
+          <div class="details-circle-card" onclick="toggleDetails()" role="button" tabindex="0">
+            <span class="circle-the">THE</span>
+            <h3 class="circle-details-script">Details</h3>
+            <span class="circle-click-open"><i class="fa-solid fa-chevron-down" id="details-arrow"></i> VER ITINERARIO</span>
           </div>
         </div>
 
-        <div class="player-controls-row">
-          <button id="play-toggle-btn" class="gold-play-btn" aria-label="Reproducir o Pausar">
-            <i class="fa-solid fa-play" id="main-play-icon"></i>
-          </button>
-          <div class="player-track">
-            <div class="player-progress-bar" id="player-progress-bar"></div>
-          </div>
-          <span class="player-timer" id="player-timer">0:00 / 3:36</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. SECCIÓN "NUESTRA HISTORIA" (OUR STORY CON POLAROIDS) -->
-    <section class="our-story-section fade-up">
-      <div class="story-container">
-        <div class="badge-gold-pill">
-          <i class="fa-solid fa-book-open"></i> NUESTRA HISTORIA
-        </div>
-        <h2 class="story-heading">Nuestro Camino Juntos</h2>
-
-        <div class="story-polaroids-stack">
-          <div class="story-polaroid pol-1" onclick="openLightbox(2)">
-            <img src="assets/images/boda_foto_3.jpg" alt="Foto Víctor y Margiory">
-            <span>El primer sí</span>
-          </div>
-          <div class="story-polaroid pol-2" onclick="openLightbox(4)">
-            <img src="assets/images/boda_foto_5.jpg" alt="Foto Víctor y Margiory">
-            <span>Inolvidable</span>
-          </div>
-          <div class="story-polaroid pol-3" onclick="openLightbox(6)">
-            <img src="assets/images/boda_foto_7.jpg" alt="Foto Víctor y Margiory">
-            <span>Juntos por siempre</span>
-          </div>
-        </div>
-
-        <div class="story-narrative">
-          <p>
-            Nuestros caminos se cruzaron y bastaron unas cuantas horas para saber que este era apenas el inicio.
-          </p>
-          <p>
-            Lo que comenzó como una hermosa conversación se convirtió en complicidad, risas infinitas y el amor más puro. Encontramos la magia en lo simple y la certeza de elegirnos día a día.
-          </p>
-          <p class="story-highlight">
-            Hoy la cuenta regresiva avanza y nuestro mayor anhelo es celebrar este momento sagrado rodeados de las personas que más amamos.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. LOS DETALLES: ITINERARIO Y MAPA EMBEBIDO -->
-    <section class="details-section fade-up" id="detalles">
-      <div class="details-badge-gold">
-        <i class="fa-solid fa-clock"></i>
-        <span>LOS DETALLES</span>
-      </div>
-      <h2 class="section-title-navy">Itinerario de Celebración</h2>
-      <p class="section-lead-navy">Cada momento de este día inolvidable que compartiremos contigo</p>
-
-      <div class="timeline-navy">
-        <div class="timeline-navy-item">
-          <div class="timeline-gold-icon"><i class="fa-solid fa-door-open"></i></div>
-          <div class="timeline-text">
-            <span class="tl-hour">17:00 HRS</span>
-            <h4 class="tl-title">Recepción de Invitados</h4>
-            <p class="tl-desc">Bienvenida y cóctel de inicio</p>
-          </div>
-        </div>
-
-        <div class="timeline-navy-item">
-          <div class="timeline-gold-icon"><i class="fa-solid fa-heart"></i></div>
-          <div class="timeline-text">
-            <span class="tl-hour">17:45 HRS</span>
-            <h4 class="tl-title">Entrada de los Novios</h4>
-            <p class="tl-desc">Ingreso triunfal de Víctor & Margiory</p>
-          </div>
-        </div>
-
-        <div class="timeline-navy-item">
-          <div class="timeline-gold-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
-          <div class="timeline-text">
-            <span class="tl-hour">18:30 HRS</span>
-            <h4 class="tl-title">Brindis de Honor y Vals</h4>
-            <p class="tl-desc">Palabras de los padres y primer baile nupcial</p>
-          </div>
-        </div>
-
-        <div class="timeline-navy-item">
-          <div class="timeline-gold-icon"><i class="fa-solid fa-utensils"></i></div>
-          <div class="timeline-text">
-            <span class="tl-hour">19:30 HRS</span>
-            <h4 class="tl-title">Cena de Gala</h4>
-            <p class="tl-desc">Banquete en honor a los recién casados</p>
-          </div>
-        </div>
-
-        <div class="timeline-navy-item">
-          <div class="timeline-gold-icon"><i class="fa-solid fa-music"></i></div>
-          <div class="timeline-text">
-            <span class="tl-hour">21:00 HRS</span>
-            <h4 class="tl-title">Fiesta y Celebración</h4>
-            <p class="tl-desc">¡Música en vivo, baile y alegría hasta el amanecer!</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mapa interactivo de Google Maps embebido -->
-      <div class="map-embedded-card">
-        <iframe 
-          title="Ubicación Salón Los Tulipanes Tacna"
-          src="https://maps.google.com/maps?q=Salon+de+Eventos+Los+Tulipanes+Pasaje+San+Hilarion+350+Tacna&t=&z=16&ie=UTF8&iwloc=&output=embed" 
-          width="100%" 
-          height="280" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </section>
-
-    <!-- 9. GALERÍA DE FOTOS INTERACTIVA COMPLETA (10 FOTOGRAFÍAS REALES) -->
-    <section class="gallery-section fade-up">
-      <div class="badge-gold-pill">
-        <i class="fa-solid fa-camera-retro"></i> GALERÍA
-      </div>
-      <h2 class="section-title-navy">Nuestros Recuerdos</h2>
-      <p class="section-lead-navy">Desliza para ver nuestras fotografías</p>
-
-      <div class="gallery-container">
-        <div class="gallery-viewport">
-          <div class="gallery-track" id="gallery-track">
-            <div class="gallery-slide" onclick="openLightbox(0)"><img src="assets/images/boda_foto_1.jpg" alt="Foto 1"></div>
-            <div class="gallery-slide" onclick="openLightbox(1)"><img src="assets/images/boda_foto_2.jpg" alt="Foto 2"></div>
-            <div class="gallery-slide" onclick="openLightbox(2)"><img src="assets/images/boda_foto_3.jpg" alt="Foto 3"></div>
-            <div class="gallery-slide" onclick="openLightbox(3)"><img src="assets/images/boda_foto_4.jpg" alt="Foto 4"></div>
-            <div class="gallery-slide" onclick="openLightbox(4)"><img src="assets/images/boda_foto_5.jpg" alt="Foto 5"></div>
-            <div class="gallery-slide" onclick="openLightbox(5)"><img src="assets/images/boda_foto_6.jpg" alt="Foto 6"></div>
-            <div class="gallery-slide" onclick="openLightbox(6)"><img src="assets/images/boda_foto_7.jpg" alt="Foto 7"></div>
-            <div class="gallery-slide" onclick="openLightbox(7)"><img src="assets/images/boda_foto_8.jpg" alt="Foto 8"></div>
-            <div class="gallery-slide" onclick="openLightbox(8)"><img src="assets/images/boda_foto_9.jpg" alt="Foto 9"></div>
-            <div class="gallery-slide" onclick="openLightbox(9)"><img src="assets/images/boda_foto_10.jpg" alt="Foto 10"></div>
+        <div class="details-expandable-content" id="details-dropdown">
+          <div class="timeline-classic">
+            <div class="tl-row">
+              <span class="tl-dot"></span>
+              <span class="tl-time">17:00 HRS</span>
+              <div class="tl-info">
+                <h4>Recepción de Invitados</h4>
+                <p>Bienvenida y cóctel de inicio</p>
+              </div>
+            </div>
+            <div class="tl-row">
+              <span class="tl-dot"></span>
+              <span class="tl-time">17:45 HRS</span>
+              <div class="tl-info">
+                <h4>Entrada de los Novios</h4>
+                <p>Recibimiento oficial de Víctor & Margiory</p>
+              </div>
+            </div>
+            <div class="tl-row">
+              <span class="tl-dot"></span>
+              <span class="tl-time">18:30 HRS</span>
+              <div class="tl-info">
+                <h4>Brindis de Honor y Vals</h4>
+                <p>Palabras de los padres y baile nupcial</p>
+              </div>
+            </div>
+            <div class="tl-row">
+              <span class="tl-dot"></span>
+              <span class="tl-time">19:30 HRS</span>
+              <div class="tl-info">
+                <h4>Cena de Gala</h4>
+                <p>Banquete en honor a los recién casados</p>
+              </div>
+            </div>
+            <div class="tl-row">
+              <span class="tl-dot"></span>
+              <span class="tl-time">21:00 HRS</span>
+              <div class="tl-info">
+                <h4>Fiesta y Celebración</h4>
+                <p>¡Música, baile y alegría para celebrar!</p>
+              </div>
+            </div>
           </div>
 
-          <button class="gallery-arrow arrow-prev" id="gallery-prev-btn" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
-          <button class="gallery-arrow arrow-next" id="gallery-next-btn" aria-label="Siguiente foto"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="map-box-suite">
+            <iframe 
+              title="Ubicación Salón Los Tulipanes Tacna"
+              src="https://maps.google.com/maps?q=Salon+de+Eventos+Los+Tulipanes+Pasaje+San+Hilarion+350+Tacna&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="260" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
         </div>
-        <div class="gallery-indicator-dots" id="gallery-dots"></div>
-        <span class="gallery-hint"><i class="fa-solid fa-hand-pointer"></i> Toca cualquier foto para pantalla completa</span>
-      </div>
-    </section>
+      </section>
 
-    <!-- 10. CÓDIGO DE VESTIMENTA (DRESS CODE) -->
-    <section class="dresscode-section fade-up">
-      <div class="badge-gold-pill">
-        <i class="fa-solid fa-vest"></i> CÓDIGO DE VESTIMENTA
-      </div>
-      <h2 class="section-title-navy">Etiqueta Rigurosa / Formal</h2>
-      <p class="section-lead-navy">Queremos que te sientas elegante y cómodo en nuestra noche especial</p>
+      <!-- 10. GALERÍA DE FOTOS "NUESTROS RECUERDOS" (10 FOTOGRAFÍAS REALES) -->
+      <section class="gallery-suite-section fade-up">
+        <h3 class="section-title-suite">Nuestros Recuerdos</h3>
+        <p class="section-subtitle-suite">Toca cualquier foto para ampliarla</p>
 
-      <div class="dress-cards-grid">
-        <div class="dress-card-navy">
-          <div class="dress-card-icon">
-            <svg viewBox="0 0 64 64" class="dress-svg">
+        <div class="gallery-container">
+          <div class="gallery-viewport">
+            <div class="gallery-track" id="gallery-track">
+              <div class="gallery-slide" onclick="openLightbox(0)"><img src="assets/images/boda_foto_1.jpg" alt="Foto 1"></div>
+              <div class="gallery-slide" onclick="openLightbox(1)"><img src="assets/images/boda_foto_2.jpg" alt="Foto 2"></div>
+              <div class="gallery-slide" onclick="openLightbox(2)"><img src="assets/images/boda_foto_3.jpg" alt="Foto 3"></div>
+              <div class="gallery-slide" onclick="openLightbox(3)"><img src="assets/images/boda_foto_4.jpg" alt="Foto 4"></div>
+              <div class="gallery-slide" onclick="openLightbox(4)"><img src="assets/images/boda_foto_5.jpg" alt="Foto 5"></div>
+              <div class="gallery-slide" onclick="openLightbox(5)"><img src="assets/images/boda_foto_6.jpg" alt="Foto 6"></div>
+              <div class="gallery-slide" onclick="openLightbox(6)"><img src="assets/images/boda_foto_7.jpg" alt="Foto 7"></div>
+              <div class="gallery-slide" onclick="openLightbox(7)"><img src="assets/images/boda_foto_8.jpg" alt="Foto 8"></div>
+              <div class="gallery-slide" onclick="openLightbox(8)"><img src="assets/images/boda_foto_9.jpg" alt="Foto 9"></div>
+              <div class="gallery-slide" onclick="openLightbox(9)"><img src="assets/images/boda_foto_10.jpg" alt="Foto 10"></div>
+            </div>
+
+            <button class="gallery-arrow arrow-prev" id="gallery-prev-btn" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="gallery-arrow arrow-next" id="gallery-next-btn" aria-label="Siguiente foto"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="gallery-indicator-dots" id="gallery-dots"></div>
+        </div>
+      </section>
+
+      <!-- 11. CÓDIGO DE VESTIMENTA (DRESS CODE) -->
+      <section class="dresscode-suite-section fade-up">
+        <h3 class="section-title-suite">Código de Vestimenta</h3>
+        <span class="dress-tag-suite">Etiqueta Rigurosa / Formal</span>
+
+        <div class="dress-cards-two">
+          <div class="dress-box">
+            <svg viewBox="0 0 64 64" class="dress-icon-gold">
               <path d="M32 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-3 15l-5 9h4l-4 28h16l-4-28h4l-5-9h-6z" fill="#caa160"/>
             </svg>
+            <h4>Damas</h4>
+            <p>Vestido Largo de Fiesta</p>
+            <small>* Reservamos el blanco y marfil para la novia</small>
           </div>
-          <h4 class="dress-title">Damas</h4>
-          <p class="dress-desc">Vestido Largo de Fiesta</p>
-          <span class="dress-restriction">* El color blanco y marfil está reservado para la novia.</span>
-        </div>
-
-        <div class="dress-card-navy">
-          <div class="dress-card-icon">
-            <svg viewBox="0 0 64 64" class="dress-svg">
+          <div class="dress-box">
+            <svg viewBox="0 0 64 64" class="dress-icon-gold">
               <path d="M32 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm-8 15l3 37h10l3-37l-6 4l-2 9l-2-9l-6-4z" fill="#caa160"/>
             </svg>
+            <h4>Caballeros</h4>
+            <p>Traje Formal / Terno</p>
+            <small>* Corbata o corbatín</small>
           </div>
-          <h4 class="dress-title">Caballeros</h4>
-          <p class="dress-desc">Traje Formal / Terno Completo</p>
-          <span class="dress-restriction">* Corbata o lazo formal.</span>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- 11. MESA DE REGALOS (GIFT REGISTRY CON NÚMEROS DE CUENTA EXACTOS) -->
-    <section class="gifts-section fade-up">
-      <div class="badge-gold-pill">
-        <i class="fa-solid fa-gift"></i> SUGERENCIA DE REGALOS
-      </div>
-      <h2 class="section-title-navy">Mesa de Regalos</h2>
-      <p class="section-lead-navy">Tu presencia es nuestro mayor regalo. Si deseas hacernos un presente, te dejamos nuestras opciones:</p>
-
-      <!-- Opción Lluvia de Sobres -->
-      <div class="gift-envelope-badge">
-        <div class="gift-icon-bubble">
-          <i class="fa-solid fa-envelope-open-text"></i>
+      <!-- 12. MEDALLÓN ESCUDO "GIFT REGISTRY" (MESA DE REGALOS & CUENTAS) -->
+      <section class="gift-registry-section fade-up">
+        <div class="gift-shield-badge">
+          <div class="shield-icon"><i class="fa-solid fa-gift"></i></div>
+          <h3 class="shield-title-script">Gift Registry</h3>
+          <span class="shield-subtitle">SUGERENCIA DE REGALOS</span>
         </div>
-        <h4 class="gift-box-title">Lluvia de Sobres</h4>
-        <p class="gift-box-desc">
-          Contaremos con un cofre especial en el salón de recepción para recibir tus buenos deseos.
+
+        <div class="registry-cards-container">
+          <!-- Lluvia de Sobres -->
+          <div class="envelope-gift-card">
+            <i class="fa-solid fa-envelope-open-text gift-icon-gold"></i>
+            <h4>Lluvia de Sobres</h4>
+            <p>Dispondremos de un cofre en la recepción para recibir tus buenos deseos y bendiciones.</p>
+          </div>
+
+          <!-- Cuentas Bancarias Reales -->
+          <div class="bank-accounts-card">
+            <h4><i class="fa-solid fa-building-columns gold-icon"></i> Cuentas Bancarias (BCP)</h4>
+
+            <!-- Novia (Margiory) -->
+            <div class="account-item">
+              <div class="acc-owner-row">
+                <span class="acc-person"><i class="fa-solid fa-heart gold-icon"></i> Margiory (Novia)</span>
+                <span class="acc-bank-tag">BCP Soles</span>
+              </div>
+              <div class="acc-num-row">
+                <span class="acc-label">Cuenta:</span>
+                <code class="acc-number">54096070715050</code>
+                <button class="btn-copy-mini" onclick="copyText('54096070715050', this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <div class="acc-num-row cci-subrow">
+                <span class="acc-label">CCI:</span>
+                <code class="acc-number">00254019607071505038</code>
+                <button class="btn-copy-mini" onclick="copyText('00254019607071505038', this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+            </div>
+
+            <!-- Novio (Víctor) -->
+            <div class="account-item">
+              <div class="acc-owner-row">
+                <span class="acc-person"><i class="fa-solid fa-heart gold-icon"></i> Víctor (Novio)</span>
+                <span class="acc-bank-tag">BCP Soles</span>
+              </div>
+              <div class="acc-num-row">
+                <span class="acc-label">Cuenta:</span>
+                <code class="acc-number">19178146227081</code>
+                <button class="btn-copy-mini" onclick="copyText('19178146227081', this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+              <div class="acc-num-row cci-subrow">
+                <span class="acc-label">CCI:</span>
+                <code class="acc-number">00219117814622708154</code>
+                <button class="btn-copy-mini" onclick="copyText('00219117814622708154', this)"><i class="fa-regular fa-copy"></i> Copiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 13. SOBRE BLANCO "KINDLY RSVP" (FORMULARIO WHATSAPP) -->
+      <section class="rsvp-suite-section fade-up" id="rsvp">
+        <div class="rsvp-envelope-card">
+          <span class="rsvp-kindly-script">Kindly</span>
+          <h2 class="rsvp-heading">RSVP</h2>
+          
+          <div class="rsvp-heart-seal">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <p class="rsvp-deadline-text">
+            Por favor, confírmanos antes del <strong>10 de Octubre</strong> para acompañarnos en esta noche única.
+          </p>
+
+          <form id="wedding-rsvp-form" class="rsvp-suite-form">
+            <div class="form-field-suite">
+              <label for="rsvp-name">Tu Nombre y Apellido:</label>
+              <input type="text" id="rsvp-name" placeholder="Ej. Roberto Mendoza" required>
+            </div>
+
+            <div class="form-field-suite">
+              <label for="rsvp-status">¿Podrás acompañarnos?:</label>
+              <select id="rsvp-status" required>
+                <option value="¡Sí, confirmo mi asistencia con mucha alegría!">¡Sí, con mucho gusto asistiré! 🎉</option>
+                <option value="Lamentablemente no podré asistir, pero les deseo lo mejor">Lamentablemente no podré asistir 🤍</option>
+              </select>
+            </div>
+
+            <div class="form-field-suite">
+              <label for="rsvp-guests">Número de pases:</label>
+              <select id="rsvp-guests">
+                <option value="1 pase (Individual)">1 pase (Solo yo)</option>
+                <option value="2 pases (En pareja)" selected>2 pases (Con mi acompañante)</option>
+                <option value="3 pases">3 pases</option>
+                <option value="Familia (4 pases)">Familia (4 pases)</option>
+              </select>
+            </div>
+
+            <div class="form-field-suite">
+              <label>Enviar confirmación a:</label>
+              <div class="target-radio-suite">
+                <label class="radio-chip">
+                  <input type="radio" name="rsvp-recipient" value="novio" checked>
+                  <span>Víctor (Novio)</span>
+                </label>
+                <label class="radio-chip">
+                  <input type="radio" name="rsvp-recipient" value="novia">
+                  <span>Margiory (Novia)</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-whatsapp-suite">
+              <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia por WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- 14. RECEPCIÓN SOLO ADULTOS -->
+      <section class="adults-suite-section fade-up">
+        <div class="adults-suite-box">
+          <i class="fa-solid fa-moon adults-gold-icon"></i>
+          <h4>RECEPCIÓN EXCLUSIVA PARA ADULTOS</h4>
+          <p>
+            Amamos a los más pequeños de la familia; sin embargo, deseamos que todos los papis y mamis disfruten al máximo de una velada de celebración y baile. ¡Agradecemos su comprensión y cariño!
+          </p>
+        </div>
+      </section>
+
+      <!-- 15. PIE DE PÁGINA Y AGRADECIMIENTO -->
+      <footer class="stationery-footer fade-up">
+        <p class="footer-quote-text">
+          “Esperamos con ilusión contar con tu presencia para brindar juntos por el amor y la vida.”
         </p>
-      </div>
 
-      <!-- Cuentas Bancarias Reales de los Novios -->
-      <div class="bank-accounts-navy-card">
-        <h3 class="bank-card-title"><i class="fa-solid fa-building-columns gold-text"></i> Transferencias Bancarias</h3>
+        <h3 class="footer-thanks-script">¡Muchas Gracias!</h3>
 
-        <!-- Cuenta Novia (Margiory) -->
-        <div class="bank-block">
-          <div class="bank-owner-tag">
-            <span class="owner-name"><i class="fa-solid fa-heart gold-text"></i> Margiory (Novia)</span>
-            <span class="bank-label">BCP Soles</span>
-          </div>
-
-          <!-- Número BCP -->
-          <div class="account-row">
-            <div class="acc-data">
-              <span class="acc-label">Número de Cuenta BCP:</span>
-              <code class="acc-code" id="bcp-novia">54096070715050</code>
-            </div>
-            <button class="btn-copy-gold" onclick="copyText('54096070715050', this)" aria-label="Copiar cuenta BCP Novia">
-              <i class="fa-regular fa-copy"></i> <span>Copiar</span>
-            </button>
-          </div>
-
-          <!-- CCI Novia -->
-          <div class="account-row cci-row">
-            <div class="acc-data">
-              <span class="acc-label">Cuenta Interbancaria (CCI):</span>
-              <code class="acc-code" id="cci-novia">00254019607071505038</code>
-            </div>
-            <button class="btn-copy-gold" onclick="copyText('00254019607071505038', this)" aria-label="Copiar CCI Novia">
-              <i class="fa-regular fa-copy"></i> <span>Copiar</span>
-            </button>
-          </div>
+        <div class="footer-wax-seal">
+          <span>VM</span>
         </div>
 
-        <div class="bank-sep-line"></div>
-
-        <!-- Cuenta Novio (Víctor) -->
-        <div class="bank-block">
-          <div class="bank-owner-tag">
-            <span class="owner-name"><i class="fa-solid fa-heart gold-text"></i> Víctor (Novio)</span>
-            <span class="bank-label">BCP Soles</span>
-          </div>
-
-          <!-- Número BCP -->
-          <div class="account-row">
-            <div class="acc-data">
-              <span class="acc-label">Número de Cuenta BCP:</span>
-              <code class="acc-code" id="bcp-novio">19178146227081</code>
-            </div>
-            <button class="btn-copy-gold" onclick="copyText('19178146227081', this)" aria-label="Copiar cuenta BCP Novio">
-              <i class="fa-regular fa-copy"></i> <span>Copiar</span>
-            </button>
-          </div>
-
-          <!-- CCI Novio -->
-          <div class="account-row cci-row">
-            <div class="acc-data">
-              <span class="acc-label">Cuenta Interbancaria (CCI):</span>
-              <code class="acc-code" id="cci-novio">00219117814622708154</code>
-            </div>
-            <button class="btn-copy-gold" onclick="copyText('00219117814622708154', this)" aria-label="Copiar CCI Novio">
-              <i class="fa-regular fa-copy"></i> <span>Copiar</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. CONFIRMAR ASISTENCIA (KINDLY RSVP VIA WHATSAPP) -->
-    <section class="rsvp-section fade-up" id="rsvp">
-      <div class="badge-gold-pill">
-        <i class="fa-solid fa-envelope-circle-check"></i> CONFIRMAR ASISTENCIA
-      </div>
-      <h2 class="section-title-navy">Kindly RSVP</h2>
-      <p class="section-lead-navy">
-        Por favor, confirma tu asistencia antes del <strong>10 de Octubre</strong> para acompañarnos en esta noche única.
-      </p>
-
-      <form id="wedding-rsvp-form" class="rsvp-form-navy">
-        <div class="form-group-navy">
-          <label for="rsvp-name"><i class="fa-solid fa-user gold-text"></i> Tu Nombre y Apellido:</label>
-          <input type="text" id="rsvp-name" placeholder="Ej. Roberto Mendoza" required>
-        </div>
-
-        <div class="form-group-navy">
-          <label for="rsvp-status"><i class="fa-solid fa-clipboard-question gold-text"></i> ¿Podrás acompañarnos?:</label>
-          <select id="rsvp-status" required>
-            <option value="¡Sí, confirmo mi asistencia con mucha alegría!">¡Sí, con mucho gusto asistiré! 🎉</option>
-            <option value="Lamentablemente no podré asistir, pero les deseo lo mejor">Lamentablemente no podré asistir 🤍</option>
-          </select>
-        </div>
-
-        <div class="form-group-navy">
-          <label for="rsvp-guests"><i class="fa-solid fa-users gold-text"></i> Número de pases:</label>
-          <select id="rsvp-guests">
-            <option value="1 pase (Individual)">1 pase (Solo yo)</option>
-            <option value="2 pases (En pareja)" selected>2 pases (Con mi acompañante)</option>
-            <option value="3 pases">3 pases</option>
-            <option value="Familia (4 pases)">Familia (4 pases)</option>
-          </select>
-        </div>
-
-        <div class="form-group-navy">
-          <label><i class="fa-solid fa-paper-plane gold-text"></i> Enviar confirmación a:</label>
-          <div class="rsvp-target-toggles">
-            <label class="target-option">
-              <input type="radio" name="rsvp-recipient" value="novio" checked>
-              <span>Víctor (Novio)</span>
-            </label>
-            <label class="target-option">
-              <input type="radio" name="rsvp-recipient" value="novia">
-              <span>Margiory (Novia)</span>
-            </label>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-whatsapp-gold">
-          <i class="fa-brands fa-whatsapp"></i> Confirmar Asistencia por WhatsApp
-        </button>
-      </form>
-    </section>
-
-    <!-- 13. RECEPCIÓN SOLO ADULTOS -->
-    <section class="nokids-section fade-up">
-      <div class="adults-only-card-navy">
-        <i class="fa-solid fa-moon adults-gold-icon"></i>
-        <h4 class="adults-title">RECEPCIÓN EXCLUSIVA PARA ADULTOS</h4>
-        <p class="adults-text">
-          Amamos a los más pequeños de la familia; sin embargo, deseamos que todos los papis y mamis disfruten al máximo de una velada de celebración y baile. Agradecemos su comprensión y cariño.
+        <p class="footer-sig">
+          Víctor Guzmán & Margiory Esquia<br>
+          19 de Octubre de 2026 • Tacna, Perú
         </p>
-      </div>
-    </section>
+      </footer>
 
-    <!-- 14. CIERRE Y AGRADECIMIENTO -->
-    <footer class="wedding-footer fade-up">
-      <p class="footer-quote">
-        “Esperamos con ilusión contar con tu presencia para brindar juntos por el amor y la vida.”
-      </p>
+    </article>
+  </div>
 
-      <h3 class="footer-thanks">¡Muchas Gracias!</h3>
-
-      <div class="footer-wax-seal-badge">
-        <span class="seal-text">VM</span>
-      </div>
-
-      <p class="footer-signature">
-        Víctor Guzmán & Margiory Esquia<br>
-        19 de Octubre de 2026 • Tacna, Perú
-      </p>
-    </footer>
-
-  </main>
-
-  <!-- MODAL LIGHTBOX PARA VER FOTOS A PANTALLA COMPLETA -->
+  <!-- MODAL LIGHTBOX PARA FOTOS EN ALTA RESOLUCIÓN -->
   <div id="lightbox-modal" class="lightbox-modal" onclick="handleLightboxClick(event)">
-    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar foto">&times;</button>
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar">&times;</button>
     <div class="lightbox-content">
-      <img id="lightbox-img" src="" alt="Foto en alta resolución">
+      <img id="lightbox-img" src="" alt="Foto">
     </div>
-    <button class="lightbox-arrow lb-prev" onclick="navLightbox(-1, event)" aria-label="Foto anterior"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="lightbox-arrow lb-next" onclick="navLightbox(1, event)" aria-label="Siguiente foto"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="lightbox-arrow lb-prev" onclick="navLightbox(-1, event)"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-arrow lb-next" onclick="navLightbox(1, event)"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <!-- Toast Notification -->

@@ -1,5 +1,5 @@
 /**
- * BODA VÍCTOR & MARGIORY — EXPERIENCIA NAVY BLUE & WAX SEAL
+ * BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL MIDNIGHT NAVY & GOLD
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,20 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initRSVPForm();
   initGallery();
   initScrollAnimations();
-  initSparkles();
 });
 
-/* ================= 1. APERTURA INTERACTIVA DEL SOBRE ================= */
-window.openEnvelopeExperience = function() {
-  const envelopeBox = document.getElementById('envelope-box');
-  const envelopeHero = document.getElementById('envelope-hero');
+/* ================= 1. APERTURA / INTERACCIÓN DEL SOBRE ================= */
+window.toggleMainEnvelope = function() {
+  const revealedBox = document.getElementById('revealed-envelope-box');
   const audio = document.getElementById('bg-audio');
 
-  if (envelopeBox) {
-    envelopeBox.classList.add('open-anim');
-  }
-
-  // Intentar reproducir música automáticamente al abrir
+  // Intentar iniciar la música si está pausada
   if (audio && audio.paused) {
     audio.play().then(() => {
       const floatBtn = document.getElementById('floating-audio-btn');
@@ -37,17 +31,28 @@ window.openEnvelopeExperience = function() {
     });
   }
 
-  // Desvanecer el sobre y mostrar la invitación completa
-  setTimeout(() => {
-    if (envelopeHero) {
-      envelopeHero.classList.add('opened');
-    }
-    // Desplazar suavemente a la cabecera
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 1100);
+  // Desplazar suavemente a la foto revelada
+  if (revealedBox) {
+    revealedBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 };
 
-/* ================= 2. CONTADOR REGRESIVO ================= */
+/* ================= 2. DESPLEGAR / COLAPSAR DETALLES ================= */
+window.toggleDetails = function() {
+  const dropdown = document.getElementById('details-dropdown');
+  const arrow = document.getElementById('details-arrow');
+  if (!dropdown) return;
+
+  if (dropdown.style.display === 'none') {
+    dropdown.style.display = 'block';
+    if (arrow) arrow.className = 'fa-solid fa-chevron-up';
+  } else {
+    dropdown.style.display = 'none';
+    if (arrow) arrow.className = 'fa-solid fa-chevron-down';
+  }
+};
+
+/* ================= 3. CONTADOR REGRESIVO ================= */
 function initCountdown() {
   const eventDate = new Date(2026, 9, 19, 17, 0, 0).getTime();
 
@@ -83,7 +88,7 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-/* ================= 3. ENLACE GOOGLE CALENDAR ================= */
+/* ================= 4. ENLACE GOOGLE CALENDAR ================= */
 function initCalendarLink() {
   const calBtn = document.getElementById('btn-add-calendar');
   if (!calBtn) return;
@@ -96,7 +101,7 @@ function initCalendarLink() {
   calBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 }
 
-/* ================= 4. REPRODUCTOR DE MÚSICA (PISTA REAL IL DIVO) ================= */
+/* ================= 5. REPRODUCTOR DE MÚSICA REAL (IL DIVO) ================= */
 function formatAudioTime(seconds) {
   if (isNaN(seconds) || seconds < 0) return "0:00";
   const m = Math.floor(seconds / 60);
@@ -178,17 +183,19 @@ function initMusicPlayer() {
   if (floatBtn) floatBtn.addEventListener('click', togglePlay);
 }
 
-/* ================= 5. COPIAR DATOS BANCARIOS ================= */
+/* ================= 6. COPIAR DATOS AL PORTAPAPELES ================= */
 window.copyText = function(text, btnElement) {
   navigator.clipboard.writeText(text).then(() => {
     showToast("¡Número copiado con éxito!");
     if (btnElement) {
       const origHtml = btnElement.innerHTML;
-      btnElement.innerHTML = `<i class="fa-solid fa-check"></i> <span>¡Listo!</span>`;
-      btnElement.style.background = "#dfbe82";
+      btnElement.innerHTML = `<i class="fa-solid fa-check"></i> Copiado`;
+      btnElement.style.background = "#caa160";
+      btnElement.style.color = "#0c1829";
       setTimeout(() => {
         btnElement.innerHTML = origHtml;
         btnElement.style.background = "";
+        btnElement.style.color = "";
       }, 2000);
     }
   }).catch(() => {
@@ -212,7 +219,7 @@ function showToast(msg) {
   }, 2600);
 }
 
-/* ================= 6. FORMULARIO RSVP WHATSAPP ================= */
+/* ================= 7. FORMULARIO RSVP WHATSAPP ================= */
 function initRSVPForm() {
   const form = document.getElementById('wedding-rsvp-form');
   if (!form) return;
@@ -246,7 +253,7 @@ function initRSVPForm() {
   });
 }
 
-/* ================= 7. GALERÍA DE FOTOS & LIGHTBOX ================= */
+/* ================= 8. GALERÍA DE FOTOS & LIGHTBOX ================= */
 const galleryImages = [
   "assets/images/boda_foto_1.jpg",
   "assets/images/boda_foto_2.jpg",
@@ -360,7 +367,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') window.navLightbox(1);
 });
 
-/* ================= 8. ANIMACIONES SCROLL ================= */
+/* ================= 9. ANIMACIONES SCROLL ================= */
 function initScrollAnimations() {
   const elements = document.querySelectorAll('.fade-up');
   if (!elements.length) return;
@@ -372,28 +379,9 @@ function initScrollAnimations() {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: "0px 0px -30px 0px"
+    threshold: 0.08,
+    rootMargin: "0px 0px -20px 0px"
   });
 
   elements.forEach(el => observer.observe(el));
-}
-
-/* ================= 9. DESTELLOS DORADOS (GOLD SPARKLES) ================= */
-function initSparkles() {
-  const container = document.getElementById('gold-sparkles');
-  if (!container) return;
-
-  const total = 18;
-  for (let i = 0; i < total; i++) {
-    const s = document.createElement('div');
-    s.className = 'sparkle';
-    const size = Math.random() * 4 + 2;
-    s.style.width = `${size}px`;
-    s.style.height = `${size}px`;
-    s.style.left = `${Math.random() * 100}vw`;
-    s.style.animationDuration = `${Math.random() * 8 + 6}s`;
-    s.style.animationDelay = `${Math.random() * 5}s`;
-    container.appendChild(s);
-  }
 }
