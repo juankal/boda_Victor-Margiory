@@ -865,37 +865,58 @@ body.theme-dusty-blue {
   text-transform: uppercase;
   color: var(--c-text-navy);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
-.dress-adults-note {
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
+.wedding-notes-item {
+  margin-bottom: 22px;
+}
+
+.notes-heading {
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #556c80;
-  margin-bottom: 14px;
-  font-weight: 500;
-}
-
-.dress-thanks-block p {
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #556c80;
-  line-height: 1.6;
-}
-
-.dress-thanks-block .thanks-strong {
-  font-weight: 700;
   color: var(--c-text-navy);
-  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+.notes-body {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #455769;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.dress-thanks-block {
+  margin-top: 26px;
+}
+
+.thanks-presence {
+  font-family: var(--font-serif);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #556c80;
+  font-weight: 600;
+}
+
+.thanks-script {
+  font-family: var(--font-script);
+  font-size: 2.85rem;
+  font-weight: 400;
+  color: #172635;
+  line-height: 1.1;
+  margin-top: 4px;
+  letter-spacing: 0.02em;
 }
 
 /* ================= 14. BOUQUET INFERIOR ================= */
 .ref-bottom-floral-box {
-  margin-top: 20px;
+  margin-top: 16px;
   text-align: center;
 }
 
