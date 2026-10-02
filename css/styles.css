@@ -316,18 +316,18 @@ body.theme-dusty-blue {
 /* ================= 6. NOMBRES CON FLORES FLANQUEANTES ================= */
 .ref-couple-names-section {
   text-align: center;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .nosotros-tag {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #647b91;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .names-with-florals {
@@ -335,8 +335,10 @@ body.theme-dusty-blue {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 120px;
-  padding: 0 45px;
+  min-height: 140px;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 .names-calligraphy-stack {
@@ -349,48 +351,48 @@ body.theme-dusty-blue {
 
 .calligraphy-name {
   font-family: var(--font-script);
-  font-size: 3.3rem;
+  font-size: 3.4rem;
   font-weight: 400;
-  color: #1a2938;
-  line-height: 0.92;
+  color: #172635;
+  line-height: 0.95;
   letter-spacing: 0.02em;
 }
 
 .name-groom {
-  margin-right: 24px;
+  margin-right: 22px;
 }
 
 .calligraphy-amp {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #7992a7;
   line-height: 1;
   margin: -6px 0 -4px;
 }
 
 .name-bride {
-  margin-left: 24px;
+  margin-left: 22px;
 }
 
 .floral-flank {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.03));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.03));
 }
 
 .floral-flank-l {
-  left: 6px;
-  bottom: -6px;
-  width: 72px;
+  left: 14px;
+  bottom: 4px;
+  width: 95px;
   height: auto;
 }
 
 .floral-flank-r {
-  right: 6px;
-  top: 6px;
-  width: 72px;
+  right: 14px;
+  top: 4px;
+  width: 95px;
   height: auto;
 }
 
@@ -1305,21 +1307,32 @@ body.theme-dusty-blue {
   }
 
   .names-with-florals {
-    padding: 0 20px;
+    padding: 0 5px;
+    min-height: 125px;
   }
 
   .calligraphy-name {
-    font-size: 2.8rem;
+    font-size: 2.9rem;
+  }
+
+  .name-groom {
+    margin-right: 14px;
+  }
+
+  .name-bride {
+    margin-left: 14px;
   }
 
   .floral-flank-l {
-    left: -4px;
-    width: 60px;
+    left: 4px;
+    bottom: 2px;
+    width: 80px;
   }
 
   .floral-flank-r {
-    right: -4px;
-    width: 60px;
+    right: 4px;
+    top: 2px;
+    width: 80px;
   }
 
   .mono-letter {
