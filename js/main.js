@@ -269,8 +269,11 @@ const galleryImages = [
 
 let curGalleryIndex = 0;
 let curLightboxIndex = 0;
+let galleryAutoplayTimer = null;
+const GALLERY_AUTOPLAY_MS = 3500;
 
 function initGallery() {
+  const container = document.querySelector('.gallery-container') || document.querySelector('.gallery-viewport');
   const track = document.getElementById('gallery-track');
   const prevBtn = document.getElementById('gallery-prev-btn');
   const nextBtn = document.getElementById('gallery-next-btn');
@@ -282,7 +285,10 @@ function initGallery() {
   galleryImages.forEach((_, idx) => {
     const dot = document.createElement('div');
     dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-    dot.addEventListener('click', () => goToSlide(idx));
+    dot.addEventListener('click', () => {
+      goToSlide(idx);
+      resetAutoplay();
+    });
     dotsContainer.appendChild(dot);
   });
 
@@ -299,13 +305,54 @@ function initGallery() {
     updateGalleryUI();
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(curGalleryIndex - 1));
-  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(curGalleryIndex + 1));
+  function startAutoplay() {
+    stopAutoplay();
+    galleryAutoplayTimer = setInterval(() => {
+      goToSlide(curGalleryIndex + 1);
+    }, GALLERY_AUTOPLAY_MS);
+  }
 
+  function stopAutoplay() {
+    if (galleryAutoplayTimer) {
+      clearInterval(galleryAutoplayTimer);
+      galleryAutoplayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  window.pauseGalleryAutoplay = stopAutoplay;
+  window.resumeGalleryAutoplay = startAutoplay;
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      goToSlide(curGalleryIndex - 1);
+      resetAutoplay();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      goToSlide(curGalleryIndex + 1);
+      resetAutoplay();
+    });
+  }
+
+  // Pausar al pasar el mouse por encima y reanudar al salir
+  if (container) {
+    container.addEventListener('mouseenter', stopAutoplay);
+    container.addEventListener('mouseleave', startAutoplay);
+  }
+
+  // Soporte Touch para móviles
   let touchStartX = 0;
   let touchEndX = 0;
 
   track.addEventListener('touchstart', (e) => {
+    stopAutoplay();
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
 
@@ -316,7 +363,20 @@ function initGallery() {
     } else if (touchEndX - touchStartX > 50) {
       goToSlide(curGalleryIndex - 1);
     }
+    startAutoplay();
   }, { passive: true });
+
+  // Pausar si la pestaña pasa a segundo plano para ahorrar batería
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
+    }
+  });
+
+  // Iniciar avance automático inmediatamente
+  startAutoplay();
 }
 
 /* ================= LIGHTBOX ================= */
@@ -325,6 +385,8 @@ window.openLightbox = function(index) {
   const modal = document.getElementById('lightbox-modal');
   const img = document.getElementById('lightbox-img');
   if (!modal || !img) return;
+
+  if (window.pauseGalleryAutoplay) window.pauseGalleryAutoplay();
 
   img.src = galleryImages[curLightboxIndex];
   modal.classList.add('active');
@@ -338,6 +400,7 @@ window.closeLightbox = function(e) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
+  if (window.resumeGalleryAutoplay) window.resumeGalleryAutoplay();
 };
 
 window.handleLightboxClick = function(e) {

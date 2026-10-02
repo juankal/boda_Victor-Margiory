@@ -1171,7 +1171,7 @@ body.page-navy-roses {
 
 .gallery-track {
   display: flex;
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .gallery-slide {
@@ -1201,6 +1201,12 @@ body.page-navy-roses {
   justify-content: center;
   cursor: pointer;
   z-index: 10;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.gallery-arrow:hover {
+  background: var(--c-gold);
+  color: var(--c-navy-dark);
 }
 
 .arrow-prev { left: 10px; }
@@ -1219,6 +1225,7 @@ body.page-navy-roses {
   border-radius: 50%;
   background: rgba(202, 161, 96, 0.35);
   cursor: pointer;
+  transition: all 0.35s ease;
 }
 
 .dot.active {
