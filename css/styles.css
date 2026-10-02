@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL MIDNIGHT NAVY & GOLD
    Fiel a la referencia: Lienzo marfil sobre fondo de rosas azul marino, bouquets botánicos y lacre
    ========================================================================== */
@@ -242,6 +242,8 @@ body.page-navy-roses {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(6, 14, 26, 0.38));
+  transition: transform 0.4s ease;
 }
 
 .flip-h {
@@ -1001,6 +1003,17 @@ body.page-navy-roses {
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+
+.wreath-full-frame {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 260px;
+  height: 260px;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 18px rgba(6, 14, 26, 0.35));
 }
 
 .wreath-floral-left {
