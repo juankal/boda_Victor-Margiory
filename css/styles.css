@@ -50,10 +50,12 @@ html {
   font-size: 16px;
 }
 
+html,
+body,
 body.theme-dusty-blue {
-  background-color: var(--c-bg-sand);
-  background-image: var(--c-bg-sand-gradient);
-  background-attachment: fixed;
+  background-color: var(--c-bg-sand) !important;
+  background-image: var(--c-bg-sand-gradient) !important;
+  background-attachment: fixed !important;
   color: var(--c-text-body);
   font-family: var(--font-sans);
   min-height: 100vh;
