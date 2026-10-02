@@ -383,6 +383,8 @@ body.theme-dusty-blue {
 
 .floral-flank {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   pointer-events: none;
   z-index: 1;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.03));
@@ -390,14 +392,12 @@ body.theme-dusty-blue {
 
 .floral-flank-l {
   left: 14px;
-  bottom: 4px;
   width: 95px;
   height: auto;
 }
 
 .floral-flank-r {
   right: 14px;
-  top: 4px;
   width: 95px;
   height: auto;
 }
