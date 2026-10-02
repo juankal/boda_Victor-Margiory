@@ -1,19 +1,19 @@
 /* ==========================================================================
-   BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL DUSTY BLUE
-   Diseño de Alta Gama: Adaptación 100% fiel a la tarjeta de referencia
+   BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL DUSTY BLUE (100% VERTICAL)
+   Lienzo de papelería nupcial exclusivo, continuo y optimizado para móviles y escritorio
    ========================================================================== */
 
 :root {
   /* Paleta Oficial Dusty Blue */
-  --c-bg-slate: #7e95ab;
-  --c-bg-slate-dark: #6a8298;
-  --c-bg-slate-light: #90a6bb;
+  --c-bg-slate: #7d95ab;
+  --c-bg-slate-dark: #698197;
+  --c-bg-slate-light: #8fa5ba;
 
-  /* Tarjetas y Papelería */
+  /* Tarjeta y Papelería */
   --c-card-white: #ffffff;
   --c-card-cream: #fafbfc;
-  --c-wash-blue: #e3ecf3;
-  --c-border-subtle: #dbe5ee;
+  --c-wash-blue: #e3edf4;
+  --c-border-subtle: #dce6ef;
   --c-border-line: #c2d1df;
 
   /* Botones y Acentos */
@@ -58,58 +58,51 @@ body.theme-dusty-blue {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ================= CONTENEDOR PRINCIPAL ================= */
+/* ================= CONTENEDOR PRINCIPAL VERTICAL ================= */
 .invitation-viewport-wrapper {
   width: 100%;
   min-height: 100vh;
-  padding: 40px 16px 60px;
+  padding: 36px 16px 60px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.invitation-dual-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/* ================= TARJETA INDIVIDUAL (ESTILO REALISTA) ================= */
-.invitation-card {
+/* ================= TARJETA ÚNICA CONTINUA VERTICAL ================= */
+.invitation-card-vertical {
   background: var(--c-card-white);
   width: 100%;
-  max-width: 440px;
+  max-width: 480px;
+  margin: 0 auto;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 24px 60px rgba(18, 35, 52, 0.28),
-    0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    0 24px 70px rgba(18, 35, 52, 0.28),
+    0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
 }
 
-.invitation-card:hover {
+.invitation-card-vertical:hover {
   box-shadow: 
-    0 28px 70px rgba(18, 35, 52, 0.34),
-    0 8px 24px rgba(0, 0, 0, 0.1);
+    0 28px 80px rgba(18, 35, 52, 0.34),
+    0 8px 26px rgba(0, 0, 0, 0.1);
 }
 
 .card-inner-padding {
-  padding: 0 28px 28px;
+  padding: 0 28px 24px;
 }
 
-/* ================= TARJETA 1: ELEMENTOS SUPERIORES ================= */
-/* 1. Floral Corner */
+.card-second-half {
+  padding-top: 14px;
+}
+
+/* ================= 1. BOUQUET SUPERIOR IZQUIERDO ================= */
 .card-floral-corner {
   position: absolute;
   top: 0;
   left: 0;
-  width: 165px;
+  width: 180px;
   z-index: 2;
   pointer-events: none;
 }
@@ -118,19 +111,19 @@ body.theme-dusty-blue {
   width: 100%;
   height: auto;
   display: block;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04));
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.04));
 }
 
-/* 2. Versículo Bíblico */
+/* ================= 2. VERSÍCULO BÍBLICO ================= */
 .ref-verse-block {
-  padding-top: 50px;
+  padding-top: 60px;
   text-align: center;
   margin-bottom: 22px;
 }
 
 .verse-quote-text {
   font-family: var(--font-sans);
-  font-size: 0.62rem;
+  font-size: 0.64rem;
   letter-spacing: 0.16em;
   line-height: 1.65;
   text-transform: uppercase;
@@ -151,7 +144,7 @@ body.theme-dusty-blue {
   margin-top: 6px;
 }
 
-/* 3. Monograma */
+/* ================= 3. MONOGRAMA ================= */
 .ref-monogram-block {
   text-align: center;
   margin-bottom: 22px;
@@ -191,7 +184,7 @@ body.theme-dusty-blue {
   margin-top: 8px;
 }
 
-/* ================= 4. FOTO DE LOS NOVIOS CON PAPEL RASGADO ================= */
+/* ================= 4. FOTO CON PAPEL RASGADO ================= */
 .photo-deckle-wrapper {
   position: relative;
   width: 100%;
@@ -226,7 +219,7 @@ body.theme-dusty-blue {
 .deckle-photo-carousel {
   position: relative;
   width: 100%;
-  height: 310px;
+  height: 330px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -306,7 +299,7 @@ body.theme-dusty-blue {
   font-weight: 500;
 }
 
-/* ================= 6. NOMBRES EN CALIGRAFÍA CON FLORES ================= */
+/* ================= 6. NOMBRES CON FLORES FLANQUEANTES ================= */
 .ref-couple-names-section {
   text-align: center;
   margin-bottom: 24px;
@@ -328,8 +321,8 @@ body.theme-dusty-blue {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 130px;
-  padding: 0 10px;
+  min-height: 120px;
+  padding: 0 45px;
 }
 
 .names-calligraphy-stack {
@@ -342,7 +335,7 @@ body.theme-dusty-blue {
 
 .calligraphy-name {
   font-family: var(--font-script);
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: 400;
   color: #1a2938;
   line-height: 0.92;
@@ -350,40 +343,40 @@ body.theme-dusty-blue {
 }
 
 .name-groom {
-  margin-right: 32px;
+  margin-right: 24px;
 }
 
 .calligraphy-amp {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   color: #7992a7;
   line-height: 1;
   margin: -6px 0 -4px;
 }
 
 .name-bride {
-  margin-left: 32px;
+  margin-left: 24px;
 }
 
 .floral-flank {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.04));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.03));
 }
 
 .floral-flank-l {
-  left: -4px;
-  bottom: -10px;
-  width: 78px;
+  left: 6px;
+  bottom: -6px;
+  width: 72px;
   height: auto;
 }
 
 .floral-flank-r {
-  right: -4px;
-  top: 4px;
-  width: 62px;
+  right: 6px;
+  top: 6px;
+  width: 72px;
   height: auto;
 }
 
@@ -499,7 +492,6 @@ body.theme-dusty-blue {
   margin-bottom: 18px;
 }
 
-/* Botón estilo píldora de la referencia */
 .btn-ref-pill {
   display: inline-flex;
   align-items: center;
@@ -536,17 +528,13 @@ body.theme-dusty-blue {
   transform: translate(2px, 2px);
 }
 
-
-/* ========================================================= */
-/* TARJETA 2: ITINERARIO, PASES, REGALOS Y ASISTENCIA       */
-/* ========================================================= */
-
-/* 1. Cabecera Acuarela con Itinerario */
+/* ================= 8. ITINERARIO BANNER ACUARELA ================= */
 .itinerary-watercolor-banner {
   background: linear-gradient(180deg, #dbe6f0 0%, #ebf2f8 80%, #f6f9fc 100%);
   position: relative;
   padding: 38px 24px 44px;
   text-align: center;
+  margin-top: 10px;
 }
 
 .itinerary-banner-title {
@@ -623,7 +611,7 @@ body.theme-dusty-blue {
   line-height: 1.1;
 }
 
-/* ================= 2. PASES RESERVADOS ================= */
+/* ================= 9. PASES ================= */
 .ref-passes-section {
   text-align: center;
   padding-top: 24px;
@@ -679,7 +667,7 @@ body.theme-dusty-blue {
   line-height: 1.2;
 }
 
-/* ================= 3. SUGERENCIA DE REGALO ================= */
+/* ================= 10. SUGERENCIA DE REGALO ================= */
 .ref-gift-section {
   text-align: center;
   margin-bottom: 20px;
@@ -767,20 +755,20 @@ body.theme-dusty-blue {
   background: var(--c-btn-pill-hover);
 }
 
-/* ================= 4. SEPARADOR ANÉMONA ================= */
+/* ================= 11. DIVIDER ANÉMONA ================= */
 .ref-anemone-divider {
   text-align: center;
-  margin: 22px 0 20px;
+  margin: 24px 0 20px;
 }
 
 .anemone-img {
-  width: 110px;
+  width: 140px;
   height: auto;
   display: inline-block;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.03));
 }
 
-/* ================= 5. CONFIRMACIÓN / WHATSAPP ================= */
+/* ================= 12. CONFIRMACIÓN / WHATSAPP ================= */
 .ref-rsvp-section {
   text-align: center;
   margin-bottom: 24px;
@@ -833,23 +821,23 @@ body.theme-dusty-blue {
   color: var(--c-text-navy);
 }
 
-/* ================= 6. VESTIMENTA ================= */
+/* ================= 13. VESTIMENTA ================= */
 .ref-dresscode-section {
   text-align: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .dresscode-silhouette-box {
   display: flex;
   justify-content: center;
-  margin: 8px 0 10px;
+  align-items: center;
+  margin: 10px 0 12px;
 }
 
 .silhouette-img {
-  width: 46px;
+  width: 60px;
   height: auto;
   display: block;
-  opacity: 0.92;
 }
 
 .dress-label-bold {
@@ -888,25 +876,25 @@ body.theme-dusty-blue {
   margin-top: 2px;
 }
 
-/* ================= 7. BOUQUET INFERIOR ================= */
+/* ================= 14. BOUQUET INFERIOR ================= */
 .ref-bottom-floral-box {
-  margin-top: 18px;
+  margin-top: 20px;
   text-align: center;
 }
 
 .footer-floral-img {
   width: 100%;
-  max-width: 290px;
+  max-width: 320px;
   height: auto;
   display: block;
   margin: 0 auto;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.04));
 }
 
-/* ================= 8. PIE DE PÁGINA Y CRÉDITO ================= */
+/* ================= 15. PIE DE PÁGINA ================= */
 .card-ref-footer {
-  margin-top: 20px;
-  padding-top: 14px;
+  margin-top: 22px;
+  padding-top: 16px;
   border-top: 1px dashed var(--c-border-subtle);
   text-align: center;
 }
@@ -1285,63 +1273,51 @@ body.theme-dusty-blue {
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 899px) {
-  .invitation-dual-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-  }
-
-  .invitation-viewport-wrapper {
-    padding: 24px 12px 50px;
-  }
-
-  .invitation-card {
-    max-width: 440px;
-  }
-
-  .card-inner-padding {
-    padding: 0 20px 24px;
-  }
-
-  .calligraphy-name {
-    font-size: 3.1rem;
-  }
-
-  .name-groom { margin-right: 20px; }
-  .name-bride { margin-left: 20px; }
-}
-
-@media (max-width: 420px) {
+@media (max-width: 520px) {
   .invitation-viewport-wrapper {
     padding: 16px 8px 40px;
   }
 
   .card-inner-padding {
-    padding: 0 16px 20px;
+    padding: 0 18px 20px;
   }
 
-  .mono-letter {
-    font-size: 2.8rem;
+  .card-floral-corner {
+    width: 140px;
+  }
+
+  .ref-verse-block {
+    padding-top: 50px;
+  }
+
+  .names-with-florals {
+    padding: 0 20px;
   }
 
   .calligraphy-name {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
   }
 
-  .name-groom { margin-right: 14px; }
-  .name-bride { margin-left: 14px; }
+  .floral-flank-l {
+    left: -4px;
+    width: 60px;
+  }
+
+  .floral-flank-r {
+    right: -4px;
+    width: 60px;
+  }
+
+  .mono-letter {
+    font-size: 2.7rem;
+  }
 
   .date-day-num {
     font-size: 2.4rem;
   }
 
-  .date-sep-line {
-    width: 20px;
-  }
-
   .btn-ref-pill {
-    padding: 10px 20px;
+    padding: 10px 22px;
     font-size: 0.68rem;
   }
 }

@@ -14,7 +14,7 @@
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
 
-  <!-- Tipografías de Alta Gama -->
+  <!-- Fuentes Tipográficas Oficiales de Alta Gama -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
 </head>
 <body class="theme-dusty-blue">
 
-  <!-- Botón Flotante de Audio con pista romántica -->
+  <!-- Botón Flotante de Audio con Canción Romántica -->
   <button id="floating-audio-btn" class="floating-audio-btn" aria-label="Reproducir música romántica" title="Música romántica">
     <i class="fa-solid fa-music"></i>
     <div class="audio-bars">
@@ -34,363 +34,351 @@
     </div>
   </button>
 
-  <!-- Botón Flotante Confirmar Asistencia Directa -->
+  <!-- Botón Flotante Confirmar Asistencia por WhatsApp -->
   <a href="#card-rsvp" class="floating-rsvp-btn" aria-label="Confirmar Asistencia">
     <i class="fa-brands fa-whatsapp"></i>
     <span>CONFIRMAR</span>
   </a>
 
-  <!-- Audio nativo -->
+  <!-- Audio nativo con pista real -->
   <audio id="bg-audio" preload="metadata" loop>
     <source src="assets/audio/cancion.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- CONTENEDOR PRINCIPAL: AMBIENTE AZUL PIZARRA CON LAS DOS TARJETAS -->
+  <!-- ========================================================= -->
+  <!-- LIENZO VERTICAL COMPLETO (100% EN VERTICAL COMO EL ORIGINAL)-->
+  <!-- ========================================================= -->
   <main class="invitation-viewport-wrapper">
-    <div class="invitation-dual-container">
+    <article class="invitation-card-vertical" id="invitation-main">
+      
+      <!-- 1. Bouquet Floral Esquina Superior Izquierda en Alta Resolución -->
+      <div class="card-floral-corner top-left-floral">
+        <img src="assets/images/dusty_top_floral.png" alt="Flores acuarela azul dusty" class="floral-asset">
+      </div>
 
-      <!-- ========================================================= -->
-      <!-- TARJETA 1: INVITACIÓN PRINCIPAL (PANEL IZQUIERDO)        -->
-      <!-- ========================================================= -->
-      <article class="invitation-card card-primary" id="card-invitation">
-        
-        <!-- 1. Bouquet Floral Esquina Superior Izquierda -->
-        <div class="card-floral-corner top-left-floral">
-          <img src="assets/images/dusty_top_floral.png" alt="Flores acuarela azul dusty" class="floral-asset">
+      <div class="card-inner-padding">
+
+        <!-- 2. Versículo Bíblico -->
+        <div class="ref-verse-block">
+          <p class="verse-quote-text">
+            Y SOBRE TODO VÍSTANSE DE AMOR,<br>
+            PORQUE ES UN VÍNCULO PERFECTO DE UNIÓN.
+          </p>
+          <span class="verse-citation">COLOSENSES 3:14</span>
         </div>
 
-        <div class="card-inner-padding">
-
-          <!-- 2. Versículo Bíblico -->
-          <div class="ref-verse-block">
-            <p class="verse-quote-text">
-              Y SOBRE TODO VÍSTANSE DE AMOR,<br>
-              PORQUE ES UN VÍNCULO PERFECTO DE UNIÓN.
-            </p>
-            <span class="verse-citation">COLOSENSES 3:14</span>
+        <!-- 3. Monograma V | M -->
+        <div class="ref-monogram-block">
+          <div class="monogram-frame">
+            <span class="mono-letter">V</span>
+            <span class="mono-line"></span>
+            <span class="mono-letter">M</span>
           </div>
+          <span class="mono-subtitle">¡NOS CASAMOS!</span>
+        </div>
 
-          <!-- 3. Monograma V | M -->
-          <div class="ref-monogram-block">
-            <div class="monogram-frame">
-              <span class="mono-letter">V</span>
-              <span class="mono-line"></span>
-              <span class="mono-letter">M</span>
-            </div>
-            <span class="mono-subtitle">¡NOS CASAMOS!</span>
+      </div> <!-- /card-inner-padding -->
+
+      <!-- 4. Fotografía de los Novios con Borde de Papel Rasgado -->
+      <div class="photo-deckle-wrapper">
+        <!-- Borde rasgado superior -->
+        <div class="deckle-edge deckle-top">
+          <img src="assets/images/torn_paper_top.svg" alt="" aria-hidden="true">
+        </div>
+
+        <!-- Carrusel suave con fotos de Víctor & Margiory -->
+        <div class="deckle-photo-carousel" id="hero-photo-carousel">
+          <div class="carousel-slide active" onclick="openLightbox(0)">
+            <img src="assets/images/boda_foto_1.jpg" alt="Víctor & Margiory">
           </div>
-
-        </div> <!-- /card-inner-padding -->
-
-        <!-- 4. Fotografía de los Novios con Borde de Papel Rasgado -->
-        <div class="photo-deckle-wrapper">
-          <!-- Borde rasgado superior -->
-          <div class="deckle-edge deckle-top">
-            <img src="assets/images/torn_paper_top.svg" alt="" aria-hidden="true">
+          <div class="carousel-slide" onclick="openLightbox(1)">
+            <img src="assets/images/boda_foto_2.jpg" alt="Víctor & Margiory">
           </div>
-
-          <!-- Carrusel suave con fotos de Víctor & Margiory -->
-          <div class="deckle-photo-carousel" id="hero-photo-carousel">
-            <div class="carousel-slide active" onclick="openLightbox(0)">
-              <img src="assets/images/boda_foto_1.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(1)">
-              <img src="assets/images/boda_foto_2.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(2)">
-              <img src="assets/images/boda_foto_3.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(3)">
-              <img src="assets/images/boda_foto_4.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(4)">
-              <img src="assets/images/boda_foto_5.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(6)">
-              <img src="assets/images/boda_foto_7.jpg" alt="Víctor & Margiory">
-            </div>
-            <div class="carousel-slide" onclick="openLightbox(8)">
-              <img src="assets/images/boda_foto_9.jpg" alt="Víctor & Margiory">
-            </div>
+          <div class="carousel-slide" onclick="openLightbox(2)">
+            <img src="assets/images/boda_foto_3.jpg" alt="Víctor & Margiory">
           </div>
-
-          <!-- Borde rasgado inferior -->
-          <div class="deckle-edge deckle-bot">
-            <img src="assets/images/torn_paper_bot.svg" alt="" aria-hidden="true">
+          <div class="carousel-slide" onclick="openLightbox(3)">
+            <img src="assets/images/boda_foto_4.jpg" alt="Víctor & Margiory">
+          </div>
+          <div class="carousel-slide" onclick="openLightbox(4)">
+            <img src="assets/images/boda_foto_5.jpg" alt="Víctor & Margiory">
+          </div>
+          <div class="carousel-slide" onclick="openLightbox(6)">
+            <img src="assets/images/boda_foto_7.jpg" alt="Víctor & Margiory">
+          </div>
+          <div class="carousel-slide" onclick="openLightbox(8)">
+            <img src="assets/images/boda_foto_9.jpg" alt="Víctor & Margiory">
           </div>
         </div>
 
-        <div class="card-inner-padding">
+        <!-- Borde rasgado inferior -->
+        <div class="deckle-edge deckle-bot">
+          <img src="assets/images/torn_paper_bot.svg" alt="" aria-hidden="true">
+        </div>
+      </div>
 
-          <!-- 5. Padres de los Novios -->
-          <div class="ref-parents-block">
-            <p class="parents-intro-text">
-              CON NUESTRO AMOR, LA BENDICIÓN DE DIOS Y EN<br>
-              COMPAÑÍA DE NUESTROS PADRES
-            </p>
+      <div class="card-inner-padding">
+
+        <!-- 5. Padres de los Novios -->
+        <div class="ref-parents-block">
+          <p class="parents-intro-text">
+            CON NUESTRO AMOR, LA BENDICIÓN DE DIOS Y EN<br>
+            COMPAÑÍA DE NUESTROS PADRES
+          </p>
+          
+          <div class="parents-grid-clean">
+            <div class="parent-clean-col">
+              <span class="parent-role-tag">Padres del Novio</span>
+              <p class="parent-person-name">Ricardo Guzmán Guzmán</p>
+              <p class="parent-person-name">Marta Dalila Fernández Paredes</p>
+            </div>
+            <div class="parent-clean-col">
+              <span class="parent-role-tag">Padres de la Novia</span>
+              <p class="parent-person-name">Winder Perci Esquia Catacora</p>
+              <p class="parent-person-name">Eda Dula Mamani Davalos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Nombres en Caligrafía Flanqueados por Flores de Alta Resolución -->
+        <div class="ref-couple-names-section">
+          <span class="nosotros-tag">NOSOTROS</span>
+          
+          <div class="names-with-florals">
+            <!-- Flor Izquierda -->
+            <img src="assets/images/dusty_side_left.png" alt="" class="floral-flank floral-flank-l" aria-hidden="true">
             
-            <div class="parents-grid-clean">
-              <div class="parent-clean-col">
-                <span class="parent-role-tag">Padres del Novio</span>
-                <p class="parent-person-name">Ricardo Guzmán Guzmán</p>
-                <p class="parent-person-name">Marta Dalila Fernández Paredes</p>
-              </div>
-              <div class="parent-clean-col">
-                <span class="parent-role-tag">Padres de la Novia</span>
-                <p class="parent-person-name">Winder Perci Esquia Catacora</p>
-                <p class="parent-person-name">Eda Dula Mamani Davalos</p>
-              </div>
+            <div class="names-calligraphy-stack">
+              <span class="calligraphy-name name-groom">Víctor</span>
+              <span class="calligraphy-amp">&</span>
+              <span class="calligraphy-name name-bride">Margiory</span>
             </div>
+
+            <!-- Flor Derecha -->
+            <img src="assets/images/dusty_side_right.png" alt="" class="floral-flank floral-flank-r" aria-hidden="true">
+          </div>
+        </div>
+
+        <!-- 7. Fecha y Ceremonia -->
+        <div class="ref-date-ceremony-section">
+          <p class="honor-invitation-text">TENEMOS EL HONOR DE INVITARTE A NUESTRA BODA</p>
+          
+          <div class="ref-date-lockup">
+            <span class="date-month-lbl">OCTUBRE</span>
+            <div class="date-day-display-row">
+              <span class="date-day-word">LUNES</span>
+              <span class="date-sep-line"></span>
+              <span class="date-day-num">19</span>
+              <span class="date-sep-line"></span>
+              <span class="date-year-num">2026</span>
+            </div>
+            <span class="date-hour-lbl">5:00 PM</span>
           </div>
 
-          <!-- 6. Nombres en Caligrafía Flanqueados por Flores -->
-          <div class="ref-couple-names-section">
-            <span class="nosotros-tag">NOSOTROS</span>
+          <div class="ref-venue-block">
+            <span class="venue-title-sub">CEREMONIA Y RECEPCIÓN</span>
+            <h3 class="venue-main-name">SALÓN DE EVENTOS LOS TULIPANES</h3>
+            <p class="venue-address-line">Pasaje San Hilarión Nro 350, Tacna</p>
             
-            <div class="names-with-florals">
-              <!-- Flor Izquierda -->
-              <img src="assets/images/dusty_side_left.png" alt="" class="floral-flank floral-flank-l" aria-hidden="true">
-              
-              <div class="names-calligraphy-stack">
-                <span class="calligraphy-name name-groom">Víctor</span>
-                <span class="calligraphy-amp">&</span>
-                <span class="calligraphy-name name-bride">Margiory</span>
-              </div>
-
-              <!-- Flor Derecha -->
-              <img src="assets/images/dusty_side_right.png" alt="" class="floral-flank floral-flank-r" aria-hidden="true">
-            </div>
-          </div>
-
-          <!-- 7. Fecha y Ceremonia -->
-          <div class="ref-date-ceremony-section">
-            <p class="honor-invitation-text">TENEMOS EL HONOR DE INVITARTE A NUESTRA BODA</p>
-            
-            <div class="ref-date-lockup">
-              <span class="date-month-lbl">OCTUBRE</span>
-              <div class="date-day-display-row">
-                <span class="date-day-word">LUNES</span>
-                <span class="date-sep-line"></span>
-                <span class="date-day-num">19</span>
-                <span class="date-sep-line"></span>
-                <span class="date-year-num">2026</span>
-              </div>
-              <span class="date-hour-lbl">5:00 PM</span>
-            </div>
-
-            <div class="ref-venue-block">
-              <span class="venue-title-sub">CEREMONIA Y RECEPCIÓN</span>
-              <h3 class="venue-main-name">SALÓN DE EVENTOS LOS TULIPANES</h3>
-              <p class="venue-address-line">Pasaje San Hilarión Nro 350, Tacna</p>
-              
-              <div class="venue-btn-wrapper">
-                <a href="https://www.google.com/maps/search/?api=1&query=Salon+de+Eventos+Los+Tulipanes,+Pasaje+San+Hilari%C3%B3n+350,+Tacna" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="btn-ref-pill">
-                  VER UBICACIÓN <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </div> <!-- /card-inner-padding -->
-      </article>
-
-
-      <!-- ========================================================= -->
-      <!-- TARJETA 2: ITINERARIO, REGALOS Y ASISTENCIA (PANEL DERECHO)-->
-      <!-- ========================================================= -->
-      <article class="invitation-card card-secondary" id="card-itinerary">
-        
-        <!-- 1. Cabecera Acuarela con Itinerario y Papel Rasgado -->
-        <header class="itinerary-watercolor-banner">
-          <h2 class="itinerary-banner-title">ITINERARIO DE ACTIVIDADES</h2>
-
-          <div class="itinerary-vertical-timeline">
-            <!-- Línea conectora central -->
-            <div class="itinerary-line-track"></div>
-
-            <div class="itinerary-node">
-              <div class="itinerary-icon-bubble">
-                <i class="fa-solid fa-ring"></i>
-              </div>
-              <div class="itinerary-details">
-                <span class="node-time">5:00 PM</span>
-                <span class="node-desc">Ceremonia</span>
-              </div>
-            </div>
-
-            <div class="itinerary-node">
-              <div class="itinerary-icon-bubble">
-                <i class="fa-solid fa-martini-glass-citrus"></i>
-              </div>
-              <div class="itinerary-details">
-                <span class="node-time">6:00 PM</span>
-                <span class="node-desc">Cóctel de bienvenida</span>
-              </div>
-            </div>
-
-            <div class="itinerary-node">
-              <div class="itinerary-icon-bubble">
-                <i class="fa-solid fa-utensils"></i>
-              </div>
-              <div class="itinerary-details">
-                <span class="node-time">7:30 PM</span>
-                <span class="node-desc">Cena</span>
-              </div>
-            </div>
-
-            <div class="itinerary-node">
-              <div class="itinerary-icon-bubble">
-                <i class="fa-regular fa-clock"></i>
-              </div>
-              <div class="itinerary-details">
-                <span class="node-time">9:00 PM</span>
-                <span class="node-desc">Fiesta y Brindis</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Borde rasgado inferior de la acuarela -->
-          <div class="deckle-edge deckle-bot">
-            <img src="assets/images/torn_paper_banner.svg" alt="" aria-hidden="true">
-          </div>
-        </header>
-
-        <div class="card-inner-padding">
-
-          <!-- 2. Pases Reservados -->
-          <section class="ref-passes-section">
-            <div class="ref-icon-bubble">
-              <i class="fa-solid fa-ticket-simple"></i>
-            </div>
-            <span class="ref-section-tag">PASES</span>
-            <span class="passes-sub-txt">TENEMOS RESERVADOS</span>
-            <div class="passes-number-row">
-              <span class="passes-side-txt">PARA TI</span>
-              <span class="passes-pill-box" id="passes-display-value">2</span>
-              <span class="passes-side-txt">LUGARES</span>
-            </div>
-          </section>
-
-          <!-- 3. Sugerencia de Regalo -->
-          <section class="ref-gift-section">
-            <div class="ref-icon-bubble">
-              <i class="fa-solid fa-gift"></i>
-            </div>
-            <span class="ref-section-tag">SUGERENCIA DE REGALO</span>
-            <p class="gift-body-text">
-              NOS SENTIMOS MUY AFORTUNADOS DE TENERLOS EN NUESTRAS VIDAS Y ESPERAMOS CELEBRAR NUESTRO GRAN DÍA CON USTEDES. SI DESEAN HACERNOS UN REGALO, UNA CONTRIBUCIÓN MONETARIA SERÍA MUY BIENVENIDA.
-            </p>
-
-            <div class="gift-qr-box">
-              <img src="assets/images/qr_boda.png" alt="Código QR Regalo" class="qr-preview-img">
-            </div>
-
-            <!-- Cuentas Bancarias BCP con botón de 1-click Copiar -->
-            <div class="bank-accounts-accordion">
-              <div class="bank-pill-row">
-                <div class="bank-pill-info">
-                  <span class="bank-holder-name">BCP Soles (Margiory):</span>
-                  <code class="bank-num">54096070715050</code>
-                </div>
-                <button class="btn-copy-chip" onclick="copyText('54096070715050', this)">
-                  <i class="fa-regular fa-copy"></i> Copiar
-                </button>
-              </div>
-
-              <div class="bank-pill-row">
-                <div class="bank-pill-info">
-                  <span class="bank-holder-name">BCP Soles (Víctor):</span>
-                  <code class="bank-num">19178146227081</code>
-                </div>
-                <button class="btn-copy-chip" onclick="copyText('19178146227081', this)">
-                  <i class="fa-regular fa-copy"></i> Copiar
-                </button>
-              </div>
-            </div>
-          </section>
-
-          <!-- 4. Separador Botánico de Anémona -->
-          <div class="ref-anemone-divider">
-            <img src="assets/images/dusty_divider.png" alt="Decoración botánica" class="anemone-img">
-          </div>
-
-          <!-- 5. Confirmación / WhatsApp -->
-          <section class="ref-rsvp-section" id="card-rsvp">
-            <div class="ref-icon-bubble wa-bubble">
-              <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <span class="ref-section-tag">CONFIRMACIÓN</span>
-            <p class="rsvp-deadline-sub">
-              POR FAVOR CONFIRMA TU ASISTENCIA ANTES DEL 10 DE OCTUBRE
-            </p>
-
-            <div class="rsvp-action-buttons">
-              <a href="#" onclick="openWhatsAppContact('novio'); return false;" class="btn-ref-pill">
-                CONTACTO VÍCTOR <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
-              </a>
-              <a href="#" onclick="openWhatsAppContact('novia'); return false;" class="btn-ref-pill">
-                CONTACTO MARGIORY <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
+            <div class="venue-btn-wrapper">
+              <a href="https://www.google.com/maps/search/?api=1&query=Salon+de+Eventos+Los+Tulipanes,+Pasaje+San+Hilari%C3%B3n+350,+Tacna" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn-ref-pill">
+                VER UBICACIÓN <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
               </a>
             </div>
-
-            <!-- Botón discreto para personalizar confirmación con formulario -->
-            <button class="btn-personalize-rsvp" onclick="toggleRSVPModal()">
-              <i class="fa-regular fa-pen-to-square"></i> Indicar nombre y número de pases
-            </button>
-          </section>
-
-          <!-- 6. Código de Vestimenta -->
-          <section class="ref-dresscode-section">
-            <span class="ref-section-tag">VESTIMENTA</span>
-            
-            <div class="dresscode-silhouette-box">
-              <img src="assets/images/icon_dress_silhouette.png" alt="Silueta Novios Vestimenta" class="silhouette-img">
-            </div>
-
-            <span class="dress-label-bold">ELEGANTE</span>
-
-            <p class="dress-adults-note">CEREMONIA Y RECEPCIÓN SÓLO ADULTOS</p>
-
-            <div class="dress-thanks-block">
-              <p>ESPERAMOS CONTAR CON SU PRESENCIA</p>
-              <p class="thanks-strong">MUCHAS GRACIAS</p>
-            </div>
-          </section>
-
-          <!-- 7. Bouquet Floral Inferior -->
-          <div class="ref-bottom-floral-box">
-            <img src="assets/images/dusty_footer.png" alt="Bouquet floral inferior" class="footer-floral-img">
           </div>
 
-          <!-- Barra sutil inferior con Cuenta Regresiva y Agendar en Calendario -->
-          <footer class="card-ref-footer">
-            <div class="mini-countdown-capsule">
-              <span class="mini-cd-label">Faltan:</span>
-              <span id="cd-days" class="mini-cd-num">00</span>d :
-              <span id="cd-hours" class="mini-cd-num">00</span>h :
-              <span id="cd-minutes" class="mini-cd-num">00</span>m :
-              <span id="cd-seconds" class="mini-cd-num">00</span>s
+        </div>
+
+      </div> <!-- /card-inner-padding -->
+
+      <!-- 8. Cabecera Acuarela con Itinerario y Papel Rasgado -->
+      <section class="itinerary-watercolor-banner">
+        <h2 class="itinerary-banner-title">ITINERARIO DE ACTIVIDADES</h2>
+
+        <div class="itinerary-vertical-timeline">
+          <!-- Línea conectora central -->
+          <div class="itinerary-line-track"></div>
+
+          <div class="itinerary-node">
+            <div class="itinerary-icon-bubble">
+              <i class="fa-solid fa-ring"></i>
+            </div>
+            <div class="itinerary-details">
+              <span class="node-time">5:00 PM</span>
+              <span class="node-desc">Ceremonia</span>
+            </div>
+          </div>
+
+          <div class="itinerary-node">
+            <div class="itinerary-icon-bubble">
+              <i class="fa-solid fa-martini-glass-citrus"></i>
+            </div>
+            <div class="itinerary-details">
+              <span class="node-time">6:00 PM</span>
+              <span class="node-desc">Cóctel de bienvenida</span>
+            </div>
+          </div>
+
+          <div class="itinerary-node">
+            <div class="itinerary-icon-bubble">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="itinerary-details">
+              <span class="node-time">7:30 PM</span>
+              <span class="node-desc">Cena</span>
+            </div>
+          </div>
+
+          <div class="itinerary-node">
+            <div class="itinerary-icon-bubble">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+            <div class="itinerary-details">
+              <span class="node-time">9:00 PM</span>
+              <span class="node-desc">Fiesta y Brindis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Borde rasgado inferior de la acuarela -->
+        <div class="deckle-edge deckle-bot">
+          <img src="assets/images/torn_paper_banner.svg" alt="" aria-hidden="true">
+        </div>
+      </section>
+
+      <div class="card-inner-padding card-second-half">
+
+        <!-- 9. Pases Reservados -->
+        <section class="ref-passes-section">
+          <div class="ref-icon-bubble">
+            <i class="fa-solid fa-ticket-simple"></i>
+          </div>
+          <span class="ref-section-tag">PASES</span>
+          <span class="passes-sub-txt">TENEMOS RESERVADOS</span>
+          <div class="passes-number-row">
+            <span class="passes-side-txt">PARA TI</span>
+            <span class="passes-pill-box" id="passes-display-value">2</span>
+            <span class="passes-side-txt">LUGARES</span>
+          </div>
+        </section>
+
+        <!-- 10. Sugerencia de Regalo -->
+        <section class="ref-gift-section">
+          <div class="ref-icon-bubble">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <span class="ref-section-tag">SUGERENCIA DE REGALO</span>
+          <p class="gift-body-text">
+            NOS SENTIMOS MUY AFORTUNADOS DE TENERLOS EN NUESTRAS VIDAS Y ESPERAMOS CELEBRAR NUESTRO GRAN DÍA CON USTEDES. SI DESEAN HACERNOS UN REGALO, UNA CONTRIBUCIÓN MONETARIA SERÍA MUY BIENVENIDA.
+          </p>
+
+          <div class="gift-qr-box">
+            <img src="assets/images/qr_boda.png" alt="Código QR Regalo" class="qr-preview-img">
+          </div>
+
+          <!-- Cuentas Bancarias BCP con botón de 1-click Copiar -->
+          <div class="bank-accounts-accordion">
+            <div class="bank-pill-row">
+              <div class="bank-pill-info">
+                <span class="bank-holder-name">BCP Soles (Margiory):</span>
+                <code class="bank-num">54096070715050</code>
+              </div>
+              <button class="btn-copy-chip" onclick="copyText('54096070715050', this)">
+                <i class="fa-regular fa-copy"></i> Copiar
+              </button>
             </div>
 
-            <div class="calendar-add-wrapper">
-              <a id="btn-add-calendar" href="#" target="_blank" rel="noopener" class="btn-mini-calendar">
-                <i class="fa-regular fa-calendar-check"></i> Agendar en Calendario
-              </a>
+            <div class="bank-pill-row">
+              <div class="bank-pill-info">
+                <span class="bank-holder-name">BCP Soles (Víctor):</span>
+                <code class="bank-num">19178146227081</code>
+              </div>
+              <button class="btn-copy-chip" onclick="copyText('19178146227081', this)">
+                <i class="fa-regular fa-copy"></i> Copiar
+              </button>
             </div>
+          </div>
+        </section>
 
-            <p class="developer-credit-text">
-              Desarrollado con cariño por <a href="https://solucionestakana.pe" target="_blank" rel="noopener noreferrer">Soluciones Takana</a>
-            </p>
-          </footer>
+        <!-- 11. Separador Botánico de Anémona en Alta Calidad -->
+        <div class="ref-anemone-divider">
+          <img src="assets/images/dusty_divider.png" alt="Decoración botánica" class="anemone-img">
+        </div>
 
-        </div> <!-- /card-inner-padding -->
-      </article>
+        <!-- 12. Confirmación / WhatsApp -->
+        <section class="ref-rsvp-section" id="card-rsvp">
+          <div class="ref-icon-bubble wa-bubble">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <span class="ref-section-tag">CONFIRMACIÓN</span>
+          <p class="rsvp-deadline-sub">
+            POR FAVOR CONFIRMA TU ASISTENCIA ANTES DEL 10 DE OCTUBRE
+          </p>
 
-    </div> <!-- /invitation-dual-container -->
+          <div class="rsvp-action-buttons">
+            <a href="#" onclick="openWhatsAppContact('novio'); return false;" class="btn-ref-pill">
+              CONTACTO VÍCTOR <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
+            </a>
+            <a href="#" onclick="openWhatsAppContact('novia'); return false;" class="btn-ref-pill">
+              CONTACTO MARGIORY <i class="fa-solid fa-arrow-pointer btn-pointer-icon"></i>
+            </a>
+          </div>
+
+          <!-- Botón discreto para personalizar confirmación con formulario -->
+          <button class="btn-personalize-rsvp" onclick="toggleRSVPModal()">
+            <i class="fa-regular fa-pen-to-square"></i> Indicar nombre y número de pases
+          </button>
+        </section>
+
+        <!-- 13. Código de Vestimenta con Silueta Vectorial Limpia -->
+        <section class="ref-dresscode-section">
+          <span class="ref-section-tag">VESTIMENTA</span>
+          
+          <div class="dresscode-silhouette-box">
+            <img src="assets/images/icon_dress_silhouette.svg" alt="Silueta Novios Vestimenta Elegante" class="silhouette-img">
+          </div>
+
+          <span class="dress-label-bold">ELEGANTE</span>
+
+          <p class="dress-adults-note">CEREMONIA Y RECEPCIÓN SÓLO ADULTOS</p>
+
+          <div class="dress-thanks-block">
+            <p>ESPERAMOS CONTAR CON SU PRESENCIA</p>
+            <p class="thanks-strong">MUCHAS GRACIAS</p>
+          </div>
+        </section>
+
+        <!-- 14. Bouquet Floral Inferior en Alta Calidad -->
+        <div class="ref-bottom-floral-box">
+          <img src="assets/images/dusty_footer.png" alt="Bouquet floral inferior" class="footer-floral-img">
+        </div>
+
+        <!-- Barra sutil inferior con Cuenta Regresiva y Agendar en Calendario -->
+        <footer class="card-ref-footer">
+          <div class="mini-countdown-capsule">
+            <span class="mini-cd-label">Faltan:</span>
+            <span id="cd-days" class="mini-cd-num">00</span>d :
+            <span id="cd-hours" class="mini-cd-num">00</span>h :
+            <span id="cd-minutes" class="mini-cd-num">00</span>m :
+            <span id="cd-seconds" class="mini-cd-num">00</span>s
+          </div>
+
+          <div class="calendar-add-wrapper">
+            <a id="btn-add-calendar" href="#" target="_blank" rel="noopener" class="btn-mini-calendar">
+              <i class="fa-regular fa-calendar-check"></i> Agendar en Calendario
+            </a>
+          </div>
+
+          <p class="developer-credit-text">
+            Desarrollado con cariño por <a href="https://solucionestakana.pe" target="_blank" rel="noopener noreferrer">Soluciones Takana</a>
+          </p>
+        </footer>
+
+      </div> <!-- /card-inner-padding -->
+    </article>
   </main>
 
   <!-- MODAL PARA CONFIRMACIÓN PERSONALIZADA (NOMBRE Y NÚMERO DE PASES) -->

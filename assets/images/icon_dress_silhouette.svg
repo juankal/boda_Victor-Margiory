@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="120" height="100">
+  <!-- Groom (Left) -->
+  <g fill="#253849">
+    <!-- Head -->
+    <circle cx="44" cy="18" r="8" />
+    <!-- Neck -->
+    <rect x="42" y="26" width="4" height="4" />
+    <!-- Tuxedo Torso -->
+    <path d="M33,30 L55,30 L52,65 L36,65 Z" />
+    <!-- Tuxedo White Shirt V-neck -->
+    <polygon points="44,48 40,30 48,30" fill="#ffffff" />
+    <!-- Bow tie -->
+    <polygon points="42,32 46,32 44,34" fill="#253849" />
+    <polygon points="42,36 46,36 44,34" fill="#253849" />
+    <!-- Pants -->
+    <rect x="36" y="65" width="6" height="30" rx="1.5" />
+    <rect x="46" y="65" width="6" height="30" rx="1.5" />
+  </g>
+
+  <!-- Bride (Right) -->
+  <g fill="#253849">
+    <!-- Head & Hair Bun -->
+    <circle cx="76" cy="20" r="7.5" />
+    <circle cx="81.5" cy="17" r="3.5" />
+    <!-- Neck -->
+    <rect x="74" y="27" width="4" height="4" />
+    <!-- Sweetheart Bodice -->
+    <path d="M68,32 C71,30 73,34 76,33 C79,34 81,30 84,32 L82,46 L70,46 Z" />
+    <!-- Flowing Wedding Gown / Ballgown Skirt -->
+    <path d="M70,46 C67,58 56,86 54,95 C62,96 88,96 98,95 C96,86 85,58 82,46 Z" />
+  </g>
+</svg>
