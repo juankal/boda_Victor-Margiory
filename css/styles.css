@@ -102,9 +102,10 @@ body.theme-dusty-blue {
   position: absolute;
   top: 0;
   left: 0;
-  width: 180px;
-  z-index: 2;
+  width: 155px;
+  z-index: 1; /* Detrás del texto */
   pointer-events: none;
+  opacity: 0.92;
 }
 
 .card-floral-corner .floral-asset {
@@ -116,36 +117,49 @@ body.theme-dusty-blue {
 
 /* ================= 2. VERSÍCULO BÍBLICO ================= */
 .ref-verse-block {
-  padding-top: 60px;
+  position: relative;
+  z-index: 3; /* Por delante de las flores */
+  padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
   margin-bottom: 22px;
 }
 
 .verse-quote-text {
   font-family: var(--font-sans);
-  font-size: 0.64rem;
+  font-size: 0.65rem;
   letter-spacing: 0.16em;
-  line-height: 1.65;
+  line-height: 1.7;
   text-transform: uppercase;
-  color: #495d70;
-  font-weight: 500;
-  max-width: 320px;
+  color: #1a2c3e; /* Navy oscuro de alto contraste */
+  font-weight: 600;
+  max-width: 330px;
   margin: 0 auto;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.95),
+    0 0 4px #ffffff,
+    0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .verse-citation {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.22em;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #647b91;
-  font-weight: 600;
+  color: #3f556b;
+  font-weight: 700;
   margin-top: 6px;
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.95),
+    0 0 3px #ffffff;
 }
 
 /* ================= 3. MONOGRAMA ================= */
 .ref-monogram-block {
+  position: relative;
+  z-index: 3;
   text-align: center;
   margin-bottom: 22px;
 }
@@ -162,25 +176,25 @@ body.theme-dusty-blue {
   font-family: var(--font-display);
   font-size: 3.2rem;
   font-weight: 400;
-  color: var(--c-text-navy);
+  color: #172635;
   letter-spacing: 0.05em;
 }
 
 .mono-line {
   display: inline-block;
-  width: 1px;
+  width: 1.5px;
   height: 2.5rem;
-  background-color: #273849;
+  background-color: #213244;
 }
 
 .mono-subtitle {
   display: block;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #455a6d;
-  font-weight: 600;
+  color: #3b5064;
+  font-weight: 700;
   margin-top: 8px;
 }
 
