@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL MIDNIGHT NAVY & GOLD
    Fiel a la referencia: Lienzo marfil sobre fondo de rosas azul marino, bouquets botánicos y lacre
    ========================================================================== */
@@ -1747,4 +1747,143 @@ body.page-navy-roses {
 .developer-credit a:hover {
   color: #3bf395;
   text-shadow: 0 0 8px rgba(0, 210, 106, 0.4);
+}
+
+/* ============================================================
+   SECCIÓN RECOMENDACIONES
+   ============================================================ */
+.recomendaciones-section {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: transparent;
+}
+
+.recomendaciones-header,
+.recom-footer-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.recom-footer-line {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.recom-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b89a5a, transparent);
+}
+
+.recom-star-icon,
+.recom-heart-icon {
+  color: #b89a5a;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.recom-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b89a5a;
+  margin-bottom: 2rem;
+}
+
+/* Grid de cards */
+.recom-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+@media (max-width: 420px) {
+  .recom-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card base */
+.recom-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 154, 90, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.recom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(184, 154, 90, 0.15);
+}
+
+/* Card destacada (Sin Niños) */
+.recom-card--highlight {
+  background: rgba(184, 154, 90, 0.08);
+  border-color: rgba(184, 154, 90, 0.5);
+}
+
+/* Ícono de cada card */
+.recom-card-icon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 154, 90, 0.12);
+  border-radius: 50%;
+  margin-bottom: 0.25rem;
+}
+
+.recom-card-icon i {
+  font-size: 1.3rem;
+  color: #b89a5a;
+}
+
+/* Badge "NO" sobre el ícono (Solo Niños) */
+.recom-no-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 5px;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+/* Título de card */
+.recom-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #b89a5a;
+}
+
+/* Texto de card */
+.recom-card-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.recom-card-text strong {
+  color: rgba(255, 255, 255, 0.92);
 }
