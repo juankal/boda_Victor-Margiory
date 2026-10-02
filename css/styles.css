@@ -1896,15 +1896,3 @@ body.page-navy-roses {
   font-weight: 700;
 }
 
-
-.wreath-floral-full {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-  pointer-events: none;
-  z-index: 2;
-  filter: drop-shadow(0 6px 14px rgba(12, 24, 41, 0.25));
-}
