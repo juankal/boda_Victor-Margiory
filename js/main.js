@@ -1,59 +1,39 @@
 /**
- * BODA VÍCTOR & MARGIORY — SUITE NUPCIAL FLORAL MIDNIGHT NAVY & GOLD
+ * BODA VÍCTOR & MARGIORY — INVITACIÓN DUSTY BLUE
+ * Lógica interactiva para papelería digital de alta gama
  */
 
+// Teléfonos reales para WhatsApp
+const PHONE_NOVIO = "51952822559";
+const PHONE_NOVIA = "51984661803";
+
 document.addEventListener('DOMContentLoaded', () => {
+  initURLParams();
   initCountdown();
   initCalendarLink();
   initMusicPlayer();
-  initRSVPForm();
-  initGallery();
-  initScrollAnimations();
+  initPhotoCarousel();
+  initLightbox();
 });
 
-/* ================= 1. APERTURA / INTERACCIÓN DEL SOBRE ================= */
-window.toggleMainEnvelope = function() {
-  const revealedBox = document.getElementById('revealed-envelope-box');
-  const audio = document.getElementById('bg-audio');
+/* ================= 1. PERSONALIZACIÓN POR PARÁMETROS URL ================= */
+function initURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  const pases = params.get('pases') || params.get('p');
+  const passesDisplay = document.getElementById('passes-display-value');
+  const modalCount = document.getElementById('modal-guest-count');
 
-  // Intentar iniciar la música si está pausada
-  if (audio && audio.paused) {
-    audio.play().then(() => {
-      const floatBtn = document.getElementById('floating-audio-btn');
-      const playIcon = document.getElementById('main-play-icon');
-      if (floatBtn) floatBtn.classList.add('playing');
-      if (playIcon) {
-        playIcon.classList.remove('fa-play');
-        playIcon.classList.add('fa-pause');
-      }
-    }).catch(err => {
-      console.log("Audio autoplay restringido:", err);
-    });
+  if (pases && passesDisplay) {
+    passesDisplay.textContent = pases;
+    if (modalCount) {
+      modalCount.value = `${pases} pases`;
+    }
   }
+}
 
-  // Desplazar suavemente a la foto revelada
-  if (revealedBox) {
-    revealedBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-};
-
-/* ================= 2. DESPLEGAR / COLAPSAR DETALLES ================= */
-window.toggleDetails = function() {
-  const dropdown = document.getElementById('details-dropdown');
-  const arrow = document.getElementById('details-arrow');
-  if (!dropdown) return;
-
-  if (dropdown.style.display === 'none') {
-    dropdown.style.display = 'block';
-    if (arrow) arrow.className = 'fa-solid fa-chevron-up';
-  } else {
-    dropdown.style.display = 'none';
-    if (arrow) arrow.className = 'fa-solid fa-chevron-down';
-  }
-};
-
-/* ================= 3. CONTADOR REGRESIVO ================= */
+/* ================= 2. CONTADOR REGRESIVO ================= */
 function initCountdown() {
+  // Lunes 19 de Octubre 2026, 17:00:00 (Hora Perú UTC-5)
   const eventDate = new Date(2026, 9, 19, 17, 0, 0).getTime();
 
   const daysEl = document.getElementById('cd-days');
@@ -88,118 +68,117 @@ function initCountdown() {
   setInterval(update, 1000);
 }
 
-/* ================= 4. ENLACE GOOGLE CALENDAR ================= */
+/* ================= 3. AGENDAR EN GOOGLE CALENDAR ================= */
 function initCalendarLink() {
   const calBtn = document.getElementById('btn-add-calendar');
   if (!calBtn) return;
 
   const title = encodeURIComponent("Boda de Víctor & Margiory 💍");
-  const details = encodeURIComponent("¡Acompáñanos a celebrar nuestra boda!\nRecepción: 5:00 PM.\nLugar: Salón de Eventos Los Tulipanes, Pasaje San Hilarión Nro 350, Tacna.");
+  const details = encodeURIComponent("¡Acompáñanos a celebrar nuestra boda!\nCeremonia y Recepción: 5:00 PM.\nLugar: Salón de Eventos Los Tulipanes, Pasaje San Hilarión Nro 350, Tacna.");
   const location = encodeURIComponent("Salón de Eventos Los Tulipanes, Pasaje San Hilarión 350, Tacna, Perú");
+  // 19 de Octubre 2026, 17:00 a 03:00 (Perú UTC-5 -> 22:00 UTC)
   const dates = "20261019T220000Z/20261020T080000Z";
 
   calBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
 }
 
-/* ================= 5. REPRODUCTOR DE MÚSICA REAL (IL DIVO) ================= */
-function formatAudioTime(seconds) {
-  if (isNaN(seconds) || seconds < 0) return "0:00";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${String(s).padStart(2, '0')}`;
-}
-
+/* ================= 4. REPRODUCTOR DE MÚSICA ROMÁNTICA ================= */
 function initMusicPlayer() {
-  const playBtn = document.getElementById('play-toggle-btn');
   const floatBtn = document.getElementById('floating-audio-btn');
-  const playIcon = document.getElementById('main-play-icon');
-  const progressBar = document.getElementById('player-progress-bar');
-  const trackBar = document.querySelector('.player-track');
-  const timerDisplay = document.getElementById('player-timer');
   const audio = document.getElementById('bg-audio');
 
-  if (!audio) return;
-
-  audio.addEventListener('loadedmetadata', () => {
-    if (timerDisplay) {
-      timerDisplay.textContent = `0:00 / ${formatAudioTime(audio.duration)}`;
-    }
-  });
-
-  audio.addEventListener('timeupdate', () => {
-    if (audio.duration) {
-      const percent = (audio.currentTime / audio.duration) * 100;
-      if (progressBar) progressBar.style.width = `${percent}%`;
-      if (timerDisplay) {
-        timerDisplay.textContent = `${formatAudioTime(audio.currentTime)} / ${formatAudioTime(audio.duration)}`;
-      }
-    }
-  });
-
-  audio.addEventListener('ended', () => {
-    updatePlayerState(false);
-    if (progressBar) progressBar.style.width = '0%';
-  });
-
-  function updatePlayerState(playing) {
-    if (playing) {
-      if (playIcon) {
-        playIcon.classList.remove('fa-play');
-        playIcon.classList.add('fa-pause');
-      }
-      if (floatBtn) floatBtn.classList.add('playing');
-    } else {
-      if (playIcon) {
-        playIcon.classList.remove('fa-pause');
-        playIcon.classList.add('fa-play');
-      }
-      if (floatBtn) floatBtn.classList.remove('playing');
-    }
-  }
+  if (!audio || !floatBtn) return;
 
   function togglePlay() {
     if (audio.paused) {
       audio.play().then(() => {
-        updatePlayerState(true);
+        floatBtn.classList.add('playing');
       }).catch(err => {
-        console.warn("Reproducción no permitida automáticamente:", err);
+        console.warn("Reproducción bloqueada por el navegador:", err);
       });
     } else {
       audio.pause();
-      updatePlayerState(false);
+      floatBtn.classList.remove('playing');
     }
   }
 
-  if (trackBar) {
-    trackBar.addEventListener('click', (e) => {
-      if (!audio.duration) return;
-      const rect = trackBar.getBoundingClientRect();
-      const clickPos = (e.clientX - rect.left) / rect.width;
-      audio.currentTime = clickPos * audio.duration;
-    });
-  }
+  floatBtn.addEventListener('click', togglePlay);
 
-  if (playBtn) playBtn.addEventListener('click', togglePlay);
-  if (floatBtn) floatBtn.addEventListener('click', togglePlay);
+  // Primer toque en la pantalla inicia música suave si el navegador lo permite
+  const startAudioOnFirstTouch = () => {
+    if (audio.paused) {
+      audio.play().then(() => {
+        floatBtn.classList.add('playing');
+      }).catch(() => {});
+    }
+    document.removeEventListener('click', startAudioOnFirstTouch);
+    document.removeEventListener('touchstart', startAudioOnFirstTouch);
+  };
+
+  document.addEventListener('click', startAudioOnFirstTouch, { once: true });
+  document.addEventListener('touchstart', startAudioOnFirstTouch, { once: true });
 }
 
-/* ================= 6. COPIAR DATOS AL PORTAPAPELES ================= */
+/* ================= 5. CARRUSEL SUAVE DE FOTOS CON BORDE RASGADO ================= */
+let carouselInterval = null;
+let currentSlideIndex = 0;
+
+function initPhotoCarousel() {
+  const container = document.getElementById('hero-photo-carousel');
+  if (!container) return;
+
+  const slides = container.querySelectorAll('.carousel-slide');
+  if (slides.length <= 1) return;
+
+  function showSlide(index) {
+    slides.forEach((s, idx) => {
+      s.classList.toggle('active', idx === index);
+    });
+    currentSlideIndex = index;
+  }
+
+  function nextSlide() {
+    const next = (currentSlideIndex + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    carouselInterval = setInterval(nextSlide, 3800);
+  }
+
+  function stopAutoplay() {
+    if (carouselInterval) {
+      clearInterval(carouselInterval);
+      carouselInterval = null;
+    }
+  }
+
+  startAutoplay();
+
+  // Pausar en interacción
+  container.addEventListener('mouseenter', stopAutoplay);
+  container.addEventListener('mouseleave', startAutoplay);
+  container.addEventListener('touchstart', stopAutoplay, { passive: true });
+  container.addEventListener('touchend', () => setTimeout(startAutoplay, 3000), { passive: true });
+}
+
+/* ================= 6. COPIAR CUENTAS AL PORTAPAPELES ================= */
 window.copyText = function(text, btnElement) {
   navigator.clipboard.writeText(text).then(() => {
     showToast("¡Número copiado con éxito!");
     if (btnElement) {
       const origHtml = btnElement.innerHTML;
       btnElement.innerHTML = `<i class="fa-solid fa-check"></i> Copiado`;
-      btnElement.style.background = "#caa160";
-      btnElement.style.color = "#0c1829";
+      btnElement.style.background = "#527560";
       setTimeout(() => {
         btnElement.innerHTML = origHtml;
         btnElement.style.background = "";
-        btnElement.style.color = "";
       }, 2000);
     }
   }).catch(() => {
-    const input = document.createElement('textarea');
+    // Fallback
+    const input = document.createElement('input');
     input.value = text;
     document.body.appendChild(input);
     input.select();
@@ -209,52 +188,71 @@ window.copyText = function(text, btnElement) {
   });
 };
 
-function showToast(msg) {
+function showToast(message) {
   const toast = document.getElementById('toast-alert');
   if (!toast) return;
-  toast.textContent = msg;
+  toast.textContent = message;
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
-  }, 2600);
+  }, 2500);
 }
 
-/* ================= 7. FORMULARIO RSVP WHATSAPP ================= */
-function initRSVPForm() {
-  const form = document.getElementById('wedding-rsvp-form');
-  if (!form) return;
+/* ================= 7. ENLACES DIRECTOS A WHATSAPP ================= */
+window.openWhatsAppContact = function(target) {
+  const phone = target === 'novia' ? PHONE_NOVIA : PHONE_NOVIO;
+  const name = target === 'novia' ? 'Margiory' : 'Víctor';
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  const message = `💍 *BODA VÍCTOR & MARGIORY*
+  
+¡Hola ${name}! Te escribo para confirmar mi asistencia a su boda el 19 de Octubre. ¡Muchas felicidades! ✨`;
 
-    const name = document.getElementById('rsvp-name').value.trim();
-    const status = document.getElementById('rsvp-status').value;
-    const guests = document.getElementById('rsvp-guests').value;
-    const recipient = document.querySelector('input[name="rsvp-recipient"]:checked')?.value || 'novio';
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+};
 
-    const phoneNovio = "51952000000";
-    const phoneNovia = "51952000000";
-    const targetPhone = recipient === 'novio' ? phoneNovio : phoneNovia;
-    const targetName = recipient === 'novio' ? 'Víctor' : 'Margiory';
+/* ================= 8. MODAL RSVP PERSONALIZADO ================= */
+window.toggleRSVPModal = function() {
+  const modal = document.getElementById('rsvp-modal');
+  if (!modal) return;
+  modal.classList.toggle('active');
+};
 
-    const message = 
+window.handleModalOverlayClick = function(event) {
+  if (event.target.id === 'rsvp-modal') {
+    toggleRSVPModal();
+  }
+};
+
+window.handleModalRSVPSubmit = function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('modal-guest-name').value.trim();
+  const status = document.getElementById('modal-guest-status').value;
+  const count = document.getElementById('modal-guest-count').value;
+  const target = document.querySelector('input[name="modal-target"]:checked')?.value || 'novio';
+
+  const phone = target === 'novia' ? PHONE_NOVIA : PHONE_NOVIO;
+  const targetName = target === 'novia' ? 'Margiory' : 'Víctor';
+
+  const message = 
 `💍 *CONFIRMACIÓN DE ASISTENCIA — BODA VÍCTOR & MARGIORY*
 
-¡Hola ${targetName}! Les escribo para confirmar mi asistencia a su boda:
+¡Hola ${targetName}! Les escribo para confirmar nuestra asistencia:
 
 👤 *Invitado(a):* ${name}
 💌 *Respuesta:* ${status}
-👥 *Pases:* ${guests}
+👥 *Pases:* ${count}
 
-¡Muchas felicidades y bendiciones! ✨`;
+¡Nos vemos el 19 de Octubre en Los Tulipanes! ✨`;
 
-    const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(message)}`;
-    window.open(waUrl, '_blank');
-  });
-}
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+  toggleRSVPModal();
+};
 
-/* ================= 8. GALERÍA DE FOTOS & LIGHTBOX ================= */
-const galleryImages = [
+/* ================= 9. LIGHTBOX DE FOTOGRAFÍAS ================= */
+const galleryPhotos = [
   "assets/images/boda_foto_1.jpg",
   "assets/images/boda_foto_2.jpg",
   "assets/images/boda_foto_3.jpg",
@@ -267,184 +265,43 @@ const galleryImages = [
   "assets/images/boda_foto_10.jpg"
 ];
 
-let curGalleryIndex = 0;
-let curLightboxIndex = 0;
-let galleryAutoplayTimer = null;
-const GALLERY_AUTOPLAY_MS = 3500;
+let curLbIndex = 0;
 
-function initGallery() {
-  const container = document.querySelector('.gallery-container') || document.querySelector('.gallery-viewport');
-  const track = document.getElementById('gallery-track');
-  const prevBtn = document.getElementById('gallery-prev-btn');
-  const nextBtn = document.getElementById('gallery-next-btn');
-  const dotsContainer = document.getElementById('gallery-dots');
-
-  if (!track || !dotsContainer) return;
-
-  dotsContainer.innerHTML = '';
-  galleryImages.forEach((_, idx) => {
-    const dot = document.createElement('div');
-    dot.className = `dot ${idx === 0 ? 'active' : ''}`;
-    dot.addEventListener('click', () => {
-      goToSlide(idx);
-      resetAutoplay();
-    });
-    dotsContainer.appendChild(dot);
+function initLightbox() {
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('lightbox-modal');
+    if (!modal || !modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
   });
-
-  function updateGalleryUI() {
-    track.style.transform = `translateX(-${curGalleryIndex * 100}%)`;
-    const dots = dotsContainer.querySelectorAll('.dot');
-    dots.forEach((d, i) => {
-      d.classList.toggle('active', i === curGalleryIndex);
-    });
-  }
-
-  function goToSlide(idx) {
-    curGalleryIndex = (idx + galleryImages.length) % galleryImages.length;
-    updateGalleryUI();
-  }
-
-  function startAutoplay() {
-    stopAutoplay();
-    galleryAutoplayTimer = setInterval(() => {
-      goToSlide(curGalleryIndex + 1);
-    }, GALLERY_AUTOPLAY_MS);
-  }
-
-  function stopAutoplay() {
-    if (galleryAutoplayTimer) {
-      clearInterval(galleryAutoplayTimer);
-      galleryAutoplayTimer = null;
-    }
-  }
-
-  function resetAutoplay() {
-    stopAutoplay();
-    startAutoplay();
-  }
-
-  window.pauseGalleryAutoplay = stopAutoplay;
-  window.resumeGalleryAutoplay = startAutoplay;
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      goToSlide(curGalleryIndex - 1);
-      resetAutoplay();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      goToSlide(curGalleryIndex + 1);
-      resetAutoplay();
-    });
-  }
-
-  // Pausar al pasar el mouse por encima y reanudar al salir
-  if (container) {
-    container.addEventListener('mouseenter', stopAutoplay);
-    container.addEventListener('mouseleave', startAutoplay);
-  }
-
-  // Soporte Touch para móviles
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  track.addEventListener('touchstart', (e) => {
-    stopAutoplay();
-    touchStartX = e.changedTouches[0].screenX;
-  }, { passive: true });
-
-  track.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    if (touchStartX - touchEndX > 50) {
-      goToSlide(curGalleryIndex + 1);
-    } else if (touchEndX - touchStartX > 50) {
-      goToSlide(curGalleryIndex - 1);
-    }
-    startAutoplay();
-  }, { passive: true });
-
-  // Pausar si la pestaña pasa a segundo plano para ahorrar batería
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      stopAutoplay();
-    } else {
-      startAutoplay();
-    }
-  });
-
-  // Iniciar avance automático inmediatamente
-  startAutoplay();
 }
 
-/* ================= LIGHTBOX ================= */
 window.openLightbox = function(index) {
-  curLightboxIndex = index;
+  curLbIndex = index;
   const modal = document.getElementById('lightbox-modal');
   const img = document.getElementById('lightbox-img');
   if (!modal || !img) return;
 
-  if (window.pauseGalleryAutoplay) window.pauseGalleryAutoplay();
-
-  img.src = galleryImages[curLightboxIndex];
+  img.src = galleryPhotos[curLbIndex];
   modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
 };
 
 window.closeLightbox = function(e) {
   if (e) e.stopPropagation();
   const modal = document.getElementById('lightbox-modal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  if (window.resumeGalleryAutoplay) window.resumeGalleryAutoplay();
+  if (modal) modal.classList.remove('active');
 };
 
 window.handleLightboxClick = function(e) {
   if (e.target.id === 'lightbox-modal') {
-    window.closeLightbox();
+    closeLightbox();
   }
 };
 
-window.navLightbox = function(step, e) {
+window.navLightbox = function(dir, e) {
   if (e) e.stopPropagation();
-  curLightboxIndex = (curLightboxIndex + step + galleryImages.length) % galleryImages.length;
+  curLbIndex = (curLbIndex + dir + galleryPhotos.length) % galleryPhotos.length;
   const img = document.getElementById('lightbox-img');
-  if (img) {
-    img.style.opacity = '0.3';
-    setTimeout(() => {
-      img.src = galleryImages[curLightboxIndex];
-      img.style.opacity = '1';
-    }, 150);
-  }
+  if (img) img.src = galleryPhotos[curLbIndex];
 };
-
-document.addEventListener('keydown', (e) => {
-  const modal = document.getElementById('lightbox-modal');
-  if (!modal || !modal.classList.contains('active')) return;
-  if (e.key === 'Escape') window.closeLightbox();
-  if (e.key === 'ArrowLeft') window.navLightbox(-1);
-  if (e.key === 'ArrowRight') window.navLightbox(1);
-});
-
-/* ================= 9. ANIMACIONES SCROLL ================= */
-function initScrollAnimations() {
-  const elements = document.querySelectorAll('.fade-up');
-  if (!elements.length) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.08,
-    rootMargin: "0px 0px -20px 0px"
-  });
-
-  elements.forEach(el => observer.observe(el));
-}
