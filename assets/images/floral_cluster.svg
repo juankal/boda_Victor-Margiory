@@ -1,225 +1,102 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 220" width="260" height="220">
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" class="bouquet-svg">
   <defs>
-    <radialGradient id="roseNavy1" cx="50%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#2a4a7f"/>
-      <stop offset="60%" stop-color="#162d5a"/>
-      <stop offset="100%" stop-color="#0d1e3f"/>
+    <radialGradient id="goldGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff8db"/>
+      <stop offset="45%" stop-color="#caa160"/>
+      <stop offset="100%" stop-color="#805d20"/>
     </radialGradient>
-    <radialGradient id="roseNavy2" cx="50%" cy="35%" r="55%">
-      <stop offset="0%" stop-color="#1e3d72"/>
-      <stop offset="100%" stop-color="#0b1830"/>
+    <radialGradient id="navyRoseGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#2d5386"/>
+      <stop offset="55%" stop-color="#122744"/>
+      <stop offset="100%" stop-color="#060f1c"/>
     </radialGradient>
-    <radialGradient id="rosePetal" cx="40%" cy="30%" r="70%">
-      <stop offset="0%" stop-color="#3a5a9f"/>
-      <stop offset="50%" stop-color="#1a3060"/>
-      <stop offset="100%" stop-color="#0d1e40"/>
-    </radialGradient>
-    <radialGradient id="anemoneWhite" cx="50%" cy="40%" r="55%">
+    <radialGradient id="whiteAnemoneGrad" cx="30%" cy="30%" r="70%">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="70%" stop-color="#f0eee8"/>
-      <stop offset="100%" stop-color="#e0ddd6"/>
+      <stop offset="70%" stop-color="#f5f0e4"/>
+      <stop offset="100%" stop-color="#dfd3be"/>
     </radialGradient>
-    <radialGradient id="anemoneCenter" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1a1a2e"/>
-      <stop offset="60%" stop-color="#0d0d20"/>
-      <stop offset="100%" stop-color="#050510"/>
+    <radialGradient id="anemoneCenterGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0e1e36"/>
+      <stop offset="75%" stop-color="#091322"/>
+      <stop offset="100%" stop-color="#040810"/>
     </radialGradient>
-    <linearGradient id="goldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#d4a843"/>
-      <stop offset="40%" stop-color="#c49030"/>
-      <stop offset="100%" stop-color="#8a6010"/>
-    </linearGradient>
-    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#0a0f20" flood-opacity="0.45"/>
-    </filter>
-    <filter id="shadowSm" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#0a0f20" flood-opacity="0.35"/>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
     </filter>
   </defs>
 
-  <!-- GOLD STEMS -->
-  <g stroke="#b8882a" stroke-linecap="round" fill="none" filter="url(#shadowSm)">
-    <path d="M130 172 Q110 142 80 115" stroke-width="2.2"/>
-    <path d="M130 172 Q150 147 175 120" stroke-width="2.2"/>
-    <path d="M130 172 Q128 137 125 100" stroke-width="2"/>
-    <path d="M115 137 Q100 125 88 108" stroke-width="1.5"/>
-    <path d="M145 142 Q160 130 170 115" stroke-width="1.5"/>
-    <path d="M100 118 Q92 108 84 100" stroke-width="1"/>
-    <path d="M168 118 Q174 110 180 103" stroke-width="1"/>
-    <path d="M125 110 Q120 100 118 90" stroke-width="1"/>
+  <!-- Ramas y Hojas Doradas de Fondo -->
+  <g class="gold-foliage" filter="url(#softShadow)">
+    <path d="M40,200 Q90,120 140,70 Q160,50 190,25" stroke="url(#goldGrad)" stroke-width="2.8" fill="none"/>
+    <path d="M100,135 Q145,100 165,45" stroke="url(#goldGrad)" stroke-width="2.2" fill="none"/>
+    <path d="M80,165 Q115,145 130,115" stroke="url(#goldGrad)" stroke-width="1.8" fill="none"/>
+    
+    <!-- Hojas de laurel/eucalipto doradas -->
+    <ellipse cx="180" cy="35" rx="16" ry="8" transform="rotate(-30 180 35)" fill="url(#goldGrad)"/>
+    <ellipse cx="150" cy="60" rx="17" ry="9" transform="rotate(-40 150 60)" fill="url(#goldGrad)"/>
+    <ellipse cx="120" cy="90" rx="18" ry="9" transform="rotate(-50 120 90)" fill="url(#goldGrad)"/>
+    <ellipse cx="165" cy="50" rx="14" ry="7" transform="rotate(20 165 50)" fill="url(#goldGrad)"/>
+    <ellipse cx="140" cy="85" rx="15" ry="7" transform="rotate(25 140 85)" fill="url(#goldGrad)"/>
+    <ellipse cx="95" cy="125" rx="14" ry="7" transform="rotate(-65 95 125)" fill="url(#goldGrad)"/>
+    
+    <!-- Bayas doradas en racimo -->
+    <circle cx="200" cy="22" r="4" fill="url(#goldGrad)"/>
+    <circle cx="210" cy="32" r="3.5" fill="url(#goldGrad)"/>
+    <circle cx="195" cy="42" r="3.5" fill="url(#goldGrad)"/>
+    <circle cx="185" cy="20" r="3" fill="url(#goldGrad)"/>
   </g>
 
-  <!-- GOLD LEAVES -->
-  <g fill="url(#goldLeaf)" filter="url(#shadowSm)">
-    <ellipse cx="75" cy="108" rx="14" ry="6" transform="rotate(-40 75 108)"/>
-    <ellipse cx="68" cy="98" rx="11" ry="5" transform="rotate(-55 68 98)"/>
-    <ellipse cx="85" cy="102" rx="10" ry="4.5" transform="rotate(-20 85 102)"/>
-    <ellipse cx="185" cy="108" rx="14" ry="6" transform="rotate(40 185 108)"/>
-    <ellipse cx="192" cy="98" rx="11" ry="5" transform="rotate(55 192 98)"/>
-    <ellipse cx="176" cy="102" rx="10" ry="4.5" transform="rotate(20 176 102)"/>
-    <ellipse cx="112" cy="88" rx="12" ry="5" transform="rotate(-60 112 88)"/>
-    <ellipse cx="148" cy="88" rx="12" ry="5" transform="rotate(60 148 88)"/>
-    <ellipse cx="95" cy="115" rx="8" ry="3.5" transform="rotate(-30 95 115)"/>
-    <ellipse cx="165" cy="115" rx="8" ry="3.5" transform="rotate(30 165 115)"/>
-    <path d="M85 155 Q78 142 72 148 Q79 155 85 155Z"/>
-    <path d="M88 160 Q80 152 76 158 Q82 162 88 160Z"/>
-    <path d="M175 155 Q182 142 188 148 Q181 155 175 155Z"/>
-    <path d="M172 160 Q180 152 184 158 Q178 162 172 160Z"/>
-    <path d="M118 80 Q112 70 108 75 Q114 82 118 80Z"/>
-    <path d="M142 80 Q148 70 152 75 Q146 82 142 80Z"/>
+  <!-- Rosa Azul Marino Profunda (Izquierda) -->
+  <g class="navy-rose-cluster" filter="url(#softShadow)" transform="translate(65, 125)">
+    <ellipse cx="0" cy="0" rx="42" ry="38" fill="url(#navyRoseGrad)"/>
+    <path d="M-32,-12 C-20,-34 20,-34 32,-12 C40,8 25,32 0,34 C-25,32 -40,8 -32,-12" fill="none" stroke="#3b659c" stroke-width="1.6" opacity="0.6"/>
+    <ellipse cx="0" cy="0" rx="26" ry="24" fill="#0d1f38"/>
+    <path d="M-16,-10 C-8,-20 8,-20 16,-10 C20,0 12,16 0,18 C-12,16 -20,0 -16,-10" fill="none" stroke="#5b88c4" stroke-width="1.8" opacity="0.7"/>
+    <circle cx="0" cy="0" r="12" fill="#1b365e"/>
+    <circle cx="0" cy="0" r="5" fill="#caa160" opacity="0.9"/>
   </g>
 
-  <!-- PEARL BERRIES -->
-  <g filter="url(#shadowSm)">
-    <circle cx="62" cy="94" r="3.5" fill="#f5f0e8" stroke="#d4c9a8" stroke-width="0.5"/>
-    <circle cx="72" cy="88" r="3" fill="#ffffff" stroke="#e0d9c8" stroke-width="0.5"/>
-    <circle cx="58" cy="86" r="2.5" fill="#f8f4ee" stroke="#d4c9a8" stroke-width="0.5"/>
-    <circle cx="78" cy="82" r="2" fill="#ffffff" stroke="#e0d9c8" stroke-width="0.4"/>
-    <circle cx="198" cy="94" r="3.5" fill="#f5f0e8" stroke="#d4c9a8" stroke-width="0.5"/>
-    <circle cx="188" cy="88" r="3" fill="#ffffff" stroke="#e0d9c8" stroke-width="0.5"/>
-    <circle cx="202" cy="86" r="2.5" fill="#f8f4ee" stroke="#d4c9a8" stroke-width="0.5"/>
-    <circle cx="182" cy="82" r="2" fill="#ffffff" stroke="#e0d9c8" stroke-width="0.4"/>
-    <circle cx="122" cy="78" r="2.5" fill="#ffffff" stroke="#e0d9c8" stroke-width="0.4"/>
-    <circle cx="138" cy="76" r="2" fill="#f8f4ee" stroke="#d4c9a8" stroke-width="0.4"/>
-    <circle cx="61" cy="93" r="1" fill="white" opacity="0.7"/>
-    <circle cx="197" cy="93" r="1" fill="white" opacity="0.7"/>
+  <!-- Flor Blanca Anémona con Centro Azul Medianoche y Estambres Dorados -->
+  <g class="white-anemone-flower" filter="url(#softShadow)" transform="translate(140, 145)">
+    <ellipse cx="0" cy="-34" rx="18" ry="26" fill="url(#whiteAnemoneGrad)"/>
+    <ellipse cx="29" cy="-17" rx="18" ry="26" transform="rotate(60 29 -17)" fill="url(#whiteAnemoneGrad)"/>
+    <ellipse cx="29" cy="17" rx="18" ry="26" transform="rotate(120 29 17)" fill="url(#whiteAnemoneGrad)"/>
+    <ellipse cx="0" cy="34" rx="18" ry="26" fill="url(#whiteAnemoneGrad)"/>
+    <ellipse cx="-29" cy="17" rx="18" ry="26" transform="rotate(-120 -29 17)" fill="url(#whiteAnemoneGrad)"/>
+    <ellipse cx="-29" cy="-17" rx="18" ry="26" transform="rotate(-60 -29 -17)" fill="url(#whiteAnemoneGrad)"/>
+    
+    <!-- Centro azul marino oscuro -->
+    <circle cx="0" cy="0" r="16" fill="url(#anemoneCenterGrad)"/>
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#050a12" stroke-width="1.5"/>
+    
+    <!-- Corona de estambres en oro -->
+    <circle cx="0" cy="-13" r="2" fill="url(#goldGrad)"/>
+    <circle cx="9" cy="-9" r="2" fill="url(#goldGrad)"/>
+    <circle cx="13" cy="0" r="2" fill="url(#goldGrad)"/>
+    <circle cx="9" cy="9" r="2" fill="url(#goldGrad)"/>
+    <circle cx="0" cy="13" r="2" fill="url(#goldGrad)"/>
+    <circle cx="-9" cy="9" r="2" fill="url(#goldGrad)"/>
+    <circle cx="-13" cy="0" r="2" fill="url(#goldGrad)"/>
+    <circle cx="-9" cy="-9" r="2" fill="url(#goldGrad)"/>
   </g>
 
-  <!-- NAVY ROSE CENTER (large) -->
-  <g transform="translate(130,118)" filter="url(#shadow)">
-    <ellipse cx="0" cy="2" rx="24" ry="14" fill="#0d1e40" opacity="0.9"/>
-    <path d="M0-6 Q18 2 0 18 Q-18 2 0-6Z" fill="url(#roseNavy1)" opacity="0.95"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(45)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(90)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(135)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(180)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(225)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(270)"/>
-    <path d="M0-6 Q18-2 14 14 Q2 18 0-6Z" fill="url(#rosePetal)" opacity="0.9" transform="rotate(315)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(22.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(67.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(112.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(157.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(202.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(247.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(292.5)"/>
-    <path d="M0-3 Q10 1 0 11 Q-10 1 0-3Z" fill="url(#roseNavy2)" transform="rotate(337.5)"/>
-    <circle cx="0" cy="0" r="5" fill="#0a1428"/>
-    <circle cx="-1" cy="-1" r="2.5" fill="#1a3060" opacity="0.8"/>
-    <ellipse cx="-4" cy="-8" rx="6" ry="3" fill="white" opacity="0.08" transform="rotate(-20)"/>
-  </g>
+  <!-- Florecitas de relleno Baby Blue y Destellos -->
+  <g class="filler-blossoms">
+    <circle cx="175" cy="105" r="7" fill="#8eb5dd"/>
+    <circle cx="175" cy="105" r="2.5" fill="#caa160"/>
+    
+    <circle cx="195" cy="120" r="6" fill="#8eb5dd"/>
+    <circle cx="195" cy="120" r="2" fill="#caa160"/>
 
-  <!-- NAVY ROSE LEFT -->
-  <g transform="translate(82,122) rotate(-15)" filter="url(#shadow)">
-    <ellipse cx="0" cy="2" rx="20" ry="12" fill="#0d1e40" opacity="0.9"/>
-    <path d="M0-5 Q16 2 0 15 Q-16 2 0-5Z" fill="url(#roseNavy1)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(51)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(102)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(153)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(204)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(255)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(306)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(25)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(85)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(145)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(205)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(265)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(325)"/>
-    <circle cx="0" cy="0" r="4" fill="#0a1428"/>
-    <circle cx="-1" cy="-1" r="2" fill="#1a3060" opacity="0.8"/>
-  </g>
+    <circle cx="50" cy="85" r="7" fill="#8eb5dd"/>
+    <circle cx="50" cy="85" r="2.5" fill="#caa160"/>
 
-  <!-- NAVY ROSE RIGHT -->
-  <g transform="translate(178,122) rotate(15)" filter="url(#shadow)">
-    <ellipse cx="0" cy="2" rx="20" ry="12" fill="#0d1e40" opacity="0.9"/>
-    <path d="M0-5 Q16 2 0 15 Q-16 2 0-5Z" fill="url(#roseNavy1)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(51)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(102)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(153)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(204)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(255)"/>
-    <path d="M0-5 Q14-1 11 12 Q1 15 0-5Z" fill="url(#rosePetal)" transform="rotate(306)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(25)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(85)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(145)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(205)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(265)"/>
-    <path d="M0-2 Q8 1 0 9 Q-8 1 0-2Z" fill="url(#roseNavy2)" transform="rotate(325)"/>
-    <circle cx="0" cy="0" r="4" fill="#0a1428"/>
-    <circle cx="-1" cy="-1" r="2" fill="#1a3060" opacity="0.8"/>
-  </g>
+    <circle cx="70" cy="65" r="5" fill="#8eb5dd"/>
+    <circle cx="70" cy="65" r="2" fill="#caa160"/>
 
-  <!-- NAVY ROSE BUD top -->
-  <g transform="translate(128,94) rotate(5)" filter="url(#shadowSm)">
-    <ellipse cx="0" cy="1" rx="13" ry="9" fill="#0d1e40" opacity="0.85"/>
-    <path d="M0-4 Q10 1 0 11 Q-10 1 0-4Z" fill="url(#roseNavy1)"/>
-    <path d="M0-4 Q10-1 8 9 Q0 11 0-4Z" fill="url(#rosePetal)" transform="rotate(60)"/>
-    <path d="M0-4 Q10-1 8 9 Q0 11 0-4Z" fill="url(#rosePetal)" transform="rotate(120)"/>
-    <path d="M0-4 Q10-1 8 9 Q0 11 0-4Z" fill="url(#rosePetal)" transform="rotate(180)"/>
-    <path d="M0-4 Q10-1 8 9 Q0 11 0-4Z" fill="url(#rosePetal)" transform="rotate(240)"/>
-    <path d="M0-4 Q10-1 8 9 Q0 11 0-4Z" fill="url(#rosePetal)" transform="rotate(300)"/>
-    <circle cx="0" cy="0" r="3.5" fill="#0a1428"/>
-    <circle cx="-0.5" cy="-0.5" r="1.5" fill="#1a3060" opacity="0.8"/>
+    <!-- Puntos de pan de oro flotantes -->
+    <circle cx="130" cy="30" r="2" fill="#caa160" opacity="0.8"/>
+    <circle cx="85" cy="45" r="2.5" fill="#caa160" opacity="0.8"/>
+    <circle cx="215" cy="70" r="2" fill="#caa160" opacity="0.8"/>
   </g>
-
-  <!-- WHITE ANEMONE LEFT -->
-  <g transform="translate(100,145)" filter="url(#shadow)">
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(60)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(120)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(180)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(240)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(300)"/>
-    <circle cx="0" cy="0" r="8" fill="url(#anemoneCenter)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(45)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(90)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(135)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(180)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(225)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(270)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(315)"/>
-    <circle cx="-2" cy="-2" r="2" fill="white" opacity="0.15"/>
-  </g>
-
-  <!-- WHITE ANEMONE RIGHT -->
-  <g transform="translate(160,145)" filter="url(#shadow)">
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(60)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(120)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(180)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(240)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(300)"/>
-    <circle cx="0" cy="0" r="8" fill="url(#anemoneCenter)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(45)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(90)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(135)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(180)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(225)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(270)"/>
-    <circle cx="0" cy="-5.5" r="1.2" fill="#4a7fd4" opacity="0.9" transform="rotate(315)"/>
-    <circle cx="-2" cy="-2" r="2" fill="white" opacity="0.15"/>
-  </g>
-
-  <!-- SMALL ANEMONE center front -->
-  <g transform="translate(130,148) scale(0.72)" filter="url(#shadowSm)">
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(60)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(120)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(180)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(240)"/>
-    <ellipse cx="0" cy="-13" rx="9" ry="14" fill="url(#anemoneWhite)" stroke="#d0ccc5" stroke-width="0.4" transform="rotate(300)"/>
-    <circle cx="0" cy="0" r="8" fill="url(#anemoneCenter)"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9" transform="rotate(60)"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9" transform="rotate(120)"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9" transform="rotate(180)"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9" transform="rotate(240)"/>
-    <circle cx="0" cy="-5" r="1.1" fill="#4a7fd4" opacity="0.9" transform="rotate(300)"/>
-    <circle cx="-1.5" cy="-1.5" r="1.8" fill="white" opacity="0.15"/>
-  </g>
-
-  <!-- DEPTH SHADOW -->
-  <ellipse cx="130" cy="178" rx="80" ry="10" fill="#0d1e40" opacity="0.15"/>
 </svg>
