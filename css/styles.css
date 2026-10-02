@@ -4,7 +4,11 @@
    ========================================================================== */
 
 :root {
-  /* Paleta Oficial Dusty Blue */
+  /* Paleta Oficial Dusty Blue & Fondo Arena */
+  --c-bg-sand: #f5f0ea;
+  --c-bg-sand-light: #faf6f0;
+  --c-bg-sand-dark: #ebe3d7;
+  --c-bg-sand-gradient: linear-gradient(160deg, #f7f2eb 0%, #f0e8de 50%, #eae1d5 100%);
   --c-bg-slate: #7d95ab;
   --c-bg-slate-dark: #698197;
   --c-bg-slate-light: #8fa5ba;
@@ -47,8 +51,8 @@ html {
 }
 
 body.theme-dusty-blue {
-  background-color: var(--c-bg-slate);
-  background-image: linear-gradient(145deg, #748da3 0%, #839bb2 50%, #768f9f 100%);
+  background-color: var(--c-bg-sand);
+  background-image: var(--c-bg-sand-gradient);
   background-attachment: fixed;
   color: var(--c-text-body);
   font-family: var(--font-sans);
@@ -78,15 +82,15 @@ body.theme-dusty-blue {
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 24px 70px rgba(18, 35, 52, 0.28),
-    0 6px 20px rgba(0, 0, 0, 0.08);
+    0 22px 60px rgba(90, 75, 60, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s ease;
 }
 
 .invitation-card-vertical:hover {
   box-shadow: 
-    0 28px 80px rgba(18, 35, 52, 0.34),
-    0 8px 26px rgba(0, 0, 0, 0.1);
+    0 26px 70px rgba(90, 75, 60, 0.16),
+    0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .card-inner-padding {
