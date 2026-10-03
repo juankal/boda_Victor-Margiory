@@ -2,8 +2,7 @@
 
 Invitación web nupcial de alta gama diseñada con estética **Dusty Blue (Azul Pizarra)**, tipografía editorial y formato vertical continuo optimizado para dispositivos móviles y de escritorio.
 
-> [!NOTE]
-> **Estado:** Acceso web público y GitHub Pages desactivados. Repositorio privado para uso exclusivo de los novios y desarrollo local.
+🌐 **Demo en vivo:** [https://juankal.github.io/boda_Victor-Margiory/](https://juankal.github.io/boda_Victor-Margiory/)
 
 ---
 
@@ -100,8 +99,8 @@ const eventDate = new Date(2026, 9, 19, 17, 0, 0).getTime();
 ## 🚀 Despliegue
 
 El proyecto está preparado para ejecutarse como un sitio estático en cualquier servidor web o servicio de alojamiento Jamstack:
-- **Estado actual:** Acceso web público y GitHub Pages desactivados.
-- **Alojamiento futuro (GitHub Pages / Vercel / Netlify / Cloudflare Pages):** Compatible como sitio estático sin compilación (`output directory: .`) en caso de reactivación.
+- **GitHub Pages:** Rama `main`, desplegado desde la raíz `/`.
+- **Vercel / Netlify / Cloudflare Pages:** Sin paso de compilación necesario (`output directory: .`).
 
 ---
 

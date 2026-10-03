@@ -6,7 +6,7 @@ Invitación web nupcial interactiva de alta gama en formato vertical continuo.
 - **Novios:** Víctor Guzmán & Margiory Esquia.
 - **Fecha:** Lunes 19 de Octubre de 2026 a las 5:00 PM (Tacna, Perú / UTC-5).
 - **Lugar:** Salón de Eventos Los Tulipanes (Pasaje San Hilarión Nro 350, Tacna).
-- **Despliegue:** GitHub Pages desactivado. Repositorio privado (acceso web público cerrado).
+- **Despliegue:** GitHub Pages en `https://juankal.github.io/boda_Victor-Margiory/`.
 
 ## Sistema de Diseño y Paleta
 - **Estética oficial:** *Dusty Blue* (Azul pizarra) editorial con flores botánicas acuarela y texturas de papel rasgado artesanal (*deckle edge*).
