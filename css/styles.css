@@ -629,66 +629,11 @@ body.theme-dusty-blue {
   line-height: 1.1;
 }
 
-/* ================= 9. PASES ================= */
-.ref-passes-section {
-  text-align: center;
-  padding-top: 24px;
-  margin-bottom: 24px;
-}
-
-.ref-icon-bubble {
-  color: #5d748a;
-  font-size: 1.35rem;
-  margin-bottom: 6px;
-}
-
-.ref-section-tag {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--c-text-navy);
-  font-weight: 700;
-}
-
-.passes-sub-txt {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #63778a;
-  margin: 4px 0 10px;
-}
-
-.passes-number-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: var(--font-sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  color: #425669;
-  font-weight: 500;
-}
-
-.passes-pill-box {
-  border: 1.5px solid #233446;
-  padding: 2px 10px;
-  font-size: 1.15rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  color: #1a2838;
-  border-radius: 3px;
-  line-height: 1.2;
-}
-
-/* ================= 10. SUGERENCIA DE REGALO ================= */
+/* ================= 9. SUGERENCIA DE REGALO ================= */
 .ref-gift-section {
   text-align: center;
-  margin-bottom: 20px;
+  padding-top: 28px;
+  margin-bottom: 22px;
 }
 
 .gift-body-text {
@@ -1349,13 +1294,17 @@ body.theme-dusty-blue {
 
   .floral-flank-l {
     left: 4px;
-    bottom: 2px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
     width: 80px;
   }
 
   .floral-flank-r {
     right: 4px;
-    top: 2px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
     width: 80px;
   }
 

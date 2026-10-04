@@ -19,15 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ================= 1. PERSONALIZACIÓN POR PARÁMETROS URL ================= */
 function initURLParams() {
   const params = new URLSearchParams(window.location.search);
-  const pases = params.get('pases') || params.get('p');
-  const passesDisplay = document.getElementById('passes-display-value');
-  const modalCount = document.getElementById('modal-guest-count');
+  const guestName = params.get('invitado') || params.get('n');
+  const modalName = document.getElementById('modal-guest-name');
 
-  if (pases && passesDisplay) {
-    passesDisplay.textContent = pases;
-    if (modalCount) {
-      modalCount.value = `${pases} pases`;
-    }
+  if (guestName && modalName) {
+    modalName.value = guestName;
   }
 }
 
@@ -230,7 +226,6 @@ window.handleModalRSVPSubmit = function(event) {
 
   const name = document.getElementById('modal-guest-name').value.trim();
   const status = document.getElementById('modal-guest-status').value;
-  const count = document.getElementById('modal-guest-count').value;
   const target = document.querySelector('input[name="modal-target"]:checked')?.value || 'novio';
 
   const phone = target === 'novia' ? PHONE_NOVIA : PHONE_NOVIO;
@@ -239,11 +234,10 @@ window.handleModalRSVPSubmit = function(event) {
   const message = 
 `💍 *CONFIRMACIÓN DE ASISTENCIA — BODA VÍCTOR & MARGIORY*
 
-¡Hola ${targetName}! Les escribo para confirmar nuestra asistencia:
+¡Hola ${targetName}! Les escribo para confirmar nuestra asistencia a su boda:
 
 👤 *Invitado(a):* ${name}
 💌 *Respuesta:* ${status}
-👥 *Pases:* ${count}
 
 ¡Nos vemos el 19 de Octubre en Los Tulipanes! ✨`;
 
