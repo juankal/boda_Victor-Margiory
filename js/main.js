@@ -207,7 +207,8 @@ window.openWhatsAppContact = function(target) {
   
 ¡Hola ${name}! Te escribo para confirmar mi asistencia a su boda el 19 de Octubre. ¡Muchas felicidades! ✨`;
 
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  // Se usa api.whatsapp.com directo: la redirección de wa.me corrompe los emojis (llegan como �)
+  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
 };
 
@@ -246,7 +247,7 @@ window.handleModalRSVPSubmit = function(event) {
 
 ¡Nos vemos el 19 de Octubre en Los Tulipanes! ✨`;
 
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
   toggleRSVPModal();
 };
