@@ -13,13 +13,13 @@ Invitación web nupcial de alta gama diseñada con estética **Dusty Blue (Azul 
   * Botón flotante interactivo con indicador visual animado de ondas de audio (ecualizador).
   * Control de inicio/pausa adaptado a las políticas de reproducción automática de navegadores móviles.
 
-* **💌 Sistema de Pases Personalizado por URL:**
-  * Lectura de parámetros dinámicos en la URL (`?p=2` o `?pases=2`).
-  * Asignación automática del número de pases en la sección informativa y en el modal de confirmación.
+* **💌 Personalización de Invitado por URL:**
+  * Lectura de parámetros opcionales en la URL (`?invitado=Nombre` o `?n=Nombre`).
+  * Precarga automática del nombre del invitado en el formulario modal de confirmación.
 
 * **📲 Confirmación de Asistencia (RSVP) por WhatsApp:**
-  * Enlaces directos a los teléfonos del novio y la novia.
-  * Mensajes pre-estructurados con el nombre del invitado y la cantidad de pases confirmados.
+  * Enlaces directos a los números reales del novio y la novia.
+  * Mensaje pre-estructurado y elegante con el nombre del invitado y su respuesta de confirmación.
 
 * **⏳ Contador Regresivo en Tiempo Real:**
   * Cuenta regresiva precisa para el evento: **Lunes 19 de Octubre de 2026, 5:00 PM (Hora de Perú UTC-5)**.
@@ -74,11 +74,10 @@ boda_Victor-Margiory/
 
 ## 🛠️ Personalización y Configuración
 
-### 1. Parámetros de Enlace para Invitados (Pases)
-Para enviar invitaciones personalizadas con cupos específicos, añade el parámetro `?p=N` al final de la URL:
-- Individual: `https://juankal.github.io/boda_Victor-Margiory/?p=1`
-- Pareja: `https://juankal.github.io/boda_Victor-Margiory/?p=2`
-- Familia (4 pases): `https://juankal.github.io/boda_Victor-Margiory/?p=4`
+### 1. Parámetros de Enlace para Invitados
+Para compartir la invitación personalizada con el nombre del invitado precargado en el formulario de confirmación, añade el parámetro `?invitado=Nombre` (o `?n=Nombre`):
+- Familia: `https://juankal.github.io/boda_Victor-Margiory/?invitado=Familia+Mendoza`
+- Individual: `https://juankal.github.io/boda_Victor-Margiory/?n=Carlos+Mendoza`
 
 ### 2. Números de WhatsApp para RSVP
 Configurados en `js/main.js`:

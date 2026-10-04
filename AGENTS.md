@@ -12,6 +12,7 @@ Invitación web nupcial interactiva de alta gama en formato vertical continuo.
 - **Estética oficial:** *Dusty Blue* (Azul pizarra) editorial con flores botánicas acuarela y texturas de papel rasgado artesanal (*deckle edge*).
 - **Fondo exterior:** Mantener siempre el tono slate azulado (`var(--c-bg-slate)`, `linear-gradient(145deg, #748da3 0%, #839bb2 50%, #768f9f 100%)`). No cambiar el fondo general a tonos arena, beige ni blanco salvo petición explícita.
 - **Lienzo principal:** Tarjeta vertical continua `.invitation-card-vertical` (max-width: 480px, fondo blanco con sombra profunda de elevación).
+- **Flores laterales en caligrafía:** Flanquean los nombres Víctor & Margiory (`.floral-flank-l`, `.floral-flank-r`). Mantener siempre simetría vertical estricta (`top: 50%; transform: translateY(-50%)`) tanto en móviles como en escritorio.
 
 ## Lógica y Comportamiento (`js/main.js`)
 - **Personalización por URL:** El sistema lee parámetros opcionales `?invitado=Nombre` o `?n=Nombre` para precargar el nombre del invitado en el modal de confirmación.
