@@ -16,7 +16,7 @@ Invitación web nupcial interactiva de alta gama en formato vertical continuo.
 ## Lógica y Comportamiento (`js/main.js`)
 - **Pases personalizados por URL:** El sistema lee parámetros `?p=N` o `?pases=N` para personalizar dinámicamente la cantidad de pases en pantalla y en el formulario de confirmación.
 - **Música:** Reproductor con audio local (`assets/audio/cancion.mp3`) y botón flotante con barras animadas de ecualizador. Respetar políticas de autoplay de navegadores móviles (inicio por interacción).
-- **RSVP WhatsApp:** Enlaces directos a los números reales de los novios (`PHONE_NOVIO = 51952822559`, `PHONE_NOVIA = 51984661803`).
+- **RSVP WhatsApp:** Enlaces directos a los números reales de los novios (`PHONE_NOVIO = 51917775048`, `PHONE_NOVIA = 51952940791`).
 - **Carrusel y Lightbox:** Galería fotográfica con carrusel fluido y modal Lightbox para visualización completa.
 - **Contador regresivo:** Calculado en tiempo real con fecha destino fija en UTC-5.
 

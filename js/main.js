@@ -4,8 +4,8 @@
  */
 
 // Teléfonos reales para WhatsApp
-const PHONE_NOVIO = "51952822559";
-const PHONE_NOVIA = "51984661803";
+const PHONE_NOVIO = "51917775048";
+const PHONE_NOVIA = "51952940791";
 
 document.addEventListener('DOMContentLoaded', () => {
   initURLParams();

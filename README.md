@@ -83,8 +83,8 @@ Para enviar invitaciones personalizadas con cupos específicos, añade el parám
 ### 2. Números de WhatsApp para RSVP
 Configurados en `js/main.js`:
 ```javascript
-const PHONE_NOVIO = "51952822559";
-const PHONE_NOVIA = "51984661803";
+const PHONE_NOVIO = "51917775048";
+const PHONE_NOVIA = "51952940791";
 ```
 
 ### 3. Fecha del Contador Regresivo
